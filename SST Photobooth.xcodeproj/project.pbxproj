@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2208CBF01787027F003714EB /* Black.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDA1787027F003714EB /* Black.png */; };
+		2208CBF11787027F003714EB /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDB1787027F003714EB /* Blue.png */; };
+		2208CBF21787027F003714EB /* Brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDC1787027F003714EB /* Brown.png */; };
+		2208CBF41787027F003714EB /* DarkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDE1787027F003714EB /* DarkGreen.png */; };
+		2208CBF51787027F003714EB /* DarkOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDF1787027F003714EB /* DarkOrange.png */; };
+		2208CBF81787027F003714EB /* Grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBE21787027F003714EB /* Grey.png */; };
+		2208CBF91787027F003714EB /* LightBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBE31787027F003714EB /* LightBlue.png */; };
+		2208CBFA1787027F003714EB /* LightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBE41787027F003714EB /* LightGreen.png */; };
+		2208CBFD1787027F003714EB /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBE71787027F003714EB /* Red.png */; };
+		2208CC041787027F003714EB /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBEE1787027F003714EB /* Yellow.png */; };
+		2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */; };
 		22CAF1311782CB8100794998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF1301782CB8100794998 /* UIKit.framework */; };
 		22CAF1331782CB8100794998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF1321782CB8100794998 /* Foundation.framework */; };
 		22CAF1351782CB8100794998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF1341782CB8100794998 /* CoreGraphics.framework */; };
@@ -17,12 +28,27 @@
 		22CAF1451782CB8100794998 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1441782CB8100794998 /* Default@2x.png */; };
 		22CAF1471782CB8100794998 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1461782CB8100794998 /* Default-568h@2x.png */; };
 		22CAF14A1782CB8100794998 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1481782CB8100794998 /* MainStoryboard_iPhone.storyboard */; };
-		22CAF14D1782CB8100794998 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF14B1782CB8100794998 /* MainStoryboard_iPad.storyboard */; };
 		22CAF1501782CB8100794998 /* PhotoboothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF14F1782CB8100794998 /* PhotoboothViewController.m */; };
+		22CAF15A1782CBA100794998 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1571782CBA100794998 /* SVProgressHUD.bundle */; };
+		22CAF15B1782CBA100794998 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF1591782CBA100794998 /* SVProgressHUD.m */; };
+		22CAF15D1782CBC600794998 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF15C1782CBC600794998 /* QuartzCore.framework */; };
+		22CAF15F1782CBCE00794998 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF15E1782CBCE00794998 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22CAF12D1782CB8100794998 /* SST Photobooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SST Photobooth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2208CBDA1787027F003714EB /* Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Black.png; sourceTree = "<group>"; };
+		2208CBDB1787027F003714EB /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		2208CBDC1787027F003714EB /* Brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brown.png; sourceTree = "<group>"; };
+		2208CBDE1787027F003714EB /* DarkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkGreen.png; sourceTree = "<group>"; };
+		2208CBDF1787027F003714EB /* DarkOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkOrange.png; sourceTree = "<group>"; };
+		2208CBE21787027F003714EB /* Grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Grey.png; sourceTree = "<group>"; };
+		2208CBE31787027F003714EB /* LightBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightBlue.png; sourceTree = "<group>"; };
+		2208CBE41787027F003714EB /* LightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightGreen.png; sourceTree = "<group>"; };
+		2208CBE71787027F003714EB /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
+		2208CBEE1787027F003714EB /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
+		2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController2.h; sourceTree = "<group>"; };
+		2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController2.m; sourceTree = "<group>"; };
+		22CAF12D1782CB8100794998 /* Photobooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photobooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CAF1301782CB8100794998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22CAF1321782CB8100794998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22CAF1341782CB8100794998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -36,9 +62,13 @@
 		22CAF1441782CB8100794998 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		22CAF1461782CB8100794998 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		22CAF1491782CB8100794998 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		22CAF14C1782CB8100794998 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		22CAF14E1782CB8100794998 /* PhotoboothViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController.h; sourceTree = "<group>"; };
 		22CAF14F1782CB8100794998 /* PhotoboothViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController.m; sourceTree = "<group>"; };
+		22CAF1571782CBA100794998 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		22CAF1581782CBA100794998 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		22CAF1591782CBA100794998 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		22CAF15C1782CBC600794998 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		22CAF15E1782CBCE00794998 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CAF15F1782CBCE00794998 /* Social.framework in Frameworks */,
+				22CAF15D1782CBC600794998 /* QuartzCore.framework in Frameworks */,
 				22CAF1311782CB8100794998 /* UIKit.framework in Frameworks */,
 				22CAF1331782CB8100794998 /* Foundation.framework in Frameworks */,
 				22CAF1351782CB8100794998 /* CoreGraphics.framework in Frameworks */,
@@ -55,9 +87,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2208CBD81787027E003714EB /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				2208CBDA1787027F003714EB /* Black.png */,
+				2208CBDB1787027F003714EB /* Blue.png */,
+				2208CBDC1787027F003714EB /* Brown.png */,
+				2208CBDE1787027F003714EB /* DarkGreen.png */,
+				2208CBDF1787027F003714EB /* DarkOrange.png */,
+				2208CBE21787027F003714EB /* Grey.png */,
+				2208CBE31787027F003714EB /* LightBlue.png */,
+				2208CBE41787027F003714EB /* LightGreen.png */,
+				2208CBE71787027F003714EB /* Red.png */,
+				2208CBEE1787027F003714EB /* Yellow.png */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		22CAF1241782CB8100794998 = {
 			isa = PBXGroup;
 			children = (
+				22CAF15E1782CBCE00794998 /* Social.framework */,
+				22CAF15C1782CBC600794998 /* QuartzCore.framework */,
+				22CAF1561782CBA100794998 /* SVProgressHUD */,
 				22CAF1361782CB8100794998 /* SST Photobooth */,
 				22CAF12F1782CB8100794998 /* Frameworks */,
 				22CAF12E1782CB8100794998 /* Products */,
@@ -67,7 +119,7 @@
 		22CAF12E1782CB8100794998 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22CAF12D1782CB8100794998 /* SST Photobooth.app */,
+				22CAF12D1782CB8100794998 /* Photobooth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,12 +137,14 @@
 		22CAF1361782CB8100794998 /* SST Photobooth */ = {
 			isa = PBXGroup;
 			children = (
+				2208CBD81787027E003714EB /* Graphics */,
 				22CAF13F1782CB8100794998 /* PhotoboothAppDelegate.h */,
 				22CAF1401782CB8100794998 /* PhotoboothAppDelegate.m */,
 				22CAF1481782CB8100794998 /* MainStoryboard_iPhone.storyboard */,
-				22CAF14B1782CB8100794998 /* MainStoryboard_iPad.storyboard */,
 				22CAF14E1782CB8100794998 /* PhotoboothViewController.h */,
 				22CAF14F1782CB8100794998 /* PhotoboothViewController.m */,
+				2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */,
+				2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */,
 				22CAF1371782CB8100794998 /* Supporting Files */,
 			);
 			path = "SST Photobooth";
@@ -110,12 +164,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		22CAF1561782CBA100794998 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				22CAF1571782CBA100794998 /* SVProgressHUD.bundle */,
+				22CAF1581782CBA100794998 /* SVProgressHUD.h */,
+				22CAF1591782CBA100794998 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22CAF12C1782CB8100794998 /* SST Photobooth */ = {
+		22CAF12C1782CB8100794998 /* Photobooth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22CAF1531782CB8100794998 /* Build configuration list for PBXNativeTarget "SST Photobooth" */;
+			buildConfigurationList = 22CAF1531782CB8100794998 /* Build configuration list for PBXNativeTarget "Photobooth" */;
 			buildPhases = (
 				22CAF1291782CB8100794998 /* Sources */,
 				22CAF12A1782CB8100794998 /* Frameworks */,
@@ -125,9 +189,9 @@
 			);
 			dependencies = (
 			);
-			name = "SST Photobooth";
+			name = Photobooth;
 			productName = "SST Photobooth";
-			productReference = 22CAF12D1782CB8100794998 /* SST Photobooth.app */;
+			productReference = 22CAF12D1782CB8100794998 /* Photobooth.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +216,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22CAF12C1782CB8100794998 /* SST Photobooth */,
+				22CAF12C1782CB8100794998 /* Photobooth */,
 			);
 		};
 /* End PBXProject section */
@@ -167,7 +231,17 @@
 				22CAF1451782CB8100794998 /* Default@2x.png in Resources */,
 				22CAF1471782CB8100794998 /* Default-568h@2x.png in Resources */,
 				22CAF14A1782CB8100794998 /* MainStoryboard_iPhone.storyboard in Resources */,
-				22CAF14D1782CB8100794998 /* MainStoryboard_iPad.storyboard in Resources */,
+				22CAF15A1782CBA100794998 /* SVProgressHUD.bundle in Resources */,
+				2208CBF01787027F003714EB /* Black.png in Resources */,
+				2208CBF11787027F003714EB /* Blue.png in Resources */,
+				2208CBF21787027F003714EB /* Brown.png in Resources */,
+				2208CBF41787027F003714EB /* DarkGreen.png in Resources */,
+				2208CBF51787027F003714EB /* DarkOrange.png in Resources */,
+				2208CBF81787027F003714EB /* Grey.png in Resources */,
+				2208CBF91787027F003714EB /* LightBlue.png in Resources */,
+				2208CBFA1787027F003714EB /* LightGreen.png in Resources */,
+				2208CBFD1787027F003714EB /* Red.png in Resources */,
+				2208CC041787027F003714EB /* Yellow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +255,8 @@
 				22CAF13D1782CB8100794998 /* main.m in Sources */,
 				22CAF1411782CB8100794998 /* PhotoboothAppDelegate.m in Sources */,
 				22CAF1501782CB8100794998 /* PhotoboothViewController.m in Sources */,
+				22CAF15B1782CBA100794998 /* SVProgressHUD.m in Sources */,
+				2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,14 +277,6 @@
 				22CAF1491782CB8100794998 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		22CAF14B1782CB8100794998 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22CAF14C1782CB8100794998 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -275,10 +343,13 @@
 		22CAF1541782CB8100794998 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Photobooth-Prefix.pch";
 				INFOPLIST_FILE = "SST Photobooth/SST Photobooth-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "775D612D-AEA2-411B-9AFA-C1B3CF4817E4";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -286,10 +357,13 @@
 		22CAF1551782CB8100794998 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Photobooth-Prefix.pch";
 				INFOPLIST_FILE = "SST Photobooth/SST Photobooth-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "775D612D-AEA2-411B-9AFA-C1B3CF4817E4";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -306,13 +380,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22CAF1531782CB8100794998 /* Build configuration list for PBXNativeTarget "SST Photobooth" */ = {
+		22CAF1531782CB8100794998 /* Build configuration list for PBXNativeTarget "Photobooth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22CAF1541782CB8100794998 /* Debug */,
 				22CAF1551782CB8100794998 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

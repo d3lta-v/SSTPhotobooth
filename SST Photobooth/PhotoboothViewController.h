@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoboothViewController : UIViewController
+@interface PhotoboothViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIWebViewDelegate, UIActionSheetDelegate>
+{
+    IBOutlet UIToolbar *toolbar;
+    UIImagePickerController *controller;
+}
+
+@property (strong, nonatomic) IBOutlet UIWebView *web;
+@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
+
+-(IBAction)openActionsheet:(id)sender;
 
 @end

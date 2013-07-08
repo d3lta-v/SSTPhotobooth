@@ -8,6 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoboothViewController2 : UIViewController
+@interface PhotoboothViewController2 : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
+{
+    UIImagePickerController *controller;
+    CGPoint lastPoint;
+    CGFloat red;
+    CGFloat green;
+    CGFloat blue;
+    CGFloat brush;
+    CGFloat opacity;
+    BOOL mouseSwiped;
+    
+}
+
+-(IBAction)actionSheet:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
+@property (weak, nonatomic) IBOutlet UIImageView *mainImage;
+@property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
+
+- (IBAction)pencilPressed:(id)sender;
 
 @end
