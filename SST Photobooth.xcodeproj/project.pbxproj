@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2208CBF01787027F003714EB /* Black.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDA1787027F003714EB /* Black.png */; };
-		2208CBF11787027F003714EB /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDB1787027F003714EB /* Blue.png */; };
-		2208CBF21787027F003714EB /* Brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDC1787027F003714EB /* Brown.png */; };
-		2208CBF41787027F003714EB /* DarkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDE1787027F003714EB /* DarkGreen.png */; };
-		2208CBF51787027F003714EB /* DarkOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBDF1787027F003714EB /* DarkOrange.png */; };
-		2208CBF81787027F003714EB /* Grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBE21787027F003714EB /* Grey.png */; };
-		2208CBF91787027F003714EB /* LightBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBE31787027F003714EB /* LightBlue.png */; };
-		2208CBFA1787027F003714EB /* LightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBE41787027F003714EB /* LightGreen.png */; };
-		2208CBFD1787027F003714EB /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBE71787027F003714EB /* Red.png */; };
-		2208CC041787027F003714EB /* Yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2208CBEE1787027F003714EB /* Yellow.png */; };
 		2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */; };
+		22563089178B0FFF00002FB6 /* Black1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563080178B0FFF00002FB6 /* Black1.png */; };
+		2256308A178B0FFF00002FB6 /* Blue1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563081178B0FFF00002FB6 /* Blue1.png */; };
+		2256308B178B0FFF00002FB6 /* Gray1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563082178B0FFF00002FB6 /* Gray1.png */; };
+		2256308C178B0FFF00002FB6 /* Green1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563083178B0FFF00002FB6 /* Green1.png */; };
+		2256308D178B0FFF00002FB6 /* LightGreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563084178B0FFF00002FB6 /* LightGreen1.png */; };
+		2256308E178B0FFF00002FB6 /* Orange1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563085178B0FFF00002FB6 /* Orange1.png */; };
+		2256308F178B0FFF00002FB6 /* Pink1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563086178B0FFF00002FB6 /* Pink1.png */; };
+		22563090178B0FFF00002FB6 /* Red1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563087178B0FFF00002FB6 /* Red1.png */; };
+		22563091178B0FFF00002FB6 /* Yellow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563088178B0FFF00002FB6 /* Yellow1.png */; };
+		22CA07F11793DFA30095A4B9 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07ED1793DFA30095A4B9 /* Background.png */; };
+		22CA07F21793DFA30095A4B9 /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07EE1793DFA30095A4B9 /* Editor.png */; };
+		22CA07F31793DFA30095A4B9 /* New Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07EF1793DFA30095A4B9 /* New Photo.png */; };
+		22CA07F41793DFA30095A4B9 /* Share.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07F01793DFA30095A4B9 /* Share.png */; };
+		22CA07F61794E7ED0095A4B9 /* Brown1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07F51794E7ED0095A4B9 /* Brown1.png */; };
 		22CAF1311782CB8100794998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF1301782CB8100794998 /* UIKit.framework */; };
 		22CAF1331782CB8100794998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF1321782CB8100794998 /* Foundation.framework */; };
 		22CAF1351782CB8100794998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF1341782CB8100794998 /* CoreGraphics.framework */; };
@@ -36,18 +40,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2208CBDA1787027F003714EB /* Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Black.png; sourceTree = "<group>"; };
-		2208CBDB1787027F003714EB /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
-		2208CBDC1787027F003714EB /* Brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brown.png; sourceTree = "<group>"; };
-		2208CBDE1787027F003714EB /* DarkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkGreen.png; sourceTree = "<group>"; };
-		2208CBDF1787027F003714EB /* DarkOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkOrange.png; sourceTree = "<group>"; };
-		2208CBE21787027F003714EB /* Grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Grey.png; sourceTree = "<group>"; };
-		2208CBE31787027F003714EB /* LightBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightBlue.png; sourceTree = "<group>"; };
-		2208CBE41787027F003714EB /* LightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightGreen.png; sourceTree = "<group>"; };
-		2208CBE71787027F003714EB /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
-		2208CBEE1787027F003714EB /* Yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow.png; sourceTree = "<group>"; };
 		2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController2.h; sourceTree = "<group>"; };
 		2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController2.m; sourceTree = "<group>"; };
+		22563080178B0FFF00002FB6 /* Black1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Black1.png; sourceTree = "<group>"; };
+		22563081178B0FFF00002FB6 /* Blue1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue1.png; sourceTree = "<group>"; };
+		22563082178B0FFF00002FB6 /* Gray1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gray1.png; sourceTree = "<group>"; };
+		22563083178B0FFF00002FB6 /* Green1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green1.png; sourceTree = "<group>"; };
+		22563084178B0FFF00002FB6 /* LightGreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LightGreen1.png; sourceTree = "<group>"; };
+		22563085178B0FFF00002FB6 /* Orange1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Orange1.png; sourceTree = "<group>"; };
+		22563086178B0FFF00002FB6 /* Pink1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pink1.png; sourceTree = "<group>"; };
+		22563087178B0FFF00002FB6 /* Red1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red1.png; sourceTree = "<group>"; };
+		22563088178B0FFF00002FB6 /* Yellow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Yellow1.png; sourceTree = "<group>"; };
+		22CA07ED1793DFA30095A4B9 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		22CA07EE1793DFA30095A4B9 /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Editor.png; sourceTree = "<group>"; };
+		22CA07EF1793DFA30095A4B9 /* New Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New Photo.png"; sourceTree = "<group>"; };
+		22CA07F01793DFA30095A4B9 /* Share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share.png; sourceTree = "<group>"; };
+		22CA07F51794E7ED0095A4B9 /* Brown1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brown1.png; sourceTree = "<group>"; };
 		22CAF12D1782CB8100794998 /* Photobooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photobooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CAF1301782CB8100794998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22CAF1321782CB8100794998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,21 +95,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2208CBD81787027E003714EB /* Graphics */ = {
+		2256307F178B0FFF00002FB6 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
-				2208CBDA1787027F003714EB /* Black.png */,
-				2208CBDB1787027F003714EB /* Blue.png */,
-				2208CBDC1787027F003714EB /* Brown.png */,
-				2208CBDE1787027F003714EB /* DarkGreen.png */,
-				2208CBDF1787027F003714EB /* DarkOrange.png */,
-				2208CBE21787027F003714EB /* Grey.png */,
-				2208CBE31787027F003714EB /* LightBlue.png */,
-				2208CBE41787027F003714EB /* LightGreen.png */,
-				2208CBE71787027F003714EB /* Red.png */,
-				2208CBEE1787027F003714EB /* Yellow.png */,
+				22CA07F51794E7ED0095A4B9 /* Brown1.png */,
+				22563080178B0FFF00002FB6 /* Black1.png */,
+				22563081178B0FFF00002FB6 /* Blue1.png */,
+				22563082178B0FFF00002FB6 /* Gray1.png */,
+				22563083178B0FFF00002FB6 /* Green1.png */,
+				22563084178B0FFF00002FB6 /* LightGreen1.png */,
+				22563085178B0FFF00002FB6 /* Orange1.png */,
+				22563086178B0FFF00002FB6 /* Pink1.png */,
+				22563087178B0FFF00002FB6 /* Red1.png */,
+				22563088178B0FFF00002FB6 /* Yellow1.png */,
 			);
-			path = Graphics;
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		22CA07EC1793DFA30095A4B9 /* SST Lens */ = {
+			isa = PBXGroup;
+			children = (
+				22CA07ED1793DFA30095A4B9 /* Background.png */,
+				22CA07EE1793DFA30095A4B9 /* Editor.png */,
+				22CA07EF1793DFA30095A4B9 /* New Photo.png */,
+				22CA07F01793DFA30095A4B9 /* Share.png */,
+			);
+			path = "SST Lens";
 			sourceTree = "<group>";
 		};
 		22CAF1241782CB8100794998 = {
@@ -137,7 +156,8 @@
 		22CAF1361782CB8100794998 /* SST Photobooth */ = {
 			isa = PBXGroup;
 			children = (
-				2208CBD81787027E003714EB /* Graphics */,
+				22CA07EC1793DFA30095A4B9 /* SST Lens */,
+				2256307F178B0FFF00002FB6 /* Colors */,
 				22CAF13F1782CB8100794998 /* PhotoboothAppDelegate.h */,
 				22CAF1401782CB8100794998 /* PhotoboothAppDelegate.m */,
 				22CAF1481782CB8100794998 /* MainStoryboard_iPhone.storyboard */,
@@ -177,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22CAF12C1782CB8100794998 /* Photobooth */ = {
+		22CAF12C1782CB8100794998 /* Lens */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22CAF1531782CB8100794998 /* Build configuration list for PBXNativeTarget "Photobooth" */;
+			buildConfigurationList = 22CAF1531782CB8100794998 /* Build configuration list for PBXNativeTarget "Lens" */;
 			buildPhases = (
 				22CAF1291782CB8100794998 /* Sources */,
 				22CAF12A1782CB8100794998 /* Frameworks */,
@@ -189,7 +209,7 @@
 			);
 			dependencies = (
 			);
-			name = Photobooth;
+			name = Lens;
 			productName = "SST Photobooth";
 			productReference = 22CAF12D1782CB8100794998 /* Photobooth.app */;
 			productType = "com.apple.product-type.application";
@@ -216,7 +236,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22CAF12C1782CB8100794998 /* Photobooth */,
+				22CAF12C1782CB8100794998 /* Lens */,
 			);
 		};
 /* End PBXProject section */
@@ -232,16 +252,20 @@
 				22CAF1471782CB8100794998 /* Default-568h@2x.png in Resources */,
 				22CAF14A1782CB8100794998 /* MainStoryboard_iPhone.storyboard in Resources */,
 				22CAF15A1782CBA100794998 /* SVProgressHUD.bundle in Resources */,
-				2208CBF01787027F003714EB /* Black.png in Resources */,
-				2208CBF11787027F003714EB /* Blue.png in Resources */,
-				2208CBF21787027F003714EB /* Brown.png in Resources */,
-				2208CBF41787027F003714EB /* DarkGreen.png in Resources */,
-				2208CBF51787027F003714EB /* DarkOrange.png in Resources */,
-				2208CBF81787027F003714EB /* Grey.png in Resources */,
-				2208CBF91787027F003714EB /* LightBlue.png in Resources */,
-				2208CBFA1787027F003714EB /* LightGreen.png in Resources */,
-				2208CBFD1787027F003714EB /* Red.png in Resources */,
-				2208CC041787027F003714EB /* Yellow.png in Resources */,
+				22563089178B0FFF00002FB6 /* Black1.png in Resources */,
+				2256308A178B0FFF00002FB6 /* Blue1.png in Resources */,
+				2256308B178B0FFF00002FB6 /* Gray1.png in Resources */,
+				2256308C178B0FFF00002FB6 /* Green1.png in Resources */,
+				2256308D178B0FFF00002FB6 /* LightGreen1.png in Resources */,
+				2256308E178B0FFF00002FB6 /* Orange1.png in Resources */,
+				2256308F178B0FFF00002FB6 /* Pink1.png in Resources */,
+				22563090178B0FFF00002FB6 /* Red1.png in Resources */,
+				22563091178B0FFF00002FB6 /* Yellow1.png in Resources */,
+				22CA07F11793DFA30095A4B9 /* Background.png in Resources */,
+				22CA07F21793DFA30095A4B9 /* Editor.png in Resources */,
+				22CA07F31793DFA30095A4B9 /* New Photo.png in Resources */,
+				22CA07F41793DFA30095A4B9 /* Share.png in Resources */,
+				22CA07F61794E7ED0095A4B9 /* Brown1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +404,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22CAF1531782CB8100794998 /* Build configuration list for PBXNativeTarget "Photobooth" */ = {
+		22CAF1531782CB8100794998 /* Build configuration list for PBXNativeTarget "Lens" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22CAF1541782CB8100794998 /* Debug */,

@@ -28,5 +28,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
 
 - (IBAction)pencilPressed:(id)sender;
+-(IBAction)shareButton:(id)sender;
+-(IBAction)save:(id)sender;
+-(IBAction)reset:(id)sender;
 
 @end

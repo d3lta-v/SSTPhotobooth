@@ -28,12 +28,12 @@
     //Check if user is first run
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if (! [defaults boolForKey:@"notFirstRun"]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Welcome to the SST Photobooth app!" message:@"To take a photo, please press +Photo" delegate:self cancelButtonTitle:@"Got it!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Welcome to the SST Photobooth app!" message:@"You can take a photo, open the Editor and share photos!" delegate:self cancelButtonTitle:@"Got it!" otherButtonTitles: nil];
         [alert show];
         [defaults setBool:YES forKey:@"notFirstRun"];
     }
     
-    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:139.0/255.0 green:137.0/255.0 blue:137.0/255.0 alpha:0.7]];
+    //[[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:139.0/255.0 green:137.0/255.0 blue:137.0/255.0 alpha:0.7]];
     
     return YES;
 }

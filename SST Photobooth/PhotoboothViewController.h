@@ -17,6 +17,9 @@
 @property (strong, nonatomic) IBOutlet UIWebView *web;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 
+-(IBAction)editorPressed:(id)sender;
+-(IBAction)newPressed:(id)sender;
+-(IBAction)sharePressed:(id)sender;
 -(IBAction)openActionsheet:(id)sender;
 
 @end
