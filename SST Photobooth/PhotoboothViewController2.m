@@ -33,17 +33,9 @@
 
 -(IBAction)save:(id)sender
 {
-    //Making mainImage and backgroundImg the same thing...
-    UIGraphicsBeginImageContext(self.backgroundImg.frame.size);
-    [self.backgroundImg.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
-    [self.mainImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
-    self.backgroundImg.image = UIGraphicsGetImageFromCurrentImageContext();
-    self.mainImage.image = nil;
-    UIGraphicsEndImageContext();
-    
     //Generating the image to be saved
-    UIGraphicsBeginImageContextWithOptions(_backgroundImg.bounds.size, NO,0.0);
-    [_backgroundImg.image drawInRect:CGRectMake(0, 0, _backgroundImg.frame.size.width, _backgroundImg.frame.size.height)];
+    UIGraphicsBeginImageContextWithOptions(_mainImage.bounds.size, NO,0.0);
+    [_mainImage.image drawInRect:CGRectMake(0, 0, _mainImage.frame.size.width, _mainImage.frame.size.height)];
     UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
@@ -51,8 +43,7 @@
 
 -(IBAction)reset:(id)sender
 {
-    [_backgroundImg setImage:[UIImage imageWithData:chosenImage]];
-    self.mainImage.image = nil;
+    [_mainImage setImage:[UIImage imageWithData:chosenImage]];
 }
 
 -(IBAction)shareButton:(id)sender
@@ -120,11 +111,6 @@
             blue = 0.0/255.0;
             break;
     }
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-
 }
 
 -(IBAction)actionSheet:(id)sender
@@ -198,15 +184,9 @@
             NSLog(@"facebook");
             if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
             {
-                UIGraphicsBeginImageContext(self.backgroundImg.frame.size);
-                [self.backgroundImg.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
-                [self.mainImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
-                self.backgroundImg.image = UIGraphicsGetImageFromCurrentImageContext();
-                self.mainImage.image = nil;
-                UIGraphicsEndImageContext();
                 SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
                 
-                [fbSheet addImage:_backgroundImg.image]; //This is where I try to add my image
+                [fbSheet addImage:_mainImage.image]; //This is where I try to add my image
                 
                 [self presentViewController:fbSheet animated:YES completion:nil];
             }
@@ -221,15 +201,9 @@
             NSLog(@"twitter");
             if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
             {
-                UIGraphicsBeginImageContext(self.backgroundImg.frame.size);
-                [self.backgroundImg.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
-                [self.mainImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
-                self.backgroundImg.image = UIGraphicsGetImageFromCurrentImageContext();
-                self.mainImage.image = nil;
-                UIGraphicsEndImageContext();
                 SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
                 
-                [tweetSheet addImage:_backgroundImg.image]; //This is where I try to add my image
+                [tweetSheet addImage:_mainImage.image]; //This is where I try to add my image
                 
                 [self presentViewController:tweetSheet animated:YES completion:nil];
             }
@@ -244,101 +218,6 @@
             return;
         }
     }
-    /*NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if  ([buttonTitle isEqualToString:@"Retake Photo"]) {
-        controller = [[UIImagePickerController alloc] init];
-        
-        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-        {
-            controller.sourceType = UIImagePickerControllerSourceTypeCamera;
-            controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-            controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-            controller.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
-            [controller takePicture];
-            [controller setDelegate:self];
-            [self presentViewController:controller animated:YES completion:nil];
-        }
-        else {
-            controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-            [controller setDelegate:self];
-            [self presentViewController:controller animated:YES completion:nil];
-        }
-    }
-    if ([buttonTitle isEqualToString:@"Share to Facebook"]) {
-        NSLog(@"facebook");
-        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-        {
-            UIGraphicsBeginImageContext(self.backgroundImg.frame.size);
-            [self.backgroundImg.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
-            [self.mainImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
-            self.backgroundImg.image = UIGraphicsGetImageFromCurrentImageContext();
-            self.mainImage.image = nil;
-            UIGraphicsEndImageContext();
-            SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-            
-            [fbSheet addImage:_backgroundImg.image]; //This is where I try to add my image
-            
-            [self presentViewController:fbSheet animated:YES completion:nil];
-        }
-        else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-        {
-            [self dismissViewControllerAnimated:NO completion:nil];
-            [SVProgressHUD showErrorWithStatus:@"Please link your Facebook account"];
-        }
-    }
-    if ([buttonTitle isEqualToString:@"Share to Twitter"]) {
-        NSLog(@"twitter");
-        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-        {
-            UIGraphicsBeginImageContext(self.backgroundImg.frame.size);
-            [self.backgroundImg.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
-            [self.mainImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
-            self.backgroundImg.image = UIGraphicsGetImageFromCurrentImageContext();
-            self.mainImage.image = nil;
-            UIGraphicsEndImageContext();
-            SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-            
-            [tweetSheet addImage:_backgroundImg.image]; //This is where I try to add my image
-            
-            [self presentViewController:tweetSheet animated:YES completion:nil];
-        }
-        else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-        {
-            [self dismissViewControllerAnimated:NO completion:nil];
-            [SVProgressHUD showErrorWithStatus:@"Please link your Twitter account"];
-        }
-    }
-    if ([buttonTitle isEqualToString:@"Open Camera Roll"])
-    {
-        state=YES;
-        controller = [[UIImagePickerController alloc]init];
-        controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        controller.allowsEditing=NO;
-        [controller setDelegate:self];
-        [self presentViewController:controller animated:YES completion:nil];
-    }
-    if ([buttonTitle isEqualToString:@"Save"])
-    {
-        //Making mainImage and backgroundImg the same thing...
-        UIGraphicsBeginImageContext(self.backgroundImg.frame.size);
-        [self.backgroundImg.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
-        [self.mainImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:opacity];
-        self.backgroundImg.image = UIGraphicsGetImageFromCurrentImageContext();
-        self.mainImage.image = nil;
-        UIGraphicsEndImageContext();
-        
-        //Generating the image to be saved
-        UIGraphicsBeginImageContextWithOptions(_backgroundImg.bounds.size, NO,0.0);
-        [_backgroundImg.image drawInRect:CGRectMake(0, 0, _backgroundImg.frame.size.width, _backgroundImg.frame.size.height)];
-        UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
-    }
-    if ([buttonTitle isEqualToString:@"Reset Drawings"])
-    {
-        [_backgroundImg setImage:[UIImage imageWithData:chosenImage]];
-        self.mainImage.image = nil;
-    }*/
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
@@ -356,7 +235,7 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     chosenImage = UIImageJPEGRepresentation(image, 1.0);
     
-    [_backgroundImg setImage:[UIImage imageWithData:chosenImage]];
+    [_mainImage setImage:[UIImage imageWithData:chosenImage]];
     
     /*//Save the photo
     NSParameterAssert(imageView.image);
@@ -374,50 +253,46 @@
     opacity = 1.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //[[self navigationController] setNavigationBarHidden:NO animated:YES];
     actionSheetValue=0;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
     if (_showEditorOrController==true) {
-        double delayInSeconds = 0.75;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            controller = [[UIImagePickerController alloc] init];
-            if (state==YES)
-            {
-                return;
-            }
-            else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES)
-            {
-                controller.sourceType = UIImagePickerControllerSourceTypeCamera;
-                controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-                controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-                controller.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
-                [controller takePicture];
-                [controller setDelegate:self];
-                [self presentViewController:controller animated:YES completion:nil];
-            }
-            else
-            {
-                NSLog(@"No camera found");
-            }
-        });
+        controller = [[UIImagePickerController alloc] init];
+        if (state==YES)
+        {
+            return;
+        }
+        else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES)
+        {
+            state=YES;
+            controller.sourceType = UIImagePickerControllerSourceTypeCamera;
+            controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+            controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+            controller.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+            [controller takePicture];
+            [controller setDelegate:self];
+            [self presentViewController:controller animated:YES completion:nil];
+        }
+        else
+        {
+            NSLog(@"No camera found");
+        }
     }
-    else
+    else if (_showEditorOrController==false)
     {
-        controller = [[UIImagePickerController alloc]init];
-        double delayInSeconds = 0.75;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            if (state==YES) {
-                return;
-            }
-            else if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES) {
-                state=YES;
-                controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-                [controller setDelegate:self];
-                [self presentViewController:controller animated:YES completion:nil];
-            }
-        });
+        if (state==YES) {
+            return;
+        }
+        else if (state!=NO) {
+            state=YES;
+            controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+            [controller setDelegate:self];
+            [self presentViewController:controller animated:YES completion:nil];
+        }
     }
+
 }
 
 - (void)didReceiveMemoryWarning

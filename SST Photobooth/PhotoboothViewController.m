@@ -155,14 +155,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(IBAction)openActionsheet:(id)sender
-{
-    UIActionSheet *as_1 = [[UIActionSheet alloc]initWithTitle:@"What do you want to do?" delegate:nil cancelButtonTitle:@"Back" destructiveButtonTitle:@"Take a photo" otherButtonTitles:@"Share photos to Facebook", @"Share photos to Twitter", @"Feedback", nil];
-    as_1.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
-    [as_1 setDelegate:self];
-    [as_1 showInView:[UIApplication sharedApplication].keyWindow];
-}
-
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0)
@@ -189,36 +181,7 @@
     {
         return;
     }
-    
-    //BTW, index 0 is the top button (the red one), same as arrays
-    /*if (buttonIndex == 0)
-    {
-        //first button, take a photo
-        [self performSegueWithIdentifier:@"DefaultToEditor" sender:nil]; //WOHOO IT WORKS LOL
-    }
-    else if (buttonIndex == 1)
-    {
-        //second button, share to FB
-        state=NO;
-        
-        controller = [[UIImagePickerController alloc]init];
-        controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        controller.allowsEditing=NO;
-        [controller setDelegate:self];
-        [self presentViewController:controller animated:YES completion:nil];
-    }
-    else if (buttonIndex == 2)
-    {
-        //third button, share to Twitter
-        state=YES;
-        
-        controller = [[UIImagePickerController alloc]init];
-        controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        controller.allowsEditing=NO;
-        [controller setDelegate:self];
-        [self presentViewController:controller animated:YES completion:nil];
-    }
-    else if (buttonIndex==3)
+    /*else if (buttonIndex==3)
     {
         //forth button, Feedback
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:random.rrr3@gmail.com"]];
