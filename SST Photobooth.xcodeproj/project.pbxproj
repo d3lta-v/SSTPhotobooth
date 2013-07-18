@@ -56,7 +56,7 @@
 		22CA07EF1793DFA30095A4B9 /* New Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New Photo.png"; sourceTree = "<group>"; };
 		22CA07F01793DFA30095A4B9 /* Share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share.png; sourceTree = "<group>"; };
 		22CA07F51794E7ED0095A4B9 /* Brown1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brown1.png; sourceTree = "<group>"; };
-		22CAF12D1782CB8100794998 /* Photobooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photobooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22CAF12D1782CB8100794998 /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CAF1301782CB8100794998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22CAF1321782CB8100794998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22CAF1341782CB8100794998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,7 +138,7 @@
 		22CAF12E1782CB8100794998 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22CAF12D1782CB8100794998 /* Photobooth.app */,
+				22CAF12D1782CB8100794998 /* Lens.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 			);
 			name = Lens;
 			productName = "SST Photobooth";
-			productReference = 22CAF12D1782CB8100794998 /* Photobooth.app */;
+			productReference = 22CAF12D1782CB8100794998 /* Lens.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

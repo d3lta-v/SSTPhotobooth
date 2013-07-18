@@ -23,6 +23,7 @@
 
 -(IBAction)actionSheet:(id)sender;
 
+@property (nonatomic) bool showEditorOrController;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;

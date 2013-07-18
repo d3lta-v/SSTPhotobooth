@@ -14,7 +14,6 @@
 @interface PhotoboothViewController2 ()
 {
     bool state;
-    bool fbOrTwitter;
     NSData *chosenImage;
     NSInteger actionSheetValue;
 }
@@ -125,49 +124,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    double delayInSeconds = 0.72;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        controller = [[UIImagePickerController alloc] init];
-        if (state==YES)
-        {
-            return;
-        }
-        else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES)
-        {
-            controller.sourceType = UIImagePickerControllerSourceTypeCamera;
-            controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-            controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-            controller.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
-            [controller takePicture];
-            [controller setDelegate:self];
-            [self presentViewController:controller animated:YES completion:nil];
-        }
-        else if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES) {
-            state=YES;
-            controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-            [controller setDelegate:self];
-            [self presentViewController:controller animated:YES completion:nil];
-        }
-    });
-    //Setting title attributes
-    /*CGRect frame = CGRectMake(0, 0, 400, 44);
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    label.backgroundColor = [UIColor clearColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor colorWithRed:49.0/255.0 green:79.0/255.0 blue:79.0/255.0 alpha:1.0];
-    label.text = self.navigationItem.title;
-    [label setShadowColor:[UIColor whiteColor]];
-    [label setShadowOffset:CGSizeMake(0, -0.5)];
-    self.navigationItem.titleView = label;
-    
-    //Setting the tint colors of left/right bar buttons
-    //self.navigationItem.backBarButtonItem.tintColor = [UIColor colorWithRed:112.0/255.0 green:138.0/255.0 blue:144.0/255.0 alpha:0.7];
-    //self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorWithRed:112.0/255.0 green:138.0/255.0 blue:144.0/255.0 alpha:0.7];
-    
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor],UITextAttributeTextColor,nil];
-    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    [self.navigationItem.backBarButtonItem setTitleTextAttributes:attributes forState:UIControlStateNormal];*/
+
 }
 
 -(IBAction)actionSheet:(id)sender
@@ -238,7 +195,6 @@
     if (actionSheetValue==0) {
         if (buttonIndex == 0)
         {
-            //fbOrTwitter=NO; //NO is FB
             NSLog(@"facebook");
             if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
             {
@@ -420,6 +376,48 @@
 	// Do any additional setup after loading the view.
     //[[self navigationController] setNavigationBarHidden:NO animated:YES];
     actionSheetValue=0;
+    if (_showEditorOrController==true) {
+        double delayInSeconds = 0.75;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            controller = [[UIImagePickerController alloc] init];
+            if (state==YES)
+            {
+                return;
+            }
+            else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES)
+            {
+                controller.sourceType = UIImagePickerControllerSourceTypeCamera;
+                controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+                controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+                controller.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+                [controller takePicture];
+                [controller setDelegate:self];
+                [self presentViewController:controller animated:YES completion:nil];
+            }
+            else
+            {
+                NSLog(@"No camera found");
+            }
+        });
+    }
+    else
+    {
+        controller = [[UIImagePickerController alloc]init];
+        double delayInSeconds = 0.75;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            if (state==YES) {
+                return;
+            }
+            else if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES) {
+                state=YES;
+                controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+                [controller setDelegate:self];
+                [self presentViewController:controller animated:YES completion:nil];
+            }
+        });
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,10 +9,12 @@
 #import "PhotoboothViewController.h"
 #import "SVProgressHUD.h"
 #import <Social/Social.h>
+#import "PhotoboothViewController2.h"
 
 @interface PhotoboothViewController ()
 {
     bool state;
+    bool editorOrAdd;
     NSInteger actionSheetNo;
     UIImage *image1;
 }
@@ -21,21 +23,7 @@
 
 @implementation PhotoboothViewController
 
-@synthesize web, toolbar;
 
--(void)viewWillAppear:(BOOL)animated
-{
-    //Setting title attributes
-    /*CGRect frame = CGRectMake(0, 0, 400, 44);
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    label.backgroundColor = [UIColor clearColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor colorWithRed:49.0/255.0 green:79.0/255.0 blue:79.0/255.0 alpha:1.0];
-    label.text = self.navigationItem.title;
-    [label setShadowColor:[UIColor whiteColor]];
-    [label setShadowOffset:CGSizeMake(0, -0.5)];
-    self.navigationItem.titleView = label;*/
-}
 
 - (void)viewDidLoad
 {
@@ -44,13 +32,13 @@
     /*self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
     self.navigationController.navigationBar.alpha=1.0;*/
     
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    /*self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.alpha = 0.9f;
-    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.translucent = YES;*/
     
-    toolbar.tintColor=[UIColor whiteColor];
+    /*toolbar.tintColor=[UIColor whiteColor];
     toolbar.alpha=0.9f;
-    toolbar.translucent=YES;
+    toolbar.translucent=YES;*/
     //[[self navigationController] setNavigationBarHidden:YES animated:NO];
     //[toolbar setBarStyle:UIBarStyleBlackTranslucent];
     //[toolbar setTranslucent:YES];
@@ -63,15 +51,18 @@
     actionSheetNo=0;
 }
 
+//This will also get to the editor
 -(IBAction)editorPressed:(id)sender
 {
-    
+    editorOrAdd=FALSE;
+    [self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
 }
 
 //This will get to the Editor
 -(IBAction)newPressed:(id)sender
 {
-    //[self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
+    editorOrAdd=TRUE;
+    [self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
 }
 
 -(IBAction)sharePressed:(id)sender
@@ -109,9 +100,7 @@
     image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
     if (state==NO)
     {
-        [self dismissViewControllerAnimated:YES completion:^(void){ //Yes this is how you declare methods!
-            //write code here
-            
+        [self dismissViewControllerAnimated:YES completion:^(void){
             if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
             {
                 SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
@@ -233,11 +222,23 @@
     {
         //forth button, Feedback
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:random.rrr3@gmail.com"]];
-    }
-    else
-    {
-        return;
     }*/
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"DefaultToEditor"])
+    {
+        PhotoboothViewController2 *segueController=(PhotoboothViewController2 *)segue.destinationViewController;
+        if(editorOrAdd==FALSE) //Means Editor
+        {
+            segueController.showEditorOrController = false; //Show the Editor
+        }
+        else if (editorOrAdd==TRUE) //Means Add Photo
+        {
+            segueController.showEditorOrController = true; //show the Controller
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,12 +10,8 @@
 
 @interface PhotoboothViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIWebViewDelegate, UIActionSheetDelegate>
 {
-    IBOutlet UIToolbar *toolbar;
     UIImagePickerController *controller;
 }
-
-@property (strong, nonatomic) IBOutlet UIWebView *web;
-@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 
 -(IBAction)editorPressed:(id)sender;
 -(IBAction)newPressed:(id)sender;
