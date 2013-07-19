@@ -280,12 +280,14 @@
             NSLog(@"No camera found");
         }
     }
-    else if (_showEditorOrController==false)
+    else
     {
+        controller=[[UIImagePickerController alloc]init];
         if (state==YES) {
             return;
         }
-        else if (state!=NO) {
+        else if (state==NO)
+        {
             state=YES;
             controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
             [controller setDelegate:self];
