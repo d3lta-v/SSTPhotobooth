@@ -254,6 +254,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     actionSheetValue=0;
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -294,7 +295,6 @@
             [self presentViewController:controller animated:YES completion:nil];
         }
     }
-
 }
 
 - (void)didReceiveMemoryWarning
