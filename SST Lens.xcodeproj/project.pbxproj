@@ -68,10 +68,10 @@
 		22CAF1301782CB8100794998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22CAF1321782CB8100794998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22CAF1341782CB8100794998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		22CAF1381782CB8100794998 /* SST Photobooth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SST Photobooth-Info.plist"; sourceTree = "<group>"; };
+		22CAF1381782CB8100794998 /* SST Lens-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SST Lens-Info.plist"; sourceTree = "<group>"; };
 		22CAF13A1782CB8100794998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22CAF13C1782CB8100794998 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		22CAF13E1782CB8100794998 /* SST Photobooth-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SST Photobooth-Prefix.pch"; sourceTree = "<group>"; };
+		22CAF13E1782CB8100794998 /* SST Lens-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SST Lens-Prefix.pch"; sourceTree = "<group>"; };
 		22CAF13F1782CB8100794998 /* PhotoboothAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoboothAppDelegate.h; sourceTree = "<group>"; };
 		22CAF1401782CB8100794998 /* PhotoboothAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoboothAppDelegate.m; sourceTree = "<group>"; };
 		22CAF1421782CB8100794998 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -191,10 +191,10 @@
 		22CAF1371782CB8100794998 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				22CAF1381782CB8100794998 /* SST Photobooth-Info.plist */,
+				22CAF1381782CB8100794998 /* SST Lens-Info.plist */,
 				22CAF1391782CB8100794998 /* InfoPlist.strings */,
 				22CAF13C1782CB8100794998 /* main.m */,
-				22CAF13E1782CB8100794998 /* SST Photobooth-Prefix.pch */,
+				22CAF13E1782CB8100794998 /* SST Lens-Prefix.pch */,
 				22CAF1421782CB8100794998 /* Default.png */,
 				22CAF1441782CB8100794998 /* Default@2x.png */,
 				22CAF1461782CB8100794998 /* Default-568h@2x.png */,
@@ -238,11 +238,11 @@
 		22CAF1251782CB8100794998 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = Photobooth;
+				CLASSPREFIX = Lens;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Pan Ziyue";
 			};
-			buildConfigurationList = 22CAF1281782CB8100794998 /* Build configuration list for PBXProject "SST Photobooth" */;
+			buildConfigurationList = 22CAF1281782CB8100794998 /* Build configuration list for PBXProject "SST Lens" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -393,8 +393,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SST Photobooth/SST Photobooth-Prefix.pch";
-				INFOPLIST_FILE = "SST Photobooth/SST Photobooth-Info.plist";
+				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
+				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "775D612D-AEA2-411B-9AFA-C1B3CF4817E4";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -407,8 +407,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SST Photobooth/SST Photobooth-Prefix.pch";
-				INFOPLIST_FILE = "SST Photobooth/SST Photobooth-Info.plist";
+				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
+				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "775D612D-AEA2-411B-9AFA-C1B3CF4817E4";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -419,7 +419,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22CAF1281782CB8100794998 /* Build configuration list for PBXProject "SST Photobooth" */ = {
+		22CAF1281782CB8100794998 /* Build configuration list for PBXProject "SST Lens" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22CAF1511782CB8100794998 /* Debug */,
