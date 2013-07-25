@@ -101,51 +101,47 @@
     if (state==NO)
     {
         [self dismissViewControllerAnimated:YES completion:^(void){
-            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-            {
-                SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-                
-                [fbSheet addImage:image1]; //This is where I try to add my image
-                
-                [self presentViewController:fbSheet animated:YES completion:nil];
-            }
-            else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-            {
-                [self dismissViewControllerAnimated:NO completion:nil];
-                UIAlertView *alertView = [[UIAlertView alloc]
-                                          initWithTitle:@"Sorry"
-                                          message:@"You can't post to Facebook right now, make sure your device has an internet connection and you have at least one Facebook account setup"
-                                          delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-                [alertView show];
-            }
+            [SVProgressHUD showWithStatus:@"Launching Facebook Module..."];
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+                {
+                    SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                    
+                    [fbSheet addImage:image1]; //This is where I try to add my image
+                    
+                    [self presentViewController:fbSheet animated:YES completion:nil];
+                }
+                else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+                {
+                    [self dismissViewControllerAnimated:NO completion:nil];
+                }
+            });
+            [SVProgressHUD dismiss];
         }];
     }
     else if (state==YES)
     {
         [self dismissViewControllerAnimated:YES completion:^(void){
-            //write code here
-            
-            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-            {
-                SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                
-                [tweetSheet addImage:image1]; //This is where I try to add my image
-                
-                [self presentViewController:tweetSheet animated:YES completion:nil];
-            }
-            else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-            {
-                [self dismissViewControllerAnimated:NO completion:nil];
-                UIAlertView *alertView = [[UIAlertView alloc]
-                                          initWithTitle:@"Sorry"
-                                          message:@"You can't post to Twitter right now, make sure your device has an internet connection and you have at least one Facebook account setup"
-                                          delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-                [alertView show];
-            }
+            [SVProgressHUD showWithStatus:@"Launching Twitter Module..."];
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+                {
+                    SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                    
+                    [tweetSheet addImage:image1]; //This is where I try to add my image
+                    
+                    [self presentViewController:tweetSheet animated:YES completion:nil];
+                }
+                else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+                {
+                    [self dismissViewControllerAnimated:NO completion:nil];
+                }
+            });
+            [SVProgressHUD dismiss];
         }];
     }
 }
@@ -161,21 +157,13 @@
     {
         state=NO;
         
-        controller = [[UIImagePickerController alloc]init];
-        controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        controller.allowsEditing=NO;
-        [controller setDelegate:self];
-        [self presentViewController:controller animated:YES completion:nil];
+        [self showImageController];
     }
     else if (buttonIndex == 1)
     {
         state=YES;
         
-        controller = [[UIImagePickerController alloc]init];
-        controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        controller.allowsEditing=NO;
-        [controller setDelegate:self];
-        [self presentViewController:controller animated:YES completion:nil];
+        [self showImageController];
     }
     else
     {
@@ -186,6 +174,15 @@
         //forth button, Feedback
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:random.rrr3@gmail.com"]];
     }*/
+}
+
+-(void)showImageController
+{
+    controller = [[UIImagePickerController alloc]init];
+    controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+    controller.allowsEditing=NO;
+    [controller setDelegate:self];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

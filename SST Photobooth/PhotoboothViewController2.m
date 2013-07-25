@@ -10,6 +10,7 @@
 
 #import <Social/Social.h>
 #import "SVProgressHUD.h"
+#import "GPUImage.h"
 
 @interface PhotoboothViewController2 ()
 {
@@ -31,19 +32,173 @@
     return self;
 }
 
+-(IBAction)changeSeg:(id)sender
+{
+    if(segment.selectedSegmentIndex == 0) //Sepia
+    {
+		[SVProgressHUD showWithStatus:@"Applying effect, this may take a while..."];
+        double delayInSeconds = 0.1;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImageFilter *selectedFilter;
+            selectedFilter = [[GPUImageSepiaFilter alloc] init];
+            UIImage *filteredImage = [selectedFilter imageByFilteringImage:_mainImage.image];
+            [_mainImage setImage:filteredImage];
+            [SVProgressHUD showSuccessWithStatus:@"Effect applied!"];
+        });
+	}
+	if(segment.selectedSegmentIndex == 1) //Black and White
+    {
+        [SVProgressHUD showWithStatus:@"Applying effect, this may take a while..."];
+        double delayInSeconds = 0.1;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImageFilter *selectedFilter;
+            selectedFilter = [[GPUImageGrayscaleFilter alloc] init];
+            UIImage *filteredImage = [selectedFilter imageByFilteringImage:_mainImage.image];
+            [_mainImage setImage:filteredImage];
+            [SVProgressHUD showSuccessWithStatus:@"Effect applied!"];
+        });
+	}
+    if (segment.selectedSegmentIndex == 2)
+    {
+        [SVProgressHUD showWithStatus:@"Applying effect, this may take a while..."];
+        double delayInSeconds = 0.1;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImageFilter *selectedFilter;
+            selectedFilter = [[GPUImageColorInvertFilter alloc] init];
+            UIImage *filteredImage = [selectedFilter imageByFilteringImage:_mainImage.image];
+            [_mainImage setImage:filteredImage];
+            [SVProgressHUD showSuccessWithStatus:@"Effect applied!"];
+        });
+    }
+}
+
+- (UIImage *)scaleAndRotateImage:(UIImage *)image {
+    int kMaxResolution = 640; // Or whatever
+    
+    CGImageRef imgRef = image.CGImage;
+    
+    CGFloat width = CGImageGetWidth(imgRef);
+    CGFloat height = CGImageGetHeight(imgRef);
+    
+    
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    CGRect bounds = CGRectMake(0, 0, width, height);
+    if (width > kMaxResolution || height > kMaxResolution) {
+        CGFloat ratio = width/height;
+        if (ratio > 1) {
+            bounds.size.width = kMaxResolution;
+            bounds.size.height = roundf(bounds.size.width / ratio);
+        }
+        else {
+            bounds.size.height = kMaxResolution;
+            bounds.size.width = roundf(bounds.size.height * ratio);
+        }
+    }
+    
+    CGFloat scaleRatio = bounds.size.width / width;
+    CGSize imageSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef));
+    CGFloat boundHeight;
+    UIImageOrientation orient = image.imageOrientation;
+    switch(orient) {
+            
+        case UIImageOrientationUp: //EXIF = 1
+            transform = CGAffineTransformIdentity;
+            break;
+            
+        case UIImageOrientationUpMirrored: //EXIF = 2
+            transform = CGAffineTransformMakeTranslation(imageSize.width, 0.0);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            break;
+            
+        case UIImageOrientationDown: //EXIF = 3
+            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationDownMirrored: //EXIF = 4
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.height);
+            transform = CGAffineTransformScale(transform, 1.0, -1.0);
+            break;
+            
+        case UIImageOrientationLeftMirrored: //EXIF = 5
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationLeft: //EXIF = 6
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationRightMirrored: //EXIF = 7
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeScale(-1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationRight: //EXIF = 8
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, 0.0);
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);
+            break;
+            
+        default:
+            [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];
+            
+    }
+    
+    UIGraphicsBeginImageContext(bounds.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    if (orient == UIImageOrientationRight || orient == UIImageOrientationLeft) {
+        CGContextScaleCTM(context, -scaleRatio, scaleRatio);
+        CGContextTranslateCTM(context, -height, 0);
+    }
+    else {
+        CGContextScaleCTM(context, scaleRatio, -scaleRatio);
+        CGContextTranslateCTM(context, 0, -height);
+    }
+    
+    CGContextConcatCTM(context, transform);
+    
+    CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);
+    UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return imageCopy;
+}
+
 -(IBAction)save:(id)sender
 {
     //Generating the image to be saved
+    [SVProgressHUD showWithStatus:@"Saving..."];
     UIGraphicsBeginImageContextWithOptions(_mainImage.bounds.size, NO,0.0);
     [_mainImage.image drawInRect:CGRectMake(0, 0, _mainImage.frame.size.width, _mainImage.frame.size.height)];
     UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    //Writing to Photo Album
     UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
 -(IBAction)reset:(id)sender
 {
     [_mainImage setImage:[UIImage imageWithData:chosenImage]];
+    [segment setSelectedSegmentIndex:UISegmentedControlNoSegment];
 }
 
 -(IBAction)shareButton:(id)sender
@@ -113,12 +268,6 @@
     }
 }
 
--(IBAction)actionSheet:(id)sender
-{
-    UIActionSheet *as_1 = [[UIActionSheet alloc]initWithTitle:@"Share Menu" delegate:nil cancelButtonTitle:@"Back" destructiveButtonTitle:@"Reset Drawings" otherButtonTitles:@"Retake Photo", @"Share to Facebook", @"Share to Twitter", @"Open Camera Roll", @"Save", nil];
-    [as_1 setDelegate:self];
-    [as_1 showInView:[UIApplication sharedApplication].keyWindow];
-}
 
 //Main drawing code
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -181,37 +330,45 @@
     if (actionSheetValue==0) {
         if (buttonIndex == 0)
         {
-            NSLog(@"facebook");
-            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-            {
-                SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-                
-                [fbSheet addImage:_mainImage.image]; //This is where I try to add my image
-                
-                [self presentViewController:fbSheet animated:YES completion:nil];
-            }
-            else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-            {
-                [self dismissViewControllerAnimated:NO completion:nil];
-                [SVProgressHUD showErrorWithStatus:@"Please link your Facebook account"];
-            }
+            [SVProgressHUD showWithStatus:@"Launching Facebook Module..."];
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+                {
+                    SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                    
+                    [fbSheet addImage:_mainImage.image]; //This is where I try to add my image
+                    
+                    [self presentViewController:fbSheet animated:YES completion:nil];
+                }
+                else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+                {
+                    [self dismissViewControllerAnimated:NO completion:nil];
+                }
+            });
+            [SVProgressHUD dismiss];
         }
         else if (buttonIndex == 1)
         {
-            NSLog(@"twitter");
-            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-            {
-                SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                
-                [tweetSheet addImage:_mainImage.image]; //This is where I try to add my image
-                
-                [self presentViewController:tweetSheet animated:YES completion:nil];
-            }
-            else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-            {
-                [self dismissViewControllerAnimated:NO completion:nil];
-                [SVProgressHUD showErrorWithStatus:@"Please link your Twitter account"];
-            }
+            [SVProgressHUD showWithStatus:@"Launching Twitter Module..."];
+            double delayInSeconds = 0.5;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+                {
+                    SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                    
+                    [tweetSheet addImage:_mainImage.image]; //This is where I try to add my image
+                    
+                    [self presentViewController:tweetSheet animated:YES completion:nil];
+                }
+                else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+                {
+                    [self dismissViewControllerAnimated:NO completion:nil];
+                }
+            });
+            [SVProgressHUD dismiss];
         }
         else
         {
@@ -225,8 +382,10 @@
     // Was there an error?
     if (error != NULL)
     {
+        [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:@"Image could not be saved"];
     } else {
+        [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Image was saved in Camera Roll"];
     }
 }
@@ -236,10 +395,6 @@
     chosenImage = UIImageJPEGRepresentation(image, 1.0);
     
     [_mainImage setImage:[UIImage imageWithData:chosenImage]];
-    
-    /*//Save the photo
-    NSParameterAssert(imageView.image);
-    UIImageWriteToSavedPhotosAlbum(imageView.image, nil, nil, nil);*/
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
