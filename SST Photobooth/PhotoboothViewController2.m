@@ -16,7 +16,6 @@
 {
     bool state;
     NSData *chosenImage;
-    NSInteger actionSheetValue;
 }
 
 @end
@@ -89,13 +88,14 @@
 
 -(IBAction)reset:(id)sender
 {
+    //[SVProgressHUD showWithStatus:@"Clearing edits..."];
     [_mainImage setImage:[UIImage imageWithData:chosenImage]];
     [segment setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    [SVProgressHUD showSuccessWithStatus:@"Edits Cleared!"];
 }
 
 -(IBAction)shareButton:(id)sender
 {
-    actionSheetValue=0; //Value 0 is for share Actionsheet
     UIActionSheet *as_1 = [[UIActionSheet alloc]initWithTitle:@"Share Menu" delegate:nil cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Share to Facebook", @"Share to Twitter", nil];
     [as_1 setDelegate:self];
     [as_1 showInView:[UIApplication sharedApplication].keyWindow];
@@ -218,54 +218,51 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    //If it's the share button
-    if (actionSheetValue==0) {
-        if (buttonIndex == 0)
-        {
-            [SVProgressHUD showWithStatus:@"Launching Facebook Module..."];
-            double delayInSeconds = 0.5;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-                {
-                    SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-                    
-                    [fbSheet addImage:_mainImage.image]; //This is where I try to add my image
-                    
-                    [self presentViewController:fbSheet animated:YES completion:nil];
-                }
-                else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-                {
-                    [self dismissViewControllerAnimated:NO completion:nil];
-                }
-            });
-            [SVProgressHUD dismiss];
-        }
-        else if (buttonIndex == 1)
-        {
-            [SVProgressHUD showWithStatus:@"Launching Twitter Module..."];
-            double delayInSeconds = 0.5;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-                {
-                    SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                    
-                    [tweetSheet addImage:_mainImage.image]; //This is where I try to add my image
-                    
-                    [self presentViewController:tweetSheet animated:YES completion:nil];
-                }
-                else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-                {
-                    [self dismissViewControllerAnimated:NO completion:nil];
-                }
-            });
-            [SVProgressHUD dismiss];
-        }
-        else
-        {
-            return;
-        }
+    if (buttonIndex == 0)
+    {
+        [SVProgressHUD showWithStatus:@"Launching Facebook Module..."];
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+            {
+                SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+                
+                [fbSheet addImage:_mainImage.image]; //This is where I try to add my image
+                
+                [self presentViewController:fbSheet animated:YES completion:nil];
+            }
+            else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+            {
+                [self dismissViewControllerAnimated:NO completion:nil];
+            }
+        });
+        [SVProgressHUD dismiss];
+    }
+    else if (buttonIndex == 1)
+    {
+        [SVProgressHUD showWithStatus:@"Launching Twitter Module..."];
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+            {
+                SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                
+                [tweetSheet addImage:_mainImage.image]; //This is where I try to add my image
+                
+                [self presentViewController:tweetSheet animated:YES completion:nil];
+            }
+            else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+            {
+                [self dismissViewControllerAnimated:NO completion:nil];
+            }
+        });
+        [SVProgressHUD dismiss];
+    }
+    else
+    {
+        return;
     }
 }
 
@@ -300,8 +297,6 @@
     opacity = 1.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    actionSheetValue=0;
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated

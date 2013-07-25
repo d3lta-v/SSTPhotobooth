@@ -24,6 +24,7 @@
 		225D0CD317A1577C00F71A68 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CCE17A1574A00F71A68 /* libGPUImage.a */; };
 		2274882C179831790010752E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2274882B179831790010752E /* Icon@2x.png */; };
 		2274882E179831830010752E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2274882D179831830010752E /* Icon.png */; };
+		2288E86617A17895000AA61D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2288E86517A17895000AA61D /* README.md */; };
 		22CA07F11793DFA30095A4B9 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07ED1793DFA30095A4B9 /* Background.png */; };
 		22CA07F21793DFA30095A4B9 /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07EE1793DFA30095A4B9 /* Editor.png */; };
 		22CA07F31793DFA30095A4B9 /* New Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07EF1793DFA30095A4B9 /* New Photo.png */; };
@@ -94,6 +95,7 @@
 		225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Submodules/GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		2274882B179831790010752E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2274882D179831830010752E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		2288E86517A17895000AA61D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		22CA07ED1793DFA30095A4B9 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		22CA07EE1793DFA30095A4B9 /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Editor.png; sourceTree = "<group>"; };
 		22CA07EF1793DFA30095A4B9 /* New Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New Photo.png"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */,
+				2288E86517A17895000AA61D /* README.md */,
 				225D0CC517A156A700F71A68 /* AVFoundation.framework */,
 				225D0CC317A156A000F71A68 /* OpenGLES.framework */,
 				225D0CC117A1569900F71A68 /* CoreVideo.framework */,
@@ -369,6 +372,7 @@
 				22E902051799806800D2E04C /* Undo Button.png in Resources */,
 				22F5B91B179AE1D100633CDE /* Save.png in Resources */,
 				22F5B91C179AE1D100633CDE /* Share Round.png in Resources */,
+				2288E86617A17895000AA61D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
