@@ -92,7 +92,7 @@
                     <navigationItem key="navigationItem" id="YCN-LO-HIl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <segue destination="IVW-YP-UWy" kind="modal" identifier="DefaultToEditor" modalTransitionStyle="coverVertical" id="Aji-yv-hRB"/>
+                        <segue destination="IVW-YP-UWy" kind="modal" identifier="DefaultToEditor" modalTransitionStyle="flipHorizontal" id="Aji-yv-hRB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYr-rI-cuL" userLabel="First Responder" sceneMemberID="firstResponder"/>

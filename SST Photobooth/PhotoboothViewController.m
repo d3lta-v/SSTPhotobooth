@@ -102,7 +102,7 @@
     {
         [self dismissViewControllerAnimated:YES completion:^(void){
             [SVProgressHUD showWithStatus:@"Launching Facebook Module..."];
-            double delayInSeconds = 0.5;
+            double delayInSeconds = 1.0;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
@@ -117,15 +117,15 @@
                 {
                     [self dismissViewControllerAnimated:NO completion:nil];
                 }
+                [SVProgressHUD dismiss];
             });
-            [SVProgressHUD dismiss];
         }];
     }
     else if (state==YES)
     {
         [self dismissViewControllerAnimated:YES completion:^(void){
             [SVProgressHUD showWithStatus:@"Launching Twitter Module..."];
-            double delayInSeconds = 0.5;
+            double delayInSeconds = 1.0;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
@@ -140,8 +140,8 @@
                 {
                     [self dismissViewControllerAnimated:NO completion:nil];
                 }
+                [SVProgressHUD dismiss];
             });
-            [SVProgressHUD dismiss];
         }];
     }
 }

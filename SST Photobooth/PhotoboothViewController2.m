@@ -15,6 +15,7 @@
 @interface PhotoboothViewController2 ()
 {
     bool state;
+    bool hudOpened;
     NSData *chosenImage;
 }
 
@@ -236,8 +237,8 @@
             {
                 [self dismissViewControllerAnimated:NO completion:nil];
             }
+            [SVProgressHUD dismiss];
         });
-        [SVProgressHUD dismiss];
     }
     else if (buttonIndex == 1)
     {
@@ -257,8 +258,8 @@
             {
                 [self dismissViewControllerAnimated:NO completion:nil];
             }
+            [SVProgressHUD dismiss];
         });
-        [SVProgressHUD dismiss];
     }
     else
     {
@@ -299,8 +300,17 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    if (!hudOpened) {
+        [SVProgressHUD showWithStatus:@"Loading Image Selector..."];
+        hudOpened=true;
+    }
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
+    [SVProgressHUD dismiss];
     if (_showEditorOrController==true) {
         controller = [[UIImagePickerController alloc] init];
         if (state==YES)
@@ -337,6 +347,12 @@
             [self presentViewController:controller animated:YES completion:nil];
         }
     }
+    hudOpened=true;
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    hudOpened=false;
 }
 
 - (void)didReceiveMemoryWarning
