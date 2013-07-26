@@ -15,6 +15,6 @@
 
 -(IBAction)editorPressed:(id)sender;
 -(IBAction)newPressed:(id)sender;
--(IBAction)sharePressed:(id)sender;
+-(IBAction)shareAction:(id)sender;
 
 @end

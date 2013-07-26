@@ -15,7 +15,6 @@
 {
     bool state;
     bool editorOrAdd;
-    NSInteger actionSheetNo;
     UIImage *image1;
 }
 
@@ -28,27 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    /*self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
-    self.navigationController.navigationBar.alpha=1.0;*/
-    
-    /*self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.alpha = 0.9f;
-    self.navigationController.navigationBar.translucent = YES;*/
-    
-    /*toolbar.tintColor=[UIColor whiteColor];
-    toolbar.alpha=0.9f;
-    toolbar.translucent=YES;*/
-    //[[self navigationController] setNavigationBarHidden:YES animated:NO];
-    //[toolbar setBarStyle:UIBarStyleBlackTranslucent];
-    //[toolbar setTranslucent:YES];
-    
-	// Do any additional setup after loading the view, typically from a nib.
-    //web.delegate=self;
-    //[SVProgressHUD showWithStatus:@"Loading Facebook Page..."];
-    //[web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.facebook.com/ssts.1technologydrive"]]];
     state=NO;
-    actionSheetNo=0;
 }
 
 //This will also get to the editor
@@ -65,13 +44,9 @@
     [self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
 }
 
--(IBAction)sharePressed:(id)sender
+-(IBAction)shareAction:(id)sender
 {
-    UIActionSheet *as_1 = [[UIActionSheet alloc]initWithTitle:@"Share Menu" delegate:nil cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Share photos to Facebook", @"Share photos to Twitter", nil];
-    as_1.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
-    [as_1 setDelegate:self];
-    [as_1 showInView:[UIApplication sharedApplication].keyWindow];
-    actionSheetNo=0;
+    [self showImageController];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -95,58 +70,21 @@
 }
 
 
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
-    if (state==NO)
-    {
-        [self dismissViewControllerAnimated:YES completion:^(void){
-            [SVProgressHUD showWithStatus:@"Launching Facebook Module..."];
-            double delayInSeconds = 1.0;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-                {
-                    SLComposeViewController *fbSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-                    
-                    [fbSheet addImage:image1]; //This is where I try to add my image
-                    
-                    [self presentViewController:fbSheet animated:YES completion:nil];
-                }
-                else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
-                {
-                    [self dismissViewControllerAnimated:NO completion:nil];
-                }
-                [SVProgressHUD dismiss];
-            });
-        }];
-    }
-    else if (state==YES)
-    {
-        [self dismissViewControllerAnimated:YES completion:^(void){
-            [SVProgressHUD showWithStatus:@"Launching Twitter Module..."];
-            double delayInSeconds = 1.0;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-                {
-                    SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                    
-                    [tweetSheet addImage:image1]; //This is where I try to add my image
-                    
-                    [self presentViewController:tweetSheet animated:YES completion:nil];
-                }
-                else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
-                {
-                    [self dismissViewControllerAnimated:NO completion:nil];
-                }
-                [SVProgressHUD dismiss];
-            });
-        }];
-    }
+    [self dismissViewControllerAnimated:YES completion:^(void){
+        if (NSClassFromString(@"UIActivityViewController")) {
+            NSArray *dataToShare = @[image1];
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare
+                                                                                     applicationActivities:nil];
+            [self presentViewController:activityVC animated:YES completion:nil];
+        }
+    }];
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
     // Dismiss Image Picker Controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }

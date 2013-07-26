@@ -58,7 +58,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sharePressed:" destination="UZg-MC-DMV" eventType="touchUpInside" id="mMS-Rv-YC8"/>
+                                    <action selector="shareAction:" destination="UZg-MC-DMV" eventType="touchUpInside" id="2aK-8L-JAP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDj-vj-r9U">
@@ -342,7 +342,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="shareButton:" destination="IVW-YP-UWy" eventType="touchUpInside" id="mpq-yr-GeA"/>
+                                    <action selector="shareActivityButton:" destination="IVW-YP-UWy" eventType="touchUpInside" id="XIc-4I-ETj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4X-ep-9Fl">
@@ -503,7 +503,7 @@
             <relationships>
                 <relationship kind="action" name="editorPressed:"/>
                 <relationship kind="action" name="newPressed:"/>
-                <relationship kind="action" name="sharePressed:"/>
+                <relationship kind="action" name="shareAction:"/>
             </relationships>
         </class>
         <class className="PhotoboothViewController2" superclassName="UIViewController">
@@ -513,7 +513,7 @@
                 <relationship kind="action" name="pencilPressed:"/>
                 <relationship kind="action" name="reset:"/>
                 <relationship kind="action" name="save:"/>
-                <relationship kind="action" name="shareButton:"/>
+                <relationship kind="action" name="shareActivityButton:"/>
                 <relationship kind="outlet" name="mainImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="segment" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="tempDrawImage" candidateClass="UIImageView"/>
