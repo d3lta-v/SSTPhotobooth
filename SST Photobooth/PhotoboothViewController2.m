@@ -98,10 +98,17 @@
 -(IBAction)shareActivityButton:(id)sender
 {
     if (NSClassFromString(@"UIActivityViewController")) {
-        NSArray *dataToShare = @[_mainImage.image];
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare
-                                                                                 applicationActivities:nil];
-        [self presentViewController:activityVC animated:YES completion:nil];
+        if (CGSizeEqualToSize(_mainImage.image.size, CGSizeZero)) {
+            [SVProgressHUD showErrorWithStatus:@"No image found in canvas!"];
+            return;
+        }
+        else
+        {
+            NSArray *dataToShare = @[_mainImage.image];
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare
+                                                                                     applicationActivities:nil];
+            [self presentViewController:activityVC animated:YES completion:nil];
+        }
     }
 }
 

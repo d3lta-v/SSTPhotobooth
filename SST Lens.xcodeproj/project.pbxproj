@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2202609F17A2333900F6DD8A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC517A156A700F71A68 /* AVFoundation.framework */; };
 		2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */; };
 		22563089178B0FFF00002FB6 /* Black1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563080178B0FFF00002FB6 /* Black1.png */; };
 		2256308A178B0FFF00002FB6 /* Blue1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22563081178B0FFF00002FB6 /* Blue1.png */; };
@@ -20,7 +21,6 @@
 		225D0CC017A1569100F71A68 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CBF17A1569100F71A68 /* CoreMedia.framework */; };
 		225D0CC217A1569900F71A68 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC117A1569900F71A68 /* CoreVideo.framework */; };
 		225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC317A156A000F71A68 /* OpenGLES.framework */; };
-		225D0CC617A156A700F71A68 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC517A156A700F71A68 /* AVFoundation.framework */; };
 		225D0CD317A1577C00F71A68 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CCE17A1574A00F71A68 /* libGPUImage.a */; };
 		2274882C179831790010752E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2274882B179831790010752E /* Icon@2x.png */; };
 		2274882E179831830010752E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2274882D179831830010752E /* Icon.png */; };
@@ -133,8 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2202609F17A2333900F6DD8A /* AVFoundation.framework in Frameworks */,
 				225D0CD317A1577C00F71A68 /* libGPUImage.a in Frameworks */,
-				225D0CC617A156A700F71A68 /* AVFoundation.framework in Frameworks */,
 				225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */,
 				225D0CC217A1569900F71A68 /* CoreVideo.framework in Frameworks */,
 				225D0CC017A1569100F71A68 /* CoreMedia.framework in Frameworks */,
