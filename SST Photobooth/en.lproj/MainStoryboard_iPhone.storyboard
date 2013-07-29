@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="462" y="31"/>
         </scene>
-        <!--View Controller-->
+        <!--Lens About View Controller-->
         <scene sceneID="2NO-GO-8uU">
             <objects>
-                <viewController id="2F5-53-Nzu" sceneMemberID="viewController">
+                <viewController id="2F5-53-Nzu" customClass="LensAboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9M3-hR-Iwq">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -139,15 +139,34 @@
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3He-3W-Fo1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="15s-6Z-JQc"/>
+                                    <constraint firstAttribute="height" constant="44" id="OZ6-SY-PxM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Feedback">
+                                    <color key="titleColor" red="0.0" green="0.95662396329166999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="feedback:" destination="2F5-53-Nzu" eventType="touchUpInside" id="Jff-YK-eXU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="qJj-mD-0To" firstAttribute="top" secondItem="bq8-HS-cgU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0w7-ls-lAl"/>
                             <constraint firstItem="bq8-HS-cgU" firstAttribute="centerX" secondItem="qJj-mD-0To" secondAttribute="centerX" type="default" id="1ZC-7E-iLN"/>
+                            <constraint firstAttribute="bottom" secondItem="qJj-mD-0To" secondAttribute="bottom" constant="118" id="1fi-lD-bHM"/>
                             <constraint firstAttribute="bottom" secondItem="Obg-VZ-4KN" secondAttribute="bottom" constant="71" id="4ni-6q-ddG"/>
-                            <constraint firstItem="qJj-mD-0To" firstAttribute="top" secondItem="bq8-HS-cgU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5Vl-b0-Arc"/>
-                            <constraint firstItem="qJj-mD-0To" firstAttribute="centerX" secondItem="9M3-hR-Iwq" secondAttribute="centerX" type="default" id="BAp-LS-U6w"/>
-                            <constraint firstAttribute="bottom" secondItem="qJj-mD-0To" secondAttribute="bottom" constant="126" id="OFH-UQ-M4t"/>
+                            <constraint firstAttribute="bottom" secondItem="3He-3W-Fo1" secondAttribute="bottom" constant="27" id="NZl-5y-UNS"/>
+                            <constraint firstAttribute="trailing" secondItem="3He-3W-Fo1" secondAttribute="trailing" constant="9" id="TJ3-I7-cA7"/>
                             <constraint firstItem="qJj-mD-0To" firstAttribute="centerX" secondItem="Obg-VZ-4KN" secondAttribute="centerX" type="default" id="YPl-pr-y0Y"/>
+                            <constraint firstItem="Obg-VZ-4KN" firstAttribute="leading" secondItem="9M3-hR-Iwq" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="d4M-JF-dUV"/>
                             <constraint firstItem="Obg-VZ-4KN" firstAttribute="centerX" secondItem="YxH-ZC-09S" secondAttribute="centerX" type="default" id="eCE-GO-2qa"/>
                             <constraint firstAttribute="bottom" secondItem="YxH-ZC-09S" secondAttribute="bottom" constant="6" id="wKS-Aj-muh"/>
                         </constraints>
@@ -495,6 +514,12 @@
         <image name="Yellow1.png" width="53" height="333"/>
     </resources>
     <classes>
+        <class className="LensAboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LensAboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="feedback:"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>

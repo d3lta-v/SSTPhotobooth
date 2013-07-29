@@ -28,7 +28,7 @@
     //Check if user is first run
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if (! [defaults boolForKey:@"notFirstRun"]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Welcome to the SST Photobooth app!" message:@"You can take a photo, share photos, as well as use the Editor to edit your pictures in the Camera Roll!" delegate:self cancelButtonTitle:@"Got it!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Welcome to the SST Lens app!" message:@"You can take a photo, share photos, as well as use the Editor to edit your pictures in the Camera Roll!" delegate:self cancelButtonTitle:@"Got it!" otherButtonTitles: nil];
         [alert show];
         [defaults setBool:YES forKey:@"notFirstRun"];
     }

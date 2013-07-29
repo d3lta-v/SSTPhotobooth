@@ -105,8 +105,7 @@
         else
         {
             NSArray *dataToShare = @[_mainImage.image];
-            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare
-                                                                                     applicationActivities:nil];
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
             [self presentViewController:activityVC animated:YES completion:nil];
         }
     }
@@ -227,6 +226,21 @@
     UIGraphicsEndImageContext();
 }
 
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    chosenImage = UIImageJPEGRepresentation(image, 1.0);
+    
+    [_mainImage setImage:[UIImage imageWithData:chosenImage]];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (_showEditorOrController)
+    {
+        //Autosave
+        UIImageWriteToSavedPhotosAlbum(image, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }
+}
+
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     //Is there an error?
@@ -238,15 +252,6 @@
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Image was saved in Camera Roll"];
     }
-}
-
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    chosenImage = UIImageJPEGRepresentation(image, 1.0);
-    
-    [_mainImage setImage:[UIImage imageWithData:chosenImage]];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad
@@ -271,7 +276,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [SVProgressHUD dismiss];
-    if (_showEditorOrController==true) {
+    if (_showEditorOrController) {
         controller = [[UIImagePickerController alloc] init];
         if (state==YES)
         {
@@ -286,7 +291,15 @@
             controller.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
             [controller takePicture];
             [controller setDelegate:self];
+            
+            UIDevice *currentDevice = [UIDevice currentDevice];
+            while ([currentDevice isGeneratingDeviceOrientationNotifications])
+                [currentDevice endGeneratingDeviceOrientationNotifications];
+            
             [self presentViewController:controller animated:YES completion:nil];
+            
+            while ([currentDevice isGeneratingDeviceOrientationNotifications])
+                [currentDevice endGeneratingDeviceOrientationNotifications];
         }
         else
         {
