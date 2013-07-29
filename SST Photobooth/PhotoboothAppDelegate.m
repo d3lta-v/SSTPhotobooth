@@ -25,14 +25,6 @@
       UITextAttributeFont,
       nil]];*/
     
-    //Check if user is first run
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    if (! [defaults boolForKey:@"notFirstRun"]) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Welcome to the SST Lens app!" message:@"You can take a photo, share photos, as well as use the Editor to edit your pictures in the Camera Roll!" delegate:self cancelButtonTitle:@"Got it!" otherButtonTitles: nil];
-        [alert show];
-        [defaults setBool:YES forKey:@"notFirstRun"];
-    }
-    
     //[[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:139.0/255.0 green:137.0/255.0 blue:137.0/255.0 alpha:0.7]];
     
     return YES;
