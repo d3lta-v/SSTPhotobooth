@@ -35,6 +35,6 @@
 -(IBAction)save:(id)sender;
 -(IBAction)reset:(id)sender;
 
--(IBAction)changeSeg:(id)sender;
+-(IBAction)filterSelector:(id)sender;
 
 @end

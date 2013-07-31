@@ -74,7 +74,7 @@ NSString *const kGPUImagePixellationFragmentShaderString = SHADER_STRING
     fractionalWidthOfAPixelUniform = [filterProgram uniformIndex:@"fractionalWidthOfPixel"];
     aspectRatioUniform = [filterProgram uniformIndex:@"aspectRatio"];
 
-    self.fractionalWidthOfAPixel = 0.05;
+    self.fractionalWidthOfAPixel = 0.01;
     
     return self;
 }

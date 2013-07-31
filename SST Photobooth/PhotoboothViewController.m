@@ -91,8 +91,8 @@
     [self dismissViewControllerAnimated:YES completion:^(void){
         if (NSClassFromString(@"UIActivityViewController")) {
             NSArray *dataToShare = @[image1];
-            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare
-                                                                                     applicationActivities:nil];
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
+            activityVC.excludedActivityTypes=@[UIActivityTypeSaveToCameraRoll];
             [self presentViewController:activityVC animated:YES completion:nil];
         }
     }];

@@ -16,6 +16,7 @@
 {
     bool state;
     bool hudOpened;
+    bool filterApplied;
     NSData *chosenImage;
 }
 
@@ -32,48 +33,92 @@
     return self;
 }
 
--(IBAction)changeSeg:(id)sender
+-(IBAction)filterSelector:(id)sender
 {
-    if(segment.selectedSegmentIndex == 0) //Sepia
+    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Gaussian Blur", @"Oil Painting (CPU heavy!)", @"Monochrome", @"Vignett", @"Pixelate", @"Polka Dot", nil];
+    filter.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
+    [filter setDelegate:self];
+    [filter showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    GPUImageFilter *imageFilter;
+    switch (buttonIndex) {
+        case 0:
+            imageFilter=[[GPUImageSepiaFilter alloc]init];
+            filterApplied=true;
+            break;
+        
+        case 1:
+            imageFilter=[[GPUImageGrayscaleFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        case 2:
+            imageFilter=[[GPUImageColorInvertFilter alloc]init];
+            filterApplied=true;
+            break;
+        
+        case 3:
+            imageFilter=[[GPUImageSketchFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        case 4:
+            imageFilter=[[GPUImageEmbossFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        case 5:
+            imageFilter=[[GPUImageFastBlurFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        case 6:
+            imageFilter=[[GPUImageKuwaharaFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        case 7:
+            imageFilter=[[GPUImageMonochromeFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        case 8:
+            imageFilter=[[GPUImageVignetteFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        case 9:
+            imageFilter=[[GPUImagePixellateFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        case 10:
+            imageFilter=[[GPUImagePolkaDotFilter alloc]init];
+            filterApplied=true;
+            break;
+            
+        default:
+            filterApplied=false;
+            break;
+    }
+    if (filterApplied)
     {
-		[SVProgressHUD showWithStatus:@"Applying effect, this may take a while..."];
+        [SVProgressHUD showWithStatus:@"Applying filter, this may take a while..."];
         double delayInSeconds = 0.1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            GPUImageFilter *selectedFilter;
-            selectedFilter = [[GPUImageSepiaFilter alloc] init];
-            UIImage *filteredImage = [selectedFilter imageByFilteringImage:_mainImage.image];
+            UIImage *filteredImage=[imageFilter imageByFilteringImage:_mainImage.image];
             [_mainImage setImage:filteredImage];
-            [SVProgressHUD showSuccessWithStatus:@"Effect applied!"];
-        });
-	}
-	if(segment.selectedSegmentIndex == 1) //Black and White
-    {
-        [SVProgressHUD showWithStatus:@"Applying effect, this may take a while..."];
-        double delayInSeconds = 0.1;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            GPUImageFilter *selectedFilter;
-            selectedFilter = [[GPUImageGrayscaleFilter alloc] init];
-            UIImage *filteredImage = [selectedFilter imageByFilteringImage:_mainImage.image];
-            [_mainImage setImage:filteredImage];
-            [SVProgressHUD showSuccessWithStatus:@"Effect applied!"];
-        });
-	}
-    if (segment.selectedSegmentIndex == 2)
-    {
-        [SVProgressHUD showWithStatus:@"Applying effect, this may take a while..."];
-        double delayInSeconds = 0.1;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            GPUImageFilter *selectedFilter;
-            selectedFilter = [[GPUImageColorInvertFilter alloc] init];
-            UIImage *filteredImage = [selectedFilter imageByFilteringImage:_mainImage.image];
-            [_mainImage setImage:filteredImage];
-            [SVProgressHUD showSuccessWithStatus:@"Effect applied!"];
+            [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
         });
     }
+    else
+        return;
 }
+
 
 -(IBAction)save:(id)sender
 {
@@ -106,6 +151,7 @@
         {
             NSArray *dataToShare = @[_mainImage.image];
             UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
+            activityVC.excludedActivityTypes=@[UIActivityTypeSaveToCameraRoll];
             [self presentViewController:activityVC animated:YES completion:nil];
         }
     }
@@ -230,7 +276,8 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     chosenImage = UIImageJPEGRepresentation(image, 1.0);
     
-    [_mainImage setImage:[UIImage imageWithData:chosenImage]];
+    //[_mainImage setImage:];
+    _mainImage.image=[UIImage imageWithData:chosenImage];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -284,18 +331,15 @@
         }
         else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES)
         {
+            UIDevice *currentDevice = [UIDevice currentDevice];
+            while ([currentDevice isGeneratingDeviceOrientationNotifications])
+                [currentDevice endGeneratingDeviceOrientationNotifications];
             state=YES;
             controller.sourceType = UIImagePickerControllerSourceTypeCamera;
             controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
             controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-            controller.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
             [controller takePicture];
             [controller setDelegate:self];
-            
-            UIDevice *currentDevice = [UIDevice currentDevice];
-            while ([currentDevice isGeneratingDeviceOrientationNotifications])
-                [currentDevice endGeneratingDeviceOrientationNotifications];
-            
             [self presentViewController:controller animated:YES completion:nil];
             
             while ([currentDevice isGeneratingDeviceOrientationNotifications])
