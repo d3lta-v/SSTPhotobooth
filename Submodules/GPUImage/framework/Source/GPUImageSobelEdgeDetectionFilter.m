@@ -113,7 +113,7 @@ NSString *const kGPUImageSobelEdgeDetectionFragmentShaderString = SHADER_STRING
     texelHeightUniform = [secondFilterProgram uniformIndex:@"texelHeight"];
     edgeStrengthUniform = [secondFilterProgram uniformIndex:@"edgeStrength"];
     
-    self.edgeStrength = 1.0;
+    self.edgeStrength = 0.8;
     return self;
 }
 
