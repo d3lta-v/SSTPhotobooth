@@ -93,7 +93,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="IVW-YP-UWy" kind="modal" identifier="DefaultToEditor" modalTransitionStyle="flipHorizontal" id="Aji-yv-hRB"/>
-                        <segue destination="5H0-UQ-Uva" kind="modal" identifier="DefaultToHelp" modalTransitionStyle="coverVertical" id="4vM-fb-YCP"/>
+                        <segue destination="tFG-KC-eGP" kind="modal" identifier="DefaultToHelp" id="oYI-B4-QMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYr-rI-cuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -499,7 +499,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXz-HX-mbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1323" y="4"/>
+            <point key="canvasLocation" x="1393" y="-82"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f4E-va-iOW">
+            <objects>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="tFG-KC-eGP" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AOR-KB-XcN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5H0-UQ-Uva" kind="relationship" relationship="rootViewController" id="daC-vB-HIb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SvC-TI-V0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304" y="-849"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b1E-Yx-NZI">
@@ -537,7 +553,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="iso-PR-egs" kind="modal" identifier="" modalTransitionStyle="crossDissolve" id="BJK-9d-cbz"/>
+                                    <segue destination="iso-PR-egs" kind="push" identifier="" customClass="PushSegue" id="BJK-9d-cbz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to the LENS app tutorial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCT-XI-HXr">
@@ -652,7 +668,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fW6-c3-7sK" kind="modal" modalTransitionStyle="crossDissolve" id="Ahl-zA-LRN"/>
+                                    <segue destination="fW6-c3-7sK" kind="push" id="Ahl-zA-LRN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="This second function allows you to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce3-2w-DDZ">
@@ -754,7 +770,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7Ha-cs-G7j" kind="modal" modalTransitionStyle="crossDissolve" id="JVX-Oz-fq4"/>
+                                    <segue destination="7Ha-cs-G7j" kind="push" id="JVX-Oz-fq4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="This third function allows you to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLc-ap-zga">
@@ -1188,7 +1204,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UZg-MC-DMV" kind="modal" modalTransitionStyle="crossDissolve" id="NPA-zB-c0k"/>
+                                    <segue destination="UZg-MC-DMV" kind="push" id="NPA-zB-c0k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1339,6 +1355,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NPA-zB-c0k"/>
+        <segue reference="5lA-NW-UZ8"/>
     </inferredMetricsTieBreakers>
 </document>
