@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2202609F17A2333900F6DD8A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC517A156A700F71A68 /* AVFoundation.framework */; };
 		2206283517A26B2E004EBCC8 /* LensAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206283417A26B2E004EBCC8 /* LensAboutViewController.m */; };
+		2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */; };
 		2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */; };
 		224A04EF17A954D900B12EA5 /* Filter Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04EE17A954D900B12EA5 /* Filter Button.png */; };
 		224A04F317A955DE00B12EA5 /* SSTINC.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04F217A955DE00B12EA5 /* SSTINC.png */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		2206283317A26B2E004EBCC8 /* LensAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LensAboutViewController.h; sourceTree = "<group>"; };
 		2206283417A26B2E004EBCC8 /* LensAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LensAboutViewController.m; sourceTree = "<group>"; };
+		2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController2.h; sourceTree = "<group>"; };
 		2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController2.m; sourceTree = "<group>"; };
 		224A04EE17A954D900B12EA5 /* Filter Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filter Button.png"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */,
 				2202609F17A2333900F6DD8A /* AVFoundation.framework in Frameworks */,
 				225D0CD317A1577C00F71A68 /* libGPUImage.a in Frameworks */,
 				225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */,
@@ -203,6 +206,7 @@
 		22CAF1241782CB8100794998 = {
 			isa = PBXGroup;
 			children = (
+				2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */,
 				225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */,
 				2288E86517A17895000AA61D /* README.md */,
 				225D0CC517A156A700F71A68 /* AVFoundation.framework */,

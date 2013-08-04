@@ -11,6 +11,7 @@
 #import <Social/Social.h>
 #import "SVProgressHUD.h"
 #import "GPUImage.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface PhotoboothViewController2 ()
 {
@@ -120,6 +121,11 @@
     UIGraphicsEndImageContext();
     //Writing to Photo Album
     UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+    if ([ALAssetsLibrary authorizationStatus]!=ALAuthorizationStatusAuthorized)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Permission Required:" message:@"This app requires access to your Photo Library, please enable it in your Settings/Privacy/Photos." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 -(IBAction)reset:(id)sender
