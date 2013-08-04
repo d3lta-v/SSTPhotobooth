@@ -291,6 +291,11 @@
     {
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:@"Image could not be saved"];
+        if ([ALAssetsLibrary authorizationStatus]==ALAuthorizationStatusDenied)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Permission Required:" message:@"This app requires access to your Photo Library, please enable it in your Settings/Privacy/Photos." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
+            [alert show];
+        }
     } else {
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Image was saved in Camera Roll"];
