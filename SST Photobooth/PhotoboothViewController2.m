@@ -35,7 +35,7 @@
 
 -(IBAction)filterSelector:(id)sender
 {
-    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Gaussian Blur", @"Vintage", @"Vignett", @"Pixelate", @"Polka Dot", nil];
+    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Vintage", @"Vignett", @"Pixelate", @"Polka Dot", nil];
     filter.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
     [filter setDelegate:self];
     [filter showInView:[UIApplication sharedApplication].keyWindow];
@@ -69,28 +69,23 @@
             imageFilter=[[GPUImageEmbossFilter alloc]init];
             filterApplied=true;
             break;
-            
-        case 5:
-            imageFilter=[[GPUImageFastBlurFilter alloc]init];
-            filterApplied=true;
-            break;
 
-        case 6:
+        case 5:
             imageFilter=[[GPUImageMonochromeFilter alloc]init];
             filterApplied=true;
             break;
             
-        case 7:
+        case 6:
             imageFilter=[[GPUImageVignetteFilter alloc]init];
             filterApplied=true;
             break;
             
-        case 8:
+        case 7:
             imageFilter=[[GPUImagePixellateFilter alloc]init];
             filterApplied=true;
             break;
             
-        case 9:
+        case 8:
             imageFilter=[[GPUImagePolkaDotFilter alloc]init];
             filterApplied=true;
             break;

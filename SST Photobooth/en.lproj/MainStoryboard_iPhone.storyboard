@@ -576,7 +576,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="a filter (10 filters in total)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-GK-tHc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="a filter (9 filters in total)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-GK-tHc">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="I8J-zj-4Ut"/>
                                 </constraints>
@@ -784,7 +784,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="a filter (10 filters in total)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OT6-Ao-7Tb">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="a filter (9 filters in total)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OT6-Ao-7Tb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="206" id="Zjc-Ux-ggD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Note: Certain filters may not work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyE-p8-KTn">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="well with certain images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qS4-OA-PPY">
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -792,19 +805,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pLc-ap-zga" firstAttribute="centerX" secondItem="a6k-5h-QNE" secondAttribute="centerX" type="default" id="6qe-FP-t2X"/>
-                            <constraint firstItem="fEG-Be-PqS" firstAttribute="centerX" secondItem="pLc-ap-zga" secondAttribute="centerX" type="default" id="Mek-26-If7"/>
+                            <constraint firstItem="1a1-xg-GfV" firstAttribute="top" secondItem="160-SF-Rna" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1ZJ-po-5G5"/>
+                            <constraint firstItem="1a1-xg-GfV" firstAttribute="top" secondItem="a6k-5h-QNE" secondAttribute="top" constant="143" id="2xZ-wR-J7K"/>
+                            <constraint firstItem="OT6-Ao-7Tb" firstAttribute="top" secondItem="1a1-xg-GfV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6ca-gs-LII"/>
+                            <constraint firstItem="160-SF-Rna" firstAttribute="leading" secondItem="a6k-5h-QNE" secondAttribute="leading" constant="42" id="7dt-Un-eZ6"/>
+                            <constraint firstItem="qS4-OA-PPY" firstAttribute="centerX" secondItem="1a1-xg-GfV" secondAttribute="centerX" type="default" id="BVW-2Z-fTo"/>
+                            <constraint firstItem="fEG-Be-PqS" firstAttribute="top" secondItem="qS4-OA-PPY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="L07-Ed-tCR"/>
+                            <constraint firstItem="OT6-Ao-7Tb" firstAttribute="centerX" secondItem="160-SF-Rna" secondAttribute="centerX" type="default" id="O1D-Je-j5o"/>
                             <constraint firstAttribute="bottom" secondItem="fEG-Be-PqS" secondAttribute="bottom" constant="70" id="Orz-hY-cK6"/>
                             <constraint firstAttribute="trailing" secondItem="qUf-5F-Deh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Qmv-J3-mIs"/>
-                            <constraint firstItem="OT6-Ao-7Tb" firstAttribute="top" secondItem="1a1-xg-GfV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="UKb-HD-LgL"/>
-                            <constraint firstItem="pLc-ap-zga" firstAttribute="leading" secondItem="160-SF-Rna" secondAttribute="leading" type="default" id="auP-Sy-i8D"/>
+                            <constraint firstItem="160-SF-Rna" firstAttribute="top" secondItem="pLc-ap-zga" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="U3l-mP-aRq"/>
+                            <constraint firstItem="qS4-OA-PPY" firstAttribute="centerX" secondItem="fEG-Be-PqS" secondAttribute="centerX" type="default" id="YuS-Oi-ebb"/>
                             <constraint firstAttribute="bottom" secondItem="qUf-5F-Deh" secondAttribute="bottom" constant="35" id="cct-wK-tga"/>
-                            <constraint firstItem="160-SF-Rna" firstAttribute="top" secondItem="pLc-ap-zga" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gtX-KO-Khe"/>
-                            <constraint firstItem="160-SF-Rna" firstAttribute="centerX" secondItem="1a1-xg-GfV" secondAttribute="centerX" type="default" id="oru-MG-hhk"/>
-                            <constraint firstItem="1a1-xg-GfV" firstAttribute="leading" secondItem="OT6-Ao-7Tb" secondAttribute="leading" type="default" id="pA9-Qr-100"/>
-                            <constraint firstItem="pLc-ap-zga" firstAttribute="top" secondItem="a6k-5h-QNE" secondAttribute="top" constant="97" id="qET-Wh-KT9"/>
-                            <constraint firstItem="1a1-xg-GfV" firstAttribute="top" secondItem="160-SF-Rna" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uD4-eo-8mR"/>
-                            <constraint firstItem="OT6-Ao-7Tb" firstAttribute="trailing" secondItem="1a1-xg-GfV" secondAttribute="trailing" type="default" id="uJr-Sg-Ewu"/>
+                            <constraint firstItem="qS4-OA-PPY" firstAttribute="centerX" secondItem="a6k-5h-QNE" secondAttribute="centerX" type="default" id="cvG-c2-XHK"/>
+                            <constraint firstAttribute="bottom" secondItem="jyE-p8-KTn" secondAttribute="bottom" constant="200" id="ef7-dB-kYp"/>
+                            <constraint firstItem="160-SF-Rna" firstAttribute="centerX" secondItem="pLc-ap-zga" secondAttribute="centerX" type="default" id="fAc-Vn-2VQ"/>
+                            <constraint firstItem="jyE-p8-KTn" firstAttribute="leading" secondItem="a6k-5h-QNE" secondAttribute="leading" constant="36" id="n0o-H3-p7P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RR8-wC-inZ"/>
