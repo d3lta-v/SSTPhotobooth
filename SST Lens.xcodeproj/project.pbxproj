@@ -525,14 +525,15 @@
 		22CAF1551782CB8100794998 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: School of Science and Technology Singapore (7K6ZTDFM48)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: School of Science and Technology Singapore (7K6ZTDFM48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Submodules/GPUImage/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F9CD430D-AA99-4BBB-BBAA-F2B6D5EAFF5A";
+				PROVISIONING_PROFILE = "DFDDC3CE-8AB3-4FC1-AE75-F4D0AD074A04";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DFDDC3CE-8AB3-4FC1-AE75-F4D0AD074A04";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
