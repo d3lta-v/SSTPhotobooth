@@ -18,6 +18,8 @@
     CGFloat brush;
     CGFloat opacity;
     BOOL mouseSwiped;
+    
+    UIImage *imageChoosed;
 }
 
 
@@ -25,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
 @property (weak, nonatomic) IBOutlet UIImageView *watermark;
+
+@property (strong, nonatomic) UIImage *imageChoosed;
 
 -(IBAction)pencilPressed:(id)sender;
 

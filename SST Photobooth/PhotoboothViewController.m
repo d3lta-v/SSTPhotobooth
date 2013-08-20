@@ -13,8 +13,8 @@
 
 @interface PhotoboothViewController ()
 {
-    bool state;
     bool editorOrAdd;
+    bool socialOrNot; //Social is 1, image is 2
     UIImage *image1;
 }
 
@@ -27,7 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    state=NO;
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if (! [defaults boolForKey:@"notFirstRun"]) {
@@ -49,18 +48,46 @@
 -(IBAction)editorPressed:(id)sender
 {
     editorOrAdd=FALSE;
-    [self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
+    socialOrNot=FALSE;
+    controller = [[UIImagePickerController alloc]init];
+    controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+    controller.allowsEditing=NO;
+    [controller setDelegate:self];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 //This will get to the Editor
 -(IBAction)newPressed:(id)sender
 {
     editorOrAdd=TRUE;
-    [self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
+    
+    socialOrNot=FALSE;
+    
+    controller=[[UIImagePickerController alloc]init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIDevice *currentDevice = [UIDevice currentDevice];
+        while ([currentDevice isGeneratingDeviceOrientationNotifications])
+            [currentDevice endGeneratingDeviceOrientationNotifications];
+        controller.sourceType = UIImagePickerControllerSourceTypeCamera;
+        controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+        controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        [controller takePicture];
+        [controller setDelegate:self];
+        [self presentViewController:controller animated:YES completion:nil];
+        
+        while ([currentDevice isGeneratingDeviceOrientationNotifications])
+            [currentDevice endGeneratingDeviceOrientationNotifications];
+    }
+    else
+    {
+        NSLog(@"No camera found");
+    }
 }
 
 -(IBAction)shareAction:(id)sender
 {
+    socialOrNot=TRUE;
     [self showImageController];
 }
 
@@ -74,59 +101,33 @@
     [SVProgressHUD dismiss];
 }
 
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    if ([error code] != NSURLErrorCancelled)
-    {
-        [SVProgressHUD dismiss];
-        NSLog(@"%@", error);
-        [SVProgressHUD showErrorWithStatus:@"Please check your Internet connection"];
-    }
-}
-
-
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [self dismissViewControllerAnimated:YES completion:^(void){
-        if (NSClassFromString(@"UIActivityViewController")) {
-            NSArray *dataToShare = @[image1];
-            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
-            activityVC.excludedActivityTypes=@[UIActivityTypeSaveToCameraRoll];
-            [self presentViewController:activityVC animated:YES completion:nil];
-        }
-    }];
+    if (socialOrNot) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
+        [self dismissViewControllerAnimated:YES completion:^(void){
+            if (NSClassFromString(@"UIActivityViewController")) {
+                NSArray *dataToShare = @[image1];
+                UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
+                activityVC.excludedActivityTypes=@[UIActivityTypeSaveToCameraRoll];
+                [self presentViewController:activityVC animated:YES completion:nil];
+            }
+        }];
+    }
+    else
+    {
+        image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
+        [self dismissViewControllerAnimated:YES completion:^(void){
+            [self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
+        }];
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     // Dismiss Image Picker Controller
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0)
-    {
-        state=NO;
-        
-        [self showImageController];
-    }
-    else if (buttonIndex == 1)
-    {
-        state=YES;
-        
-        [self showImageController];
-    }
-    else
-    {
-        return;
-    }
-    /*else if (buttonIndex==3)
-    {
-        //forth button, Feedback
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:random.rrr3@gmail.com"]];
-    }*/
 }
 
 -(void)showImageController
@@ -145,11 +146,11 @@
         PhotoboothViewController2 *segueController=(PhotoboothViewController2 *)segue.destinationViewController;
         if(editorOrAdd==FALSE) //Means Editor
         {
-            segueController.showEditorOrController = false; //Show the Editor
+            segueController.imageChoosed=image1;
         }
         else if (editorOrAdd==TRUE) //Means Add Photo
         {
-            segueController.showEditorOrController = true; //show the Controller
+            segueController.imageChoosed=image1;
         }
     }
 }

@@ -26,6 +26,8 @@
 
 @implementation PhotoboothViewController2
 
+@synthesize imageChoosed;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -160,7 +162,7 @@
 -(IBAction)reset:(id)sender
 {
     //[SVProgressHUD showWithStatus:@"Clearing edits..."];
-    [_mainImage setImage:[UIImage imageWithData:chosenImage]];
+    [_mainImage setImage:imageChoosed];
     [_watermark setImage:[UIImage imageNamed:@"TransparentiPhone.png"]];
     [SVProgressHUD showSuccessWithStatus:@"Edits Cleared!"];
 }
@@ -297,22 +299,6 @@
     UIGraphicsEndImageContext();
 }
 
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    chosenImage = UIImageJPEGRepresentation(image, 1.0);
-    
-    //[_mainImage setImage:];
-    _mainImage.image=[UIImage imageWithData:chosenImage];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    if (_showEditorOrController)
-    {
-        //Autosave
-        UIImageWriteToSavedPhotosAlbum(image, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
-    }
-}
-
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     //Is there an error?
@@ -340,20 +326,23 @@
     opacity = 1.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //Autosave
+    UIImageWriteToSavedPhotosAlbum(_mainImage.image, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    if (!hudOpened) {
+    /*if (!hudOpened) {
         [SVProgressHUD showWithStatus:@"Loading Image Selector..."];
         hudOpened=true;
-    }
+    }*/
+    _mainImage.image=imageChoosed;
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [SVProgressHUD dismiss];
-    if (_showEditorOrController) {
+    /*if (_showEditorOrController) {
         controller = [[UIImagePickerController alloc] init];
         if (state==YES)
         {
@@ -394,7 +383,7 @@
             [self presentViewController:controller animated:YES completion:nil];
         }
     }
-    hudOpened=true;
+    hudOpened=true;*/
 }
 
 -(UIImage *) generateWatermarkForImage:(UIImage *)mainImg :(UIImage *)transparentImg{
