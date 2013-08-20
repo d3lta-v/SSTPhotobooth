@@ -18,14 +18,13 @@
     CGFloat brush;
     CGFloat opacity;
     BOOL mouseSwiped;
-    
-    IBOutlet UISegmentedControl *segment;
 }
 
 
 @property (nonatomic) bool showEditorOrController;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
+@property (weak, nonatomic) IBOutlet UIImageView *watermark;
 
 -(IBAction)pencilPressed:(id)sender;
 
@@ -36,5 +35,6 @@
 -(IBAction)reset:(id)sender;
 
 -(IBAction)filterSelector:(id)sender;
+-(IBAction)watermarkSelector:(id)sender;
 
 @end

@@ -15,9 +15,10 @@
 
 @interface PhotoboothViewController2 ()
 {
-    bool state;
+    bool state; //This is to check if view is launched from social media
     bool hudOpened;
-    bool filterApplied;
+    bool filterApplied; //Prevent infinite loop of filter applying
+    bool actionSheetNo;
     NSData *chosenImage;
 }
 
@@ -36,78 +37,105 @@
 
 -(IBAction)filterSelector:(id)sender
 {
-    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Vintage", @"Vignett", @"Pixelate", @"Polka Dot", nil];
+    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Vintage", @"Vignette", @"Pixelate", @"Polka Dot", nil];
     filter.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
     [filter setDelegate:self];
+    actionSheetNo=false;
     [filter showInView:[UIApplication sharedApplication].keyWindow];
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    GPUImageFilter *imageFilter;
-    switch (buttonIndex) {
-        case 0:
-            imageFilter=[[GPUImageSepiaFilter alloc]init];
-            filterApplied=true;
-            break;
-        
-        case 1:
-            imageFilter=[[GPUImageGrayscaleFilter alloc]init];
-            filterApplied=true;
-            break;
-            
-        case 2:
-            imageFilter=[[GPUImageColorInvertFilter alloc]init];
-            filterApplied=true;
-            break;
-        
-        case 3:
-            imageFilter=[[GPUImageSketchFilter alloc]init];
-            filterApplied=true;
-            break;
-            
-        case 4:
-            imageFilter=[[GPUImageEmbossFilter alloc]init];
-            filterApplied=true;
-            break;
-
-        case 5:
-            imageFilter=[[GPUImageMonochromeFilter alloc]init];
-            filterApplied=true;
-            break;
-            
-        case 6:
-            imageFilter=[[GPUImageVignetteFilter alloc]init];
-            filterApplied=true;
-            break;
-            
-        case 7:
-            imageFilter=[[GPUImagePixellateFilter alloc]init];
-            filterApplied=true;
-            break;
-            
-        case 8:
-            imageFilter=[[GPUImagePolkaDotFilter alloc]init];
-            filterApplied=true;
-            break;
-            
-        default:
-            filterApplied=false;
-            break;
-    }
-    if (filterApplied)
-    {
-        [SVProgressHUD showWithStatus:@"Applying filter, this may take a while..."];
-        double delayInSeconds = 0.1;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            UIImage *filteredImage=[imageFilter imageByFilteringImage:_mainImage.image];
-            [_mainImage setImage:filteredImage];
-            [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-        });
+    if (!actionSheetNo) {
+        GPUImageFilter *imageFilter;
+        switch (buttonIndex) {
+            case 0:
+                imageFilter=[[GPUImageSepiaFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            case 1:
+                imageFilter=[[GPUImageGrayscaleFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            case 2:
+                imageFilter=[[GPUImageColorInvertFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            case 3:
+                imageFilter=[[GPUImageSketchFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            case 4:
+                imageFilter=[[GPUImageEmbossFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            case 5:
+                imageFilter=[[GPUImageMonochromeFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            case 6:
+                imageFilter=[[GPUImageVignetteFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            case 7:
+                imageFilter=[[GPUImagePixellateFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            case 8:
+                imageFilter=[[GPUImagePolkaDotFilter alloc]init];
+                filterApplied=true;
+                break;
+                
+            default:
+                filterApplied=false;
+                break;
+        }
+        if (filterApplied)
+        {
+            [SVProgressHUD showWithStatus:@"Applying filter, this may take a while..."];
+            double delayInSeconds = 0.1;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                UIImage *filteredImage=[imageFilter imageByFilteringImage:_mainImage.image];
+                [_mainImage setImage:filteredImage];
+                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
+            });
+        }
+        else
+            return;
     }
     else
-        return;
+    {
+        switch (buttonIndex) {
+            case 0:
+                _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"Design-Cluster.png"]];
+                break;
+                
+            case 1:
+                _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"SSTFullLogo.png"]];
+                break;
+            case 2:
+                _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"SSTVertLogo.png"]];
+                break;
+            case 3:
+                _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"StatiXIndustriesLogo1.png"]];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 
@@ -117,13 +145,14 @@
     [SVProgressHUD showWithStatus:@"Saving..."];
     UIGraphicsBeginImageContextWithOptions(_mainImage.bounds.size, NO,0.0);
     [_mainImage.image drawInRect:CGRectMake(0, 0, _mainImage.frame.size.width, _mainImage.frame.size.height)];
+    [_watermark.image drawInRect:CGRectMake(0, 0, _watermark.frame.size.width, _watermark.frame.size.height)];
     UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     //Writing to Photo Album
     UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
     if ([ALAssetsLibrary authorizationStatus]!=ALAuthorizationStatusAuthorized)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Permission Required:" message:@"This app requires access to your Photo Library, please enable it in your Settings/Privacy/Photos." delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Permission Required:" message:@"This app requires access to your Photo Library, please enable it in your Settings/Privacy/Photos" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
         [alert show];
     }
 }
@@ -132,7 +161,7 @@
 {
     //[SVProgressHUD showWithStatus:@"Clearing edits..."];
     [_mainImage setImage:[UIImage imageWithData:chosenImage]];
-    [segment setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    [_watermark setImage:[UIImage imageNamed:@"TransparentiPhone.png"]];
     [SVProgressHUD showSuccessWithStatus:@"Edits Cleared!"];
 }
 
@@ -366,6 +395,28 @@
         }
     }
     hudOpened=true;
+}
+
+-(UIImage *) generateWatermarkForImage:(UIImage *)mainImg :(UIImage *)transparentImg{
+    UIImage *backgroundImage = mainImg;
+    //UIImage *watermarkImage = [UIImage imageNamed:@"Design-Cluster.png"];
+    UIImage *watermarkImage = transparentImg;
+    
+    UIGraphicsBeginImageContext(backgroundImage.size);
+    [backgroundImage drawInRect:CGRectMake(0, 0, backgroundImage.size.width, backgroundImage.size.height)];
+    [watermarkImage drawInRect:CGRectMake(backgroundImage.size.width - watermarkImage.size.width, backgroundImage.size.height - watermarkImage.size.height, watermarkImage.size.width, watermarkImage.size.height)];
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return result;
+}
+
+-(IBAction)watermarkSelector:(id)sender
+{
+    UIActionSheet *watermarkSelector=[[UIActionSheet alloc]initWithTitle:@"Watermark Type Selector" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"SST Hexagon", @"Full SST Logo (Horizontal)", @"Full SST Logo (Vertical)", @"StatiX Industries Logo", nil];
+    [watermarkSelector setDelegate:self];
+    actionSheetNo=true;
+    [watermarkSelector showInView:[UIApplication sharedApplication].keyWindow];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
