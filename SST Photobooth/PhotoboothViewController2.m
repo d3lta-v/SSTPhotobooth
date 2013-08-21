@@ -326,8 +326,10 @@
     opacity = 1.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //Autosave
-    UIImageWriteToSavedPhotosAlbum(_mainImage.image, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+    
+    if (_showEditorOrController) {
+        UIImageWriteToSavedPhotosAlbum(_mainImage.image, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -386,6 +388,7 @@
     hudOpened=true;*/
 }
 
+//This is to make a watermarked image
 -(UIImage *) generateWatermarkForImage:(UIImage *)mainImg :(UIImage *)transparentImg{
     UIImage *backgroundImage = mainImg;
     //UIImage *watermarkImage = [UIImage imageNamed:@"Design-Cluster.png"];

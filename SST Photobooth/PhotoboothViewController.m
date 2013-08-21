@@ -104,7 +104,6 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     if (socialOrNot) {
-        [self dismissViewControllerAnimated:YES completion:nil];
         image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:^(void){
             if (NSClassFromString(@"UIActivityViewController")) {
