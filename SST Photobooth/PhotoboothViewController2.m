@@ -16,7 +16,6 @@
 @interface PhotoboothViewController2 ()
 {
     bool state; //This is to check if view is launched from social media
-    bool hudOpened;
     bool filterApplied; //Prevent infinite loop of filter applying
     bool actionSheetNo;
     NSData *chosenImage;
@@ -118,21 +117,20 @@
     {
         switch (buttonIndex) {
             case 0:
-                _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+                [self clearWatermark];
                 _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"Design-Cluster.png"]];
                 break;
                 
             case 1:
-                _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+                [self clearWatermark];
                 _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"SSTFullLogo.png"]];
                 break;
             case 2:
-                _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+                [self clearWatermark];
                 _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"SSTVertLogo.png"]];
                 break;
             case 3:
-                _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
-                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"StatiXIndustriesLogo1.png"]];
+                [self clearWatermark];
                 break;
             default:
                 break;
@@ -140,6 +138,20 @@
     }
 }
 
+//This function is to get rid of the watermark (set the image to a transparent image that fits the screen)
+-(void)clearWatermark
+{
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            _watermark.image=[UIImage imageNamed:@"iPhone5Transparent.png"];
+        } else {
+            _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+        }
+    } else {
+        _watermark.image=[UIImage imageNamed:@"TransparentiPhone.png"];
+    }
+}
 
 -(IBAction)save:(id)sender
 {
@@ -334,58 +346,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    /*if (!hudOpened) {
-        [SVProgressHUD showWithStatus:@"Loading Image Selector..."];
-        hudOpened=true;
-    }*/
     _mainImage.image=imageChoosed;
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [SVProgressHUD dismiss];
-    /*if (_showEditorOrController) {
-        controller = [[UIImagePickerController alloc] init];
-        if (state==YES)
-        {
-            return;
-        }
-        else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]&&state!=YES)
-        {
-            UIDevice *currentDevice = [UIDevice currentDevice];
-            while ([currentDevice isGeneratingDeviceOrientationNotifications])
-                [currentDevice endGeneratingDeviceOrientationNotifications];
-            state=YES;
-            controller.sourceType = UIImagePickerControllerSourceTypeCamera;
-            controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-            controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-            [controller takePicture];
-            [controller setDelegate:self];
-            [self presentViewController:controller animated:YES completion:nil];
-            
-            while ([currentDevice isGeneratingDeviceOrientationNotifications])
-                [currentDevice endGeneratingDeviceOrientationNotifications];
-        }
-        else
-        {
-            NSLog(@"No camera found");
-        }
-    }
-    else
-    {
-        controller=[[UIImagePickerController alloc]init];
-        if (state==YES) {
-            return;
-        }
-        else if (state==NO)
-        {
-            state=YES;
-            controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-            [controller setDelegate:self];
-            [self presentViewController:controller animated:YES completion:nil];
-        }
-    }
-    hudOpened=true;*/
 }
 
 //This is to make a watermarked image
@@ -405,15 +366,10 @@
 
 -(IBAction)watermarkSelector:(id)sender
 {
-    UIActionSheet *watermarkSelector=[[UIActionSheet alloc]initWithTitle:@"Watermark Type Selector" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"SST Hexagon", @"Full SST Logo (Horizontal)", @"Full SST Logo (Vertical)", @"StatiX Industries Logo", nil];
+    UIActionSheet *watermarkSelector=[[UIActionSheet alloc]initWithTitle:@"Watermark Type Selector" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"SST Hexagon", @"Full SST Logo (Horizontal)", @"Full SST Logo (Vertical)", @"None", nil];
     [watermarkSelector setDelegate:self];
     actionSheetNo=true;
     [watermarkSelector showInView:[UIApplication sharedApplication].keyWindow];
-}
-
--(void)viewDidDisappear:(BOOL)animated
-{
-    hudOpened=false;
 }
 
 - (void)didReceiveMemoryWarning

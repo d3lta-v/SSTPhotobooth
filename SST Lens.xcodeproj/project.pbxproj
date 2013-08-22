@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2202609F17A2333900F6DD8A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC517A156A700F71A68 /* AVFoundation.framework */; };
-		2204759D17C31D5900157452 /* StatiXIndustriesLogo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2204759C17C31D5900157452 /* StatiXIndustriesLogo1.png */; };
 		2206283517A26B2E004EBCC8 /* LensAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2206283417A26B2E004EBCC8 /* LensAboutViewController.m */; };
 		22073E8517C22342003EEEC2 /* Design-Cluster.png in Resources */ = {isa = PBXBuildFile; fileRef = 22073E8417C22342003EEEC2 /* Design-Cluster.png */; };
 		22073E8717C235AB003EEEC2 /* TransparentiPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 22073E8617C235AB003EEEC2 /* TransparentiPhone.png */; };
@@ -57,6 +56,7 @@
 		22E902051799806800D2E04C /* Undo Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E902031799806800D2E04C /* Undo Button.png */; };
 		22F5B91B179AE1D100633CDE /* Save.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F5B919179AE1D100633CDE /* Save.png */; };
 		22F5B91C179AE1D100633CDE /* Share Round.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F5B91A179AE1D100633CDE /* Share Round.png */; };
+		22FCEC8017C5C0BE00E388F4 /* iPhone5Transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FCEC7F17C5C0BE00E388F4 /* iPhone5Transparent.png */; };
 		22FE27A517A65D6D000818C4 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FE27A317A65D6D000818C4 /* iTunesArtwork.png */; };
 		22FE27A617A65D6D000818C4 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FE27A417A65D6D000818C4 /* iTunesArtwork@2x.png */; };
 /* End PBXBuildFile section */
@@ -86,7 +86,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2204759C17C31D5900157452 /* StatiXIndustriesLogo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatiXIndustriesLogo1.png; sourceTree = "<group>"; };
 		2206283317A26B2E004EBCC8 /* LensAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LensAboutViewController.h; sourceTree = "<group>"; };
 		2206283417A26B2E004EBCC8 /* LensAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LensAboutViewController.m; sourceTree = "<group>"; };
 		22073E8417C22342003EEEC2 /* Design-Cluster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Design-Cluster.png"; sourceTree = "<group>"; };
@@ -145,6 +144,7 @@
 		22E902031799806800D2E04C /* Undo Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Undo Button.png"; sourceTree = "<group>"; };
 		22F5B919179AE1D100633CDE /* Save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Save.png; sourceTree = "<group>"; };
 		22F5B91A179AE1D100633CDE /* Share Round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Share Round.png"; sourceTree = "<group>"; };
+		22FCEC7F17C5C0BE00E388F4 /* iPhone5Transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone5Transparent.png; sourceTree = "<group>"; };
 		22FE27A317A65D6D000818C4 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		22FE27A417A65D6D000818C4 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,9 +275,9 @@
 		22CAF1371782CB8100794998 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2204759C17C31D5900157452 /* StatiXIndustriesLogo1.png */,
 				22073E8A17C2454E003EEEC2 /* SSTVertLogo.png */,
 				22073E8817C23FBE003EEEC2 /* SSTFullLogo.png */,
+				22FCEC7F17C5C0BE00E388F4 /* iPhone5Transparent.png */,
 				22073E8617C235AB003EEEC2 /* TransparentiPhone.png */,
 				22073E8417C22342003EEEC2 /* Design-Cluster.png */,
 				22FE27A317A65D6D000818C4 /* iTunesArtwork.png */,
@@ -413,7 +413,7 @@
 				22073E8717C235AB003EEEC2 /* TransparentiPhone.png in Resources */,
 				22073E8917C23FBE003EEEC2 /* SSTFullLogo.png in Resources */,
 				22073E8B17C2454E003EEEC2 /* SSTVertLogo.png in Resources */,
-				2204759D17C31D5900157452 /* StatiXIndustriesLogo1.png in Resources */,
+				22FCEC8017C5C0BE00E388F4 /* iPhone5Transparent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

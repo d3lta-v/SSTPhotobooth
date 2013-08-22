@@ -90,6 +90,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YCN-LO-HIl"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="IVW-YP-UWy" kind="modal" identifier="DefaultToEditor" modalTransitionStyle="flipHorizontal" id="Aji-yv-hRB"/>
@@ -175,6 +176,7 @@
                             <constraint firstItem="2uF-3s-RJZ" firstAttribute="top" secondItem="9M3-hR-Iwq" secondAttribute="top" constant="215" id="yT6-Ah-3wx"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xon-MV-Qjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -514,6 +516,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Yv-63-f9m"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="mainImage" destination="djf-gn-Xrj" id="InB-5v-9s9"/>
@@ -529,6 +532,7 @@
         <scene sceneID="f4E-va-iOW">
             <objects>
                 <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="tFG-KC-eGP" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AOR-KB-XcN">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1307,12 +1311,46 @@
         <image name="Undo Button.png" width="258" height="258"/>
         <image name="Yellow1.png" width="53" height="333"/>
     </resources>
+    <classes>
+        <class className="LensAboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LensAboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="feedback:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PhotoboothViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoboothViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editorPressed:"/>
+                <relationship kind="action" name="newPressed:"/>
+                <relationship kind="action" name="shareAction:"/>
+            </relationships>
+        </class>
+        <class className="PhotoboothViewController2" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoboothViewController2.h"/>
+            <relationships>
+                <relationship kind="action" name="filterSelector:"/>
+                <relationship kind="action" name="landscapeToDefault:"/>
+                <relationship kind="action" name="pencilPressed:"/>
+                <relationship kind="action" name="reset:"/>
+                <relationship kind="action" name="save:"/>
+                <relationship kind="action" name="shareActivityButton:"/>
+                <relationship kind="action" name="watermarkSelector:"/>
+                <relationship kind="outlet" name="mainImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tempDrawImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="watermark" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5lA-NW-UZ8"/>
+        <segue reference="NPA-zB-c0k"/>
     </inferredMetricsTieBreakers>
 </document>

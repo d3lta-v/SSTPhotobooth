@@ -22,8 +22,6 @@
 
 @implementation PhotoboothViewController
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -103,10 +101,13 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    if (socialOrNot) {
+    if (socialOrNot) //Checking if it is initiating from the Social function or the Add Photo function
+    {
         image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
-        [self dismissViewControllerAnimated:YES completion:^(void){
-            if (NSClassFromString(@"UIActivityViewController")) {
+        [self dismissViewControllerAnimated:YES completion:^(void) //Dismiss the VC with an action on dismiss
+        {
+            if (NSClassFromString(@"UIActivityViewController"))
+            {
                 NSArray *dataToShare = @[image1];
                 UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
                 activityVC.excludedActivityTypes=@[UIActivityTypeSaveToCameraRoll];
@@ -114,7 +115,7 @@
             }
         }];
     }
-    else
+    else //If the user wasn't using the share function
     {
         image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:^(void){
@@ -129,7 +130,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)showImageController
+-(void)showImageController //Just a method to show the Image Ctrl pointed to the photo library
 {
     controller = [[UIImagePickerController alloc]init];
     controller.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
@@ -145,10 +146,12 @@
         PhotoboothViewController2 *segueController=(PhotoboothViewController2 *)segue.destinationViewController;
         if(editorOrAdd==FALSE) //Means Editor
         {
+            segueController.showEditorOrController=false;
             segueController.imageChoosed=image1;
         }
         else if (editorOrAdd==TRUE) //Means Add Photo
         {
+            segueController.showEditorOrController=true;
             segueController.imageChoosed=image1;
         }
     }
