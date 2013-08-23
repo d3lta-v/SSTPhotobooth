@@ -13,6 +13,7 @@
 		22073E8717C235AB003EEEC2 /* TransparentiPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 22073E8617C235AB003EEEC2 /* TransparentiPhone.png */; };
 		22073E8917C23FBE003EEEC2 /* SSTFullLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22073E8817C23FBE003EEEC2 /* SSTFullLogo.png */; };
 		22073E8B17C2454E003EEEC2 /* SSTVertLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22073E8A17C2454E003EEEC2 /* SSTVertLogo.png */; };
+		2207771D17C7029C00129035 /* Watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2207771C17C7029C00129035 /* Watermark.png */; };
 		2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */; };
 		2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */; };
 		224A04EF17A954D900B12EA5 /* Filter Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04EE17A954D900B12EA5 /* Filter Button.png */; };
@@ -92,6 +93,7 @@
 		22073E8617C235AB003EEEC2 /* TransparentiPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TransparentiPhone.png; sourceTree = "<group>"; };
 		22073E8817C23FBE003EEEC2 /* SSTFullLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SSTFullLogo.png; sourceTree = "<group>"; };
 		22073E8A17C2454E003EEEC2 /* SSTVertLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SSTVertLogo.png; sourceTree = "<group>"; };
+		2207771C17C7029C00129035 /* Watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Watermark.png; sourceTree = "<group>"; };
 		2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController2.h; sourceTree = "<group>"; };
 		2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController2.m; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		22CA07EC1793DFA30095A4B9 /* SST Lens */ = {
 			isa = PBXGroup;
 			children = (
+				2207771C17C7029C00129035 /* Watermark.png */,
 				224A04F217A955DE00B12EA5 /* SSTINC.png */,
 				224A04EE17A954D900B12EA5 /* Filter Button.png */,
 				22F5B919179AE1D100633CDE /* Save.png */,
@@ -414,6 +417,7 @@
 				22073E8917C23FBE003EEEC2 /* SSTFullLogo.png in Resources */,
 				22073E8B17C2454E003EEEC2 /* SSTVertLogo.png in Resources */,
 				22FCEC8017C5C0BE00E388F4 /* iPhone5Transparent.png in Resources */,
+				2207771D17C7029C00129035 /* Watermark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
