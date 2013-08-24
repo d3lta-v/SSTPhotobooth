@@ -188,7 +188,14 @@
         }
         else
         {
-            NSArray *dataToShare = @[_mainImage.image];
+            //Combining the watermark layer and the main image layer
+            UIGraphicsBeginImageContextWithOptions(_mainImage.bounds.size, NO,0.0);
+            [_mainImage.image drawInRect:CGRectMake(0, 0, _mainImage.frame.size.width, _mainImage.frame.size.height)];
+            [_watermark.image drawInRect:CGRectMake(0, 0, _watermark.frame.size.width, _watermark.frame.size.height)];
+            UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            
+            NSArray *dataToShare = @[SaveImage];
             UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
             activityVC.excludedActivityTypes=@[UIActivityTypeSaveToCameraRoll];
             [self presentViewController:activityVC animated:YES completion:nil];

@@ -11,13 +11,15 @@ The Application is used for simple photo editing
   
 1. Can draw with colors on photos
 2. Can take photos, or extract photos from Camera Roll
-3. Can apply 
+3. Can apply filters to photos
+4. Can apply watermarks to pictures
+5. Is able to share to social networks, as well as save it to camera roll.
   
 
 AVAILABILITY:  
 The App is only usable on the UNIX Darwin ARMv7 iOS 6+ platform  
 Devices compatible include the iPhone 4 and up, iPad 2 and up as well as iPod Touch 4rd Gen and up
-
+  
 
 DESCRIPTION:  
 * The Application is made for simple photo editing
@@ -31,7 +33,7 @@ StatiX Industries:
   
 
 CAVEATS:  
-No proper splash image, icon not finalized
+Small bug in image rotation, doesn't support landscape images
 
 FINAL NOTE:  
 Yes I wrote it in the format of a UNIX command manual page
