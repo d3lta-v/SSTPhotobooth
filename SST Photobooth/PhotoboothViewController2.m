@@ -36,6 +36,11 @@
     return self;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 -(IBAction)filterSelector:(id)sender
 {
     UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Vintage", @"Vignette", @"Pixelate", @"Polka Dot", nil];
