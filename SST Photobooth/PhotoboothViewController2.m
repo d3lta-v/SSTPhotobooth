@@ -43,7 +43,7 @@
 
 -(IBAction)filterSelector:(id)sender
 {
-    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Vintage", @"Vignette", @"Pixelate", @"Polka Dot", nil];
+    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Vintage", @"Vignette", @"Pixelate", @"Polka Dot", @"Gaussian Blur", nil];
     filter.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
     [filter setDelegate:self];
     actionSheetNo=false;
@@ -99,6 +99,10 @@
                 imageFilter=[[GPUImagePolkaDotFilter alloc]init];
                 filterApplied=true;
                 break;
+                
+            case 9:
+                imageFilter=[[GPUImageFastBlurFilter alloc]init];
+                filterApplied=true;
                 
             default:
                 filterApplied=false;
