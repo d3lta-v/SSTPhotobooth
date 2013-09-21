@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="UZg-MC-DMV" customClass="PhotoboothViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FMA-wx-MbW">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlz-da-cKH">
@@ -90,6 +90,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YCN-LO-HIl"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -106,7 +107,7 @@
             <objects>
                 <viewController id="2F5-53-Nzu" customClass="LensAboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9M3-hR-Iwq">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Developed by StatiX Industries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bq8-HS-cgU">
@@ -143,7 +144,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Feedback here!">
-                                    <color key="titleColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.16756957116788321" green="0.64917883211678828" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -188,7 +189,7 @@
             <objects>
                 <viewController id="IVW-YP-UWy" customClass="PhotoboothViewController2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z5X-2r-JkE">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djf-gn-Xrj" userLabel="mainImage"/>
@@ -550,7 +551,7 @@
             <objects>
                 <viewController id="5H0-UQ-Uva" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hf0-4r-Z91">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWL-o9-MAx">
@@ -669,7 +670,7 @@
             <objects>
                 <viewController id="iso-PR-egs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="chg-62-WY0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGh-oY-Ebu">
@@ -768,7 +769,7 @@
             <objects>
                 <viewController id="fW6-c3-7sK" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a6k-5h-QNE">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEG-Be-PqS">
@@ -887,7 +888,7 @@
             <objects>
                 <viewController id="7Ha-cs-G7j" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2NT-Wj-2cY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRD-Zf-7sq">

@@ -25,7 +25,7 @@
 
 -(IBAction)feedback:(id)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:random.rrr3@gmail.com"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/sst-lens/id681870976?ls=1&mt=8"]];
 }
 
 - (void)viewDidLoad
