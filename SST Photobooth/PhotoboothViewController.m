@@ -42,6 +42,11 @@
     }
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 //This will also get to the editor
 -(IBAction)editorPressed:(id)sender
 {
