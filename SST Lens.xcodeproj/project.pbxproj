@@ -16,6 +16,7 @@
 		2207771D17C7029C00129035 /* Watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2207771C17C7029C00129035 /* Watermark.png */; };
 		2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */; };
 		221B33CA17EF451D0048EA2C /* LastTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221B33C917EF451D0048EA2C /* LastTutorialViewController.m */; };
+		221B33CC17EF474E0048EA2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221B33CB17EF474E0048EA2C /* Images.xcassets */; };
 		2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */; };
 		224A04EF17A954D900B12EA5 /* Filter Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04EE17A954D900B12EA5 /* Filter Button.png */; };
 		224A04F317A955DE00B12EA5 /* SSTINC.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04F217A955DE00B12EA5 /* SSTINC.png */; };
@@ -31,8 +32,6 @@
 		225D0CC017A1569100F71A68 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CBF17A1569100F71A68 /* CoreMedia.framework */; };
 		225D0CC217A1569900F71A68 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC117A1569900F71A68 /* CoreVideo.framework */; };
 		225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC317A156A000F71A68 /* OpenGLES.framework */; };
-		2274882C179831790010752E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2274882B179831790010752E /* Icon@2x.png */; };
-		2274882E179831830010752E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2274882D179831830010752E /* Icon.png */; };
 		2288E86617A17895000AA61D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2288E86517A17895000AA61D /* README.md */; };
 		22B0F8A817EE9E1F00E5DAED /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0F8A517EE9E1400E5DAED /* libGPUImage.a */; };
 		22B0F8AA17EEB7BA00E5DAED /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8A917EEB7BA00E5DAED /* lookup_amatorka.png */; };
@@ -49,9 +48,6 @@
 		22CAF13B1782CB8100794998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1391782CB8100794998 /* InfoPlist.strings */; };
 		22CAF13D1782CB8100794998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF13C1782CB8100794998 /* main.m */; };
 		22CAF1411782CB8100794998 /* PhotoboothAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF1401782CB8100794998 /* PhotoboothAppDelegate.m */; };
-		22CAF1431782CB8100794998 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1421782CB8100794998 /* Default.png */; };
-		22CAF1451782CB8100794998 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1441782CB8100794998 /* Default@2x.png */; };
-		22CAF1471782CB8100794998 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1461782CB8100794998 /* Default-568h@2x.png */; };
 		22CAF14A1782CB8100794998 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1481782CB8100794998 /* MainStoryboard_iPhone.storyboard */; };
 		22CAF1501782CB8100794998 /* PhotoboothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF14F1782CB8100794998 /* PhotoboothViewController.m */; };
 		22CAF15A1782CBA100794998 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1571782CBA100794998 /* SVProgressHUD.bundle */; };
@@ -95,6 +91,7 @@
 		2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		221B33C817EF451D0048EA2C /* LastTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastTutorialViewController.h; sourceTree = "<group>"; };
 		221B33C917EF451D0048EA2C /* LastTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastTutorialViewController.m; sourceTree = "<group>"; };
+		221B33CB17EF474E0048EA2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Lens/Images.xcassets; sourceTree = "<group>"; };
 		2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController2.h; sourceTree = "<group>"; };
 		2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController2.m; sourceTree = "<group>"; };
 		224A04EE17A954D900B12EA5 /* Filter Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filter Button.png"; sourceTree = "<group>"; };
@@ -113,8 +110,6 @@
 		225D0CC117A1569900F71A68 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		225D0CC317A156A000F71A68 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		225D0CC517A156A700F71A68 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		2274882B179831790010752E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		2274882D179831830010752E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2288E86517A17895000AA61D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Submodules/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		22B0F8A917EEB7BA00E5DAED /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_amatorka.png; path = Submodules/framework/Resources/lookup_amatorka.png; sourceTree = SOURCE_ROOT; };
@@ -135,9 +130,6 @@
 		22CAF13E1782CB8100794998 /* SST Photobooth-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SST Photobooth-Prefix.pch"; sourceTree = "<group>"; };
 		22CAF13F1782CB8100794998 /* PhotoboothAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoboothAppDelegate.h; sourceTree = "<group>"; };
 		22CAF1401782CB8100794998 /* PhotoboothAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoboothAppDelegate.m; sourceTree = "<group>"; };
-		22CAF1421782CB8100794998 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		22CAF1441782CB8100794998 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		22CAF1461782CB8100794998 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		22CAF1491782CB8100794998 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		22CAF14E1782CB8100794998 /* PhotoboothViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController.h; sourceTree = "<group>"; };
 		22CAF14F1782CB8100794998 /* PhotoboothViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController.m; sourceTree = "<group>"; };
@@ -223,6 +215,7 @@
 		22CAF1241782CB8100794998 = {
 			isa = PBXGroup;
 			children = (
+				221B33CB17EF474E0048EA2C /* Images.xcassets */,
 				22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */,
 				2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */,
 				2288E86517A17895000AA61D /* README.md */,
@@ -231,8 +224,6 @@
 				225D0CC117A1569900F71A68 /* CoreVideo.framework */,
 				225D0CBF17A1569100F71A68 /* CoreMedia.framework */,
 				225D0CBA17A014F300F71A68 /* CoreImage.framework */,
-				2274882D179831830010752E /* Icon.png */,
-				2274882B179831790010752E /* Icon@2x.png */,
 				22CAF15E1782CBCE00794998 /* Social.framework */,
 				22CAF15C1782CBC600794998 /* QuartzCore.framework */,
 				22CAF1561782CBA100794998 /* SVProgressHUD */,
@@ -299,9 +290,6 @@
 				22CAF1391782CB8100794998 /* InfoPlist.strings */,
 				22CAF13C1782CB8100794998 /* main.m */,
 				22CAF13E1782CB8100794998 /* SST Photobooth-Prefix.pch */,
-				22CAF1421782CB8100794998 /* Default.png */,
-				22CAF1441782CB8100794998 /* Default@2x.png */,
-				22CAF1461782CB8100794998 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -397,9 +385,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22CAF13B1782CB8100794998 /* InfoPlist.strings in Resources */,
-				22CAF1431782CB8100794998 /* Default.png in Resources */,
-				22CAF1451782CB8100794998 /* Default@2x.png in Resources */,
-				22CAF1471782CB8100794998 /* Default-568h@2x.png in Resources */,
 				22CAF14A1782CB8100794998 /* MainStoryboard_iPhone.storyboard in Resources */,
 				22CAF15A1782CBA100794998 /* SVProgressHUD.bundle in Resources */,
 				22563089178B0FFF00002FB6 /* Black1.png in Resources */,
@@ -418,8 +403,6 @@
 				22CA07F61794E7ED0095A4B9 /* Brown1.png in Resources */,
 				22B0F8AE17EEB90E00E5DAED /* lookup_soft_elegance_2.png in Resources */,
 				22B0F8AA17EEB7BA00E5DAED /* lookup_amatorka.png in Resources */,
-				2274882C179831790010752E /* Icon@2x.png in Resources */,
-				2274882E179831830010752E /* Icon.png in Resources */,
 				22E902041799806800D2E04C /* Reset Button.png in Resources */,
 				22E902051799806800D2E04C /* Undo Button.png in Resources */,
 				22F5B91B179AE1D100633CDE /* Save.png in Resources */,
@@ -429,6 +412,7 @@
 				22FE27A617A65D6D000818C4 /* iTunesArtwork@2x.png in Resources */,
 				224A04EF17A954D900B12EA5 /* Filter Button.png in Resources */,
 				224A04F317A955DE00B12EA5 /* SSTINC.png in Resources */,
+				221B33CC17EF474E0048EA2C /* Images.xcassets in Resources */,
 				22073E8517C22342003EEEC2 /* Design-Cluster.png in Resources */,
 				22073E8717C235AB003EEEC2 /* TransparentiPhone.png in Resources */,
 				22073E8917C23FBE003EEEC2 /* SSTFullLogo.png in Resources */,
@@ -545,6 +529,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -562,6 +548,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: School of Science and Technology Singapore (7K6ZTDFM48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
