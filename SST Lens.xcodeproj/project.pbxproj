@@ -15,6 +15,7 @@
 		22073E8B17C2454E003EEEC2 /* SSTVertLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22073E8A17C2454E003EEEC2 /* SSTVertLogo.png */; };
 		2207771D17C7029C00129035 /* Watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2207771C17C7029C00129035 /* Watermark.png */; };
 		2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */; };
+		221B33CA17EF451D0048EA2C /* LastTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221B33C917EF451D0048EA2C /* LastTutorialViewController.m */; };
 		2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */; };
 		224A04EF17A954D900B12EA5 /* Filter Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04EE17A954D900B12EA5 /* Filter Button.png */; };
 		224A04F317A955DE00B12EA5 /* SSTINC.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04F217A955DE00B12EA5 /* SSTINC.png */; };
@@ -92,6 +93,8 @@
 		22073E8A17C2454E003EEEC2 /* SSTVertLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SSTVertLogo.png; sourceTree = "<group>"; };
 		2207771C17C7029C00129035 /* Watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Watermark.png; sourceTree = "<group>"; };
 		2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		221B33C817EF451D0048EA2C /* LastTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastTutorialViewController.h; sourceTree = "<group>"; };
+		221B33C917EF451D0048EA2C /* LastTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastTutorialViewController.m; sourceTree = "<group>"; };
 		2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController2.h; sourceTree = "<group>"; };
 		2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController2.m; sourceTree = "<group>"; };
 		224A04EE17A954D900B12EA5 /* Filter Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filter Button.png"; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				22CAF13F1782CB8100794998 /* PhotoboothAppDelegate.h */,
 				22CAF1401782CB8100794998 /* PhotoboothAppDelegate.m */,
 				22CAF1481782CB8100794998 /* MainStoryboard_iPhone.storyboard */,
+				221B33C817EF451D0048EA2C /* LastTutorialViewController.h */,
+				221B33C917EF451D0048EA2C /* LastTutorialViewController.m */,
 				22CAF14E1782CB8100794998 /* PhotoboothViewController.h */,
 				22CAF14F1782CB8100794998 /* PhotoboothViewController.m */,
 				2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */,
@@ -446,6 +451,7 @@
 				22CAF1501782CB8100794998 /* PhotoboothViewController.m in Sources */,
 				22CAF15B1782CBA100794998 /* SVProgressHUD.m in Sources */,
 				2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */,
+				221B33CA17EF451D0048EA2C /* LastTutorialViewController.m in Sources */,
 				2206283517A26B2E004EBCC8 /* LensAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +544,7 @@
 		22CAF1541782CB8100794998 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -554,6 +561,7 @@
 		22CAF1551782CB8100794998 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: School of Science and Technology Singapore (7K6ZTDFM48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

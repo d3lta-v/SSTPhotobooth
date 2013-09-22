@@ -946,10 +946,10 @@
             </objects>
             <point key="canvasLocation" x="1592" y="-849"/>
         </scene>
-        <!--View Controller-->
+        <!--Last Tutorial View Controller-->
         <scene sceneID="EdK-ZN-iG5">
             <objects>
-                <viewController id="7Ha-cs-G7j" sceneMemberID="viewController">
+                <viewController id="7Ha-cs-G7j" customClass="LastTutorialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MPL-0k-iLT"/>
                         <viewControllerLayoutGuide type="bottom" id="SEg-5c-mOJ"/>
@@ -1230,7 +1230,7 @@
                                     <segue destination="UZg-MC-DMV" kind="push" id="NPA-zB-c0k"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43g-YS-7YH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43g-YS-7YH">
                                 <rect key="frame" x="160" y="1" width="53" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="agD-71-Xs2"/>
@@ -1247,7 +1247,7 @@
                                     <action selector="shareActivityButton:" destination="IVW-YP-UWy" eventType="touchUpInside" id="0Ad-WP-QxL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtl-dq-Sj8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtl-dq-Sj8">
                                 <rect key="frame" x="107" y="1" width="53" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="8nw-HS-eEQ"/>
@@ -1264,7 +1264,7 @@
                                     <action selector="save:" destination="IVW-YP-UWy" eventType="touchUpInside" id="1Tx-eO-019"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFv-a3-BtM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFv-a3-BtM">
                                 <rect key="frame" x="1" y="1" width="53" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="Jn4-aQ-0S0"/>
@@ -1279,7 +1279,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P46-zE-hyc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P46-zE-hyc">
                                 <rect key="frame" x="54" y="1" width="53" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="ByF-Xu-td9"/>
@@ -1296,7 +1296,7 @@
                                     <action selector="reset:" destination="IVW-YP-UWy" eventType="touchUpInside" id="rhw-UB-zcp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Z6-2z-DUU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Z6-2z-DUU">
                                 <rect key="frame" x="213" y="1" width="52" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="UEp-q2-ZTZ"/>
@@ -1313,7 +1313,7 @@
                                     <action selector="filterSelector:" destination="IVW-YP-UWy" eventType="touchUpInside" id="QpB-yc-pTC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztA-Vt-xsk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztA-Vt-xsk">
                                 <rect key="frame" x="265" y="0.0" width="52" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="Emx-l2-2oQ"/>
@@ -1460,6 +1460,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5lA-NW-UZ8"/>
+        <segue reference="NPA-zB-c0k"/>
     </inferredMetricsTieBreakers>
 </document>
