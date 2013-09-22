@@ -43,7 +43,7 @@
 
 -(IBAction)filterSelector:(id)sender
 {
-    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Pencil Sketch", @"Emboss", @"Vintage", @"Vignette", @"Pixelate", @"Polka Dot", @"Gaussian Blur", nil];
+    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Vintage", @"Vignette", @"Pixelate", @"Polka Dot", nil];
     filter.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
     [filter setDelegate:self];
     actionSheetNo=false;
@@ -71,39 +71,30 @@
                 break;
                 
             case 3:
-                imageFilter=[[GPUImageSketchFilter alloc]init];
-                filterApplied=true;
-                break;
-                
-            case 4:
                 imageFilter=[[GPUImageEmbossFilter alloc]init];
                 filterApplied=true;
                 break;
                 
-            case 5:
+            case 4:
                 imageFilter=[[GPUImageMonochromeFilter alloc]init];
                 filterApplied=true;
                 break;
                 
-            case 6:
+            case 5:
                 imageFilter=[[GPUImageVignetteFilter alloc]init];
                 filterApplied=true;
                 break;
                 
-            case 7:
+            case 6:
                 imageFilter=[[GPUImagePixellateFilter alloc]init];
                 filterApplied=true;
                 break;
                 
-            case 8:
+            case 7:
                 imageFilter=[[GPUImagePolkaDotFilter alloc]init];
                 filterApplied=true;
                 break;
-                
-            case 9:
-                imageFilter=[[GPUImageFastBlurFilter alloc]init];
-                filterApplied=true;
-                
+
             default:
                 filterApplied=false;
                 break;
@@ -121,6 +112,43 @@
         }
         else
             return;
+        
+        /*if (buttonIndex==0) {
+            [SVProgressHUD showWithStatus:@"Applying filter..."];
+            GPUImageSepiaFilter *sepiaFilter = [[GPUImageSepiaFilter alloc] init];
+            
+            double delayInSeconds = 0.1;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                _mainImage.image=[sepiaFilter imageByFilteringImage:_mainImage.image];
+            });
+            [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
+        }
+        else if (buttonIndex==1) {
+            [SVProgressHUD showWithStatus:@"Applying filter..."];
+            GPUImageGrayscaleFilter *greyScale = [[GPUImageGrayscaleFilter alloc] init];
+            
+            double delayInSeconds = 0.1;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                _mainImage.image=[greyScale imageByFilteringImage:_mainImage.image];
+            });
+            
+            [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
+        }
+        else if (buttonIndex==9) {
+            [SVProgressHUD showWithStatus:@"Applying filter..."];
+            GPUImageFastBlurFilter *filter = [[GPUImageFastBlurFilter alloc] init];
+            [filter setBlurPasses:2];
+            
+            double delayInSeconds = 0.1;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                UIImage *processedImg=[filter imageByFilteringImage:_mainImage.image];
+                _mainImage.image=processedImg;
+                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
+            });
+        }*/
     }
     else
     {

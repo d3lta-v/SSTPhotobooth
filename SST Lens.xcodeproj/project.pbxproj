@@ -30,10 +30,10 @@
 		225D0CC017A1569100F71A68 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CBF17A1569100F71A68 /* CoreMedia.framework */; };
 		225D0CC217A1569900F71A68 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC117A1569900F71A68 /* CoreVideo.framework */; };
 		225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC317A156A000F71A68 /* OpenGLES.framework */; };
-		225D0CD317A1577C00F71A68 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CCE17A1574A00F71A68 /* libGPUImage.a */; };
 		2274882C179831790010752E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2274882B179831790010752E /* Icon@2x.png */; };
 		2274882E179831830010752E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2274882D179831830010752E /* Icon.png */; };
 		2288E86617A17895000AA61D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2288E86517A17895000AA61D /* README.md */; };
+		22B0F8A817EE9E1F00E5DAED /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0F8A517EE9E1400E5DAED /* libGPUImage.a */; };
 		22CA07F21793DFA30095A4B9 /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07EE1793DFA30095A4B9 /* Editor.png */; };
 		22CA07F31793DFA30095A4B9 /* New Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07EF1793DFA30095A4B9 /* New Photo.png */; };
 		22CA07F41793DFA30095A4B9 /* Share.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07F01793DFA30095A4B9 /* Share.png */; };
@@ -63,26 +63,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		225D0CCD17A1574A00F71A68 /* PBXContainerItemProxy */ = {
+		22B0F8A417EE9E1400E5DAED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */;
+			containerPortal = 22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
 			remoteInfo = GPUImage;
 		};
-		225D0CCF17A1574A00F71A68 /* PBXContainerItemProxy */ = {
+		22B0F8A617EE9E1400E5DAED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */;
+			containerPortal = 22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
 			remoteInfo = GPUImageTests;
-		};
-		225D0CD117A1576C00F71A68 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
-			remoteInfo = GPUImage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -113,10 +106,10 @@
 		225D0CC117A1569900F71A68 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		225D0CC317A156A000F71A68 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		225D0CC517A156A700F71A68 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Submodules/GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		2274882B179831790010752E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2274882D179831830010752E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		2288E86517A17895000AA61D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Submodules/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		22CA07EE1793DFA30095A4B9 /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Editor.png; sourceTree = "<group>"; };
 		22CA07EF1793DFA30095A4B9 /* New Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New Photo.png"; sourceTree = "<group>"; };
 		22CA07F01793DFA30095A4B9 /* Share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share.png; sourceTree = "<group>"; };
@@ -156,9 +149,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B0F8A817EE9E1F00E5DAED /* libGPUImage.a in Frameworks */,
 				2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */,
 				2202609F17A2333900F6DD8A /* AVFoundation.framework in Frameworks */,
-				225D0CD317A1577C00F71A68 /* libGPUImage.a in Frameworks */,
 				225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */,
 				225D0CC217A1569900F71A68 /* CoreVideo.framework in Frameworks */,
 				225D0CC017A1569100F71A68 /* CoreMedia.framework in Frameworks */,
@@ -190,11 +183,11 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		225D0CC817A1574A00F71A68 /* Products */ = {
+		22B0F89F17EE9E1300E5DAED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				225D0CCE17A1574A00F71A68 /* libGPUImage.a */,
-				225D0CD017A1574A00F71A68 /* GPUImageTests.octest */,
+				22B0F8A517EE9E1400E5DAED /* libGPUImage.a */,
+				22B0F8A717EE9E1400E5DAED /* GPUImageTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,8 +212,8 @@
 		22CAF1241782CB8100794998 = {
 			isa = PBXGroup;
 			children = (
+				22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */,
 				2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */,
-				225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */,
 				2288E86517A17895000AA61D /* README.md */,
 				225D0CC517A156A700F71A68 /* AVFoundation.framework */,
 				225D0CC317A156A000F71A68 /* OpenGLES.framework */,
@@ -320,7 +313,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				225D0CD217A1576C00F71A68 /* PBXTargetDependency */,
 			);
 			name = Lens;
 			productName = "SST Photobooth";
@@ -354,8 +346,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 225D0CC817A1574A00F71A68 /* Products */;
-					ProjectRef = 225D0CC717A1574A00F71A68 /* GPUImage.xcodeproj */;
+					ProductGroup = 22B0F89F17EE9E1300E5DAED /* Products */;
+					ProjectRef = 22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -366,18 +358,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		225D0CCE17A1574A00F71A68 /* libGPUImage.a */ = {
+		22B0F8A517EE9E1400E5DAED /* libGPUImage.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libGPUImage.a;
-			remoteRef = 225D0CCD17A1574A00F71A68 /* PBXContainerItemProxy */;
+			remoteRef = 22B0F8A417EE9E1400E5DAED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		225D0CD017A1574A00F71A68 /* GPUImageTests.octest */ = {
+		22B0F8A717EE9E1400E5DAED /* GPUImageTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = GPUImageTests.octest;
-			remoteRef = 225D0CCF17A1574A00F71A68 /* PBXContainerItemProxy */;
+			remoteRef = 22B0F8A617EE9E1400E5DAED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -443,14 +435,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		225D0CD217A1576C00F71A68 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GPUImage;
-			targetProxy = 225D0CD117A1576C00F71A68 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		22CAF1391782CB8100794998 /* InfoPlist.strings */ = {
@@ -542,7 +526,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
-				HEADER_SEARCH_PATHS = "Submodules/GPUImage/framework/**";
+				HEADER_SEARCH_PATHS = "Submodules/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F97B209E-2AA1-41BE-8FBC-5264C09D4FDC";
@@ -558,7 +542,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: School of Science and Technology Singapore (7K6ZTDFM48)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
-				HEADER_SEARCH_PATHS = "Submodules/GPUImage/framework/**";
+				HEADER_SEARCH_PATHS = "Submodules/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "DFDDC3CE-8AB3-4FC1-AE75-F4D0AD074A04";
