@@ -58,7 +58,6 @@
 -(IBAction)newPressed:(id)sender
 {
     editorOrAdd=TRUE;
-    
     socialOrNot=FALSE;
     
     controller=[[UIImagePickerController alloc]init];
@@ -70,6 +69,7 @@
         controller.sourceType = UIImagePickerControllerSourceTypeCamera;
         controller.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
         controller.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        controller.allowsEditing=NO;
         [controller takePicture];
         [controller setDelegate:self];
         [self presentViewController:controller animated:YES completion:nil];
@@ -81,6 +81,73 @@
     {
         NSLog(@"No camera found");
     }
+}
+
+- (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize withImage:(UIImage*)imageInput
+{
+    UIImage *sourceImage = imageInput;
+    UIImage *newImage = nil;
+    CGSize imageSize = sourceImage.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
+    CGFloat targetWidth = targetSize.width;
+    CGFloat targetHeight = targetSize.height;
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+    
+    if (CGSizeEqualToSize(imageSize, targetSize) == NO)
+    {
+        CGFloat widthFactor = targetWidth / width;
+        CGFloat heightFactor = targetHeight / height;
+        
+        if (widthFactor > heightFactor)
+        {
+            scaleFactor = widthFactor; // scale to fit height
+        }
+        else
+        {
+            scaleFactor = heightFactor; // scale to fit width
+        }
+        
+        scaledWidth  = width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+        
+        // center the image
+        if (widthFactor > heightFactor)
+        {
+            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+        }
+        else
+        {
+            if (widthFactor < heightFactor)
+            {
+                thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+            }
+        }
+    }
+    
+    UIGraphicsBeginImageContext(targetSize); // this will crop
+    
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
+    
+    [sourceImage drawInRect:thumbnailRect];
+    
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    if(newImage == nil)
+    {
+        NSLog(@"could not scale image");
+    }
+    
+    //pop the context to get back to the default
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 -(IBAction)shareAction:(id)sender
@@ -103,6 +170,7 @@
 {
     if (socialOrNot) //Checking if it is initiating from the Social function or the Add Photo function
     {
+        //image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
         image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:^(void) //Dismiss the VC with an action on dismiss
         {
@@ -117,7 +185,25 @@
     }
     else //If the user wasn't using the share function
     {
-        image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+        {
+            CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+            
+            if (iOSDeviceScreenSize.height == 480)
+            {
+                image1 = [self imageByScalingAndCroppingForSize:CGSizeMake(640.0, 960.0) withImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            }
+            
+            if (iOSDeviceScreenSize.height == 568)
+            {
+                image1 = [self imageByScalingAndCroppingForSize:CGSizeMake(640.0, 1136.0) withImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            }
+            
+        }
+        else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+        {
+            image1 = [self imageByScalingAndCroppingForSize:CGSizeMake(640.0, 960.0) withImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        }
         [self dismissViewControllerAnimated:YES completion:^(void){
             [self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
         }];
