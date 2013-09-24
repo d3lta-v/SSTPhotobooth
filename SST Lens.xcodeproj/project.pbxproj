@@ -51,7 +51,7 @@
 		22CAF14A1782CB8100794998 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1481782CB8100794998 /* MainStoryboard_iPhone.storyboard */; };
 		22CAF1501782CB8100794998 /* PhotoboothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF14F1782CB8100794998 /* PhotoboothViewController.m */; };
 		22CAF15A1782CBA100794998 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22CAF1571782CBA100794998 /* SVProgressHUD.bundle */; };
-		22CAF15B1782CBA100794998 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF1591782CBA100794998 /* SVProgressHUD.m */; };
+		22CAF15B1782CBA100794998 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF1591782CBA100794998 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-Wno-deprecated"; }; };
 		22CAF15D1782CBC600794998 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF15C1782CBC600794998 /* QuartzCore.framework */; };
 		22CAF15F1782CBCE00794998 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF15E1782CBCE00794998 /* Social.framework */; };
 		22E902041799806800D2E04C /* Reset Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E902021799806800D2E04C /* Reset Button.png */; };
@@ -537,6 +537,7 @@
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Submodules/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F97B209E-2AA1-41BE-8FBC-5264C09D4FDC";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -556,6 +557,7 @@
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Submodules/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "DFDDC3CE-8AB3-4FC1-AE75-F4D0AD074A04";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DFDDC3CE-8AB3-4FC1-AE75-F4D0AD074A04";

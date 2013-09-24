@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="UZg-MC-DMV">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
@@ -441,7 +441,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UZg-MC-DMV" kind="modal" modalTransitionStyle="flipHorizontal" id="5lA-NW-UZ8"/>
+                                    <action selector="goBack:" destination="IVW-YP-UWy" eventType="touchUpInside" id="4km-zJ-G0C"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.60000000000000009" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmI-MH-dk0">
@@ -564,6 +564,7 @@
                         <outlet property="mainImage" destination="djf-gn-Xrj" id="InB-5v-9s9"/>
                         <outlet property="tempDrawImage" destination="uox-n1-tLN" id="3da-fJ-YpK"/>
                         <outlet property="watermark" destination="tMP-Cl-kyq" id="gWn-91-9hh"/>
+                        <segue destination="UZg-MC-DMV" kind="modal" identifier="goBack" modalTransitionStyle="flipHorizontal" id="Awu-Pr-nKE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXz-HX-mbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1460,6 +1461,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NPA-zB-c0k"/>
+        <segue reference="Awu-Pr-nKE"/>
     </inferredMetricsTieBreakers>
 </document>

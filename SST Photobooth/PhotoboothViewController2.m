@@ -17,7 +17,7 @@
 {
     bool state; //This is to check if view is launched from social media
     bool filterApplied; //Prevent infinite loop of filter applying
-    bool actionSheetNo;
+    NSInteger actionSheetNumber;
     NSData *chosenImage;
 }
 
@@ -44,15 +44,15 @@
 -(IBAction)filterSelector:(id)sender
 {
     UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Pencil Sketch", @"Vintage", @"Vintage 2", @"Vintage 3", @"Oil Painting", @"Cartoon", @"Vignette", @"Pixelate", @"Center Pixelate", @"Polka Dot", @"News Print", nil];
-    filter.actionSheetStyle=UIActionSheetStyleBlackTranslucent;
     [filter setDelegate:self];
-    actionSheetNo=false;
+    //actionSheetNo=false;
+    actionSheetNumber=0;
     [filter showInView:[UIApplication sharedApplication].keyWindow];
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (!actionSheetNo) {
+    if (actionSheetNumber==0) { //This is for the filters
         NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
 
         if ([buttonTitle isEqualToString:@"Sepia"]) {
@@ -227,7 +227,7 @@
             });
         }
     }
-    else
+    else if (actionSheetNumber==1) //This is for the watermarks
     {
         switch (buttonIndex) {
             case 0:
@@ -246,6 +246,19 @@
             case 3:
                 [self clearWatermark];
                 break;
+            default:
+                break;
+        }
+    }
+    else if (actionSheetNumber==2)
+    {
+        switch (buttonIndex) {
+            case 0:
+                [_mainImage setImage:imageChoosed];
+                [self clearWatermark];
+                [SVProgressHUD showSuccessWithStatus:@"Edits Cleared!"];
+                break;
+                
             default:
                 break;
         }
@@ -287,10 +300,10 @@
 
 -(IBAction)reset:(id)sender
 {
-    //[SVProgressHUD showWithStatus:@"Clearing edits..."];
-    [_mainImage setImage:imageChoosed];
-    [_watermark setImage:[UIImage imageNamed:@"TransparentiPhone.png"]];
-    [SVProgressHUD showSuccessWithStatus:@"Edits Cleared!"];
+    UIActionSheet *resetActionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:@"Clear all edits" otherButtonTitles:nil, nil];
+    [resetActionSheet setDelegate:self];
+    actionSheetNumber=2;
+    [resetActionSheet showInView:[UIApplication sharedApplication].keyWindow];
 }
 
 -(IBAction)shareActivityButton:(id)sender
@@ -489,8 +502,33 @@
 {
     UIActionSheet *watermarkSelector=[[UIActionSheet alloc]initWithTitle:@"Watermark Type Selector" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"SST Hexagon", @"Full SST Logo (Horizontal)", @"Full SST Logo (Vertical)", @"None", nil];
     [watermarkSelector setDelegate:self];
-    actionSheetNo=true;
+    actionSheetNumber=1;
     [watermarkSelector showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+-(IBAction)goBack:(id)sender
+{
+    UIAlertView *backAlert = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"All unsaved changes will be lost!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
+    [backAlert setDelegate:self];
+    
+    [backAlert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 1:
+            [self performSegueWithIdentifier:@"goBack" sender:self];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)willPresentAlertView:(UIAlertView *)alertView{
+    UILabel *theBody = [alertView valueForKey:@"_bodyTextLabel"];
+    [theBody setTextColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning

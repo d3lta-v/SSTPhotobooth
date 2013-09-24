@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoboothViewController2 : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
+@interface PhotoboothViewController2 : UIViewController<UIImagePickerControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 {
     UIImagePickerController *controller;
     CGPoint lastPoint;
@@ -32,11 +32,10 @@
 
 -(IBAction)pencilPressed:(id)sender;
 
-//-(IBAction)shareButton:(id)sender;
 -(IBAction)shareActivityButton:(id)sender;
-
 -(IBAction)save:(id)sender;
 -(IBAction)reset:(id)sender;
+-(IBAction)goBack:(id)sender;
 
 -(IBAction)filterSelector:(id)sender;
 -(IBAction)watermarkSelector:(id)sender;
