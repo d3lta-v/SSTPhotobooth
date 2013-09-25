@@ -30,7 +30,6 @@ StatiX Industries:
 * Debugger: Pan Ziyue
 * Graphics Designer: Christopher Kok
 * Beta Tester: Liaw Xiao Tao
-
 [REDACTED]:
 * Graphics Designer: [REDACTED]
   
