@@ -38,6 +38,7 @@
 		22B0F8AC17EEB7EE00E5DAED /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8AB17EEB7EE00E5DAED /* lookup_miss_etikate.png */; };
 		22B0F8AE17EEB90E00E5DAED /* lookup_soft_elegance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8AD17EEB90E00E5DAED /* lookup_soft_elegance_2.png */; };
 		22B0F8B017EEB9C000E5DAED /* lookup_soft_elegance_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8AF17EEB9C000E5DAED /* lookup_soft_elegance_1.png */; };
+		22C0AF1C17F1EC7300EFA0C4 /* MainStoryboard-568h.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C0AF1B17F1EC7300EFA0C4 /* MainStoryboard-568h.storyboard */; };
 		22CA07F21793DFA30095A4B9 /* Editor.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07EE1793DFA30095A4B9 /* Editor.png */; };
 		22CA07F31793DFA30095A4B9 /* New Photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07EF1793DFA30095A4B9 /* New Photo.png */; };
 		22CA07F41793DFA30095A4B9 /* Share.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CA07F01793DFA30095A4B9 /* Share.png */; };
@@ -116,6 +117,7 @@
 		22B0F8AB17EEB7EE00E5DAED /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_miss_etikate.png; path = Submodules/framework/Resources/lookup_miss_etikate.png; sourceTree = SOURCE_ROOT; };
 		22B0F8AD17EEB90E00E5DAED /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_soft_elegance_2.png; path = Submodules/framework/Resources/lookup_soft_elegance_2.png; sourceTree = SOURCE_ROOT; };
 		22B0F8AF17EEB9C000E5DAED /* lookup_soft_elegance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_soft_elegance_1.png; path = Submodules/framework/Resources/lookup_soft_elegance_1.png; sourceTree = SOURCE_ROOT; };
+		22C0AF1B17F1EC7300EFA0C4 /* MainStoryboard-568h.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "MainStoryboard-568h.storyboard"; sourceTree = "<group>"; };
 		22CA07EE1793DFA30095A4B9 /* Editor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Editor.png; sourceTree = "<group>"; };
 		22CA07EF1793DFA30095A4B9 /* New Photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New Photo.png"; sourceTree = "<group>"; };
 		22CA07F01793DFA30095A4B9 /* Share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Share.png; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				22CAF13F1782CB8100794998 /* PhotoboothAppDelegate.h */,
 				22CAF1401782CB8100794998 /* PhotoboothAppDelegate.m */,
 				22CAF1481782CB8100794998 /* MainStoryboard_iPhone.storyboard */,
+				22C0AF1B17F1EC7300EFA0C4 /* MainStoryboard-568h.storyboard */,
 				221B33C817EF451D0048EA2C /* LastTutorialViewController.h */,
 				221B33C917EF451D0048EA2C /* LastTutorialViewController.m */,
 				22CAF14E1782CB8100794998 /* PhotoboothViewController.h */,
@@ -405,6 +408,7 @@
 				22B0F8AA17EEB7BA00E5DAED /* lookup_amatorka.png in Resources */,
 				22E902041799806800D2E04C /* Reset Button.png in Resources */,
 				22E902051799806800D2E04C /* Undo Button.png in Resources */,
+				22C0AF1C17F1EC7300EFA0C4 /* MainStoryboard-568h.storyboard in Resources */,
 				22F5B91B179AE1D100633CDE /* Save.png in Resources */,
 				22F5B91C179AE1D100633CDE /* Share Round.png in Resources */,
 				2288E86617A17895000AA61D /* README.md in Resources */,

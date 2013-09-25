@@ -83,6 +83,12 @@
     }
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+//Autocrop image to fit screen size
 - (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize withImage:(UIImage*)imageInput
 {
     UIImage *sourceImage = imageInput;
