@@ -122,21 +122,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Developed by StatiX Industries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bq8-HS-cgU">
-                                <rect key="frame" x="49" y="322" width="223" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="of SST Inc." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJj-mD-0To">
-                                <rect key="frame" x="119" y="351" width="83" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="gIh-aD-6em"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SST Lens (C) 2013 StatiX Industries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxH-ZC-09S">
                                 <rect key="frame" x="23" y="453" width="275" height="21"/>
                                 <constraints>
@@ -170,28 +155,61 @@
                                     <action selector="feedback:" destination="2F5-53-Nzu" eventType="touchUpInside" id="Jff-YK-eXU"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="SSTINC.png" translatesAutoresizingMaskIntoConstraints="NO" id="2uF-3s-RJZ">
-                                <rect key="frame" x="89" y="215" width="142" height="84"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="OH7-xO-nnB"/>
-                                    <constraint firstAttribute="width" constant="142" id="g6v-I0-BfV"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SSTINC.png" translatesAutoresizingMaskIntoConstraints="NO" id="bUm-eT-mZL">
+                                <rect key="frame" x="89" y="54" width="142" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Development Team:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-qj-MjM">
+                                <rect key="frame" x="87" y="227" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lead programmer/Debugger: Pan Ziyue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3he-9E-yoS">
+                                <rect key="frame" x="14" y="262" width="292" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Graphics designer: Christopher Kok" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHv-OQ-fiy">
+                                <rect key="frame" x="29" y="291" width="262" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beta tester: Liaw Xiao Tao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9op-ne-Vch">
+                                <rect key="frame" x="65" y="320" width="190" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Developed by StatiX Industries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcn-HR-XL7">
+                                <rect key="frame" x="49" y="144" width="223" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="of SST Inc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT5-bq-AGn">
+                                <rect key="frame" x="122" y="173" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Obg-VZ-4KN" secondAttribute="bottom" constant="71" id="4ni-6q-ddG"/>
                             <constraint firstAttribute="bottom" secondItem="3He-3W-Fo1" secondAttribute="bottom" constant="29" id="5Vk-EV-sQQ"/>
-                            <constraint firstAttribute="bottom" secondItem="qJj-mD-0To" secondAttribute="bottom" constant="108" id="7Dc-aR-St0"/>
-                            <constraint firstItem="qJj-mD-0To" firstAttribute="top" secondItem="bq8-HS-cgU" secondAttribute="bottom" constant="8" symbolic="YES" id="V2K-Ss-jad"/>
-                            <constraint firstItem="2uF-3s-RJZ" firstAttribute="centerX" secondItem="bq8-HS-cgU" secondAttribute="centerX" id="Wot-sd-hus"/>
                             <constraint firstItem="3He-3W-Fo1" firstAttribute="centerX" secondItem="YxH-ZC-09S" secondAttribute="centerX" id="Xya-ku-kjk"/>
-                            <constraint firstItem="qJj-mD-0To" firstAttribute="centerX" secondItem="Obg-VZ-4KN" secondAttribute="centerX" id="aFf-td-kC3"/>
                             <constraint firstItem="Obg-VZ-4KN" firstAttribute="leading" secondItem="9M3-hR-Iwq" secondAttribute="leading" constant="20" symbolic="YES" id="d4M-JF-dUV"/>
                             <constraint firstItem="3He-3W-Fo1" firstAttribute="centerX" secondItem="Obg-VZ-4KN" secondAttribute="centerX" id="uJa-3e-HkH"/>
-                            <constraint firstItem="bq8-HS-cgU" firstAttribute="centerX" secondItem="qJj-mD-0To" secondAttribute="centerX" id="uTT-VD-Evm"/>
                             <constraint firstAttribute="bottom" secondItem="YxH-ZC-09S" secondAttribute="bottom" constant="6" id="wKS-Aj-muh"/>
-                            <constraint firstItem="2uF-3s-RJZ" firstAttribute="top" secondItem="9M3-hR-Iwq" secondAttribute="top" constant="215" id="yT6-Ah-3wx"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -1461,6 +1479,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Awu-Pr-nKE"/>
+        <segue reference="NPA-zB-c0k"/>
     </inferredMetricsTieBreakers>
 </document>

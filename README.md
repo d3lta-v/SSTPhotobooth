@@ -1,12 +1,12 @@
 **SST Lens (formerly known as SST Photobooth)**
 ------------------------------------------------------
-Made by StatiX Industries  and Team Up.Grade
+Made by StatiX Industries and [REDACTED]
 
-NAME:  
+**NAME:**
 * SST Lens
 * SST Photobooth
 
-SYNOPSIS:  
+**SYNOPSIS:**
 The Application is used for simple photo editing
   
 1. Can draw with colors on photos
@@ -16,26 +16,29 @@ The Application is used for simple photo editing
 5. Is able to share to social networks, as well as save it to camera roll.
   
 
-AVAILABILITY:  
-The App is only usable on the UNIX Darwin ARMv7 iOS 6+ platform  
-Devices compatible include the iPhone 4 and up, iPad 2 and up as well as iPod Touch 4rd Gen and up
+**AVAILABILITY:**
+The App is only usable on the UNIX Darwin ARMv7 iOS 7 platform
+Devices compatible include the iPhone 4 and above, iPad 2 and up as well as iPod Touch 4rd Gen and up
   
 
-DESCRIPTION:  
+**DESCRIPTION:**
 * The Application is made for simple photo editing
   
-AUTHOR(S):  
+**AUTHOR(S):**
 StatiX Industries:
 * Lead Developer: Pan Ziyue
 * Debugger: Pan Ziyue
 * Graphics Designer: Christopher Kok
 * Beta Tester: Liaw Xiao Tao
+
+[REDACTED]:
+* Graphics Designer: [REDACTED]
   
 
-CAVEATS:  
+**CAVEATS:**
 Small bug in image rotation, doesn't support landscape images
 
-FINAL NOTE:  
+**FINAL NOTE:**
 Yes I wrote it in the format of a UNIX command manual page
   
 Copyright (C) StatiX Industries 2013
