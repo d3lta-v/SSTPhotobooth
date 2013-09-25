@@ -24,7 +24,7 @@ Devices compatible include the iPhone 4 and above, iPad 2 and up as well as iPod
 **DESCRIPTION:**
 * The Application is made for simple photo editing
   
-**AUTHOR(S):**
+**AUTHOR(S):**  
 StatiX Industries:
 * Lead Developer: Pan Ziyue
 * Debugger: Pan Ziyue
