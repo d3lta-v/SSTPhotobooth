@@ -122,39 +122,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SST Lens (C) 2013 StatiX Industries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxH-ZC-09S">
-                                <rect key="frame" x="23" y="453" width="275" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="3gT-YV-tFz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Uses SVProgressHUD and GPUImage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obg-VZ-4KN">
                                 <rect key="frame" x="20" y="388" width="280" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3He-3W-Fo1">
-                                <rect key="frame" x="55" y="407" width="211" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="OZ6-SY-PxM"/>
-                                    <constraint firstAttribute="width" constant="211" id="yPs-ba-2T4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Feedback here!">
-                                    <color key="titleColor" red="0.16756957116788321" green="0.64917883211678828" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="feedback:" destination="2F5-53-Nzu" eventType="touchUpInside" id="Jff-YK-eXU"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SSTINC.png" translatesAutoresizingMaskIntoConstraints="NO" id="bUm-eT-mZL">
                                 <rect key="frame" x="89" y="54" width="142" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -201,15 +174,29 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLr-TU-lry">
+                                <rect key="frame" x="101" y="413" width="119" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Feedback here!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="feedback:" destination="2F5-53-Nzu" eventType="touchUpInside" id="0Bt-hd-iRQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SST Lens (C) 2013 StatiX Industries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy3-p5-tbv">
+                                <rect key="frame" x="24" y="451" width="273" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Obg-VZ-4KN" secondAttribute="bottom" constant="71" id="4ni-6q-ddG"/>
-                            <constraint firstAttribute="bottom" secondItem="3He-3W-Fo1" secondAttribute="bottom" constant="29" id="5Vk-EV-sQQ"/>
-                            <constraint firstItem="3He-3W-Fo1" firstAttribute="centerX" secondItem="YxH-ZC-09S" secondAttribute="centerX" id="Xya-ku-kjk"/>
                             <constraint firstItem="Obg-VZ-4KN" firstAttribute="leading" secondItem="9M3-hR-Iwq" secondAttribute="leading" constant="20" symbolic="YES" id="d4M-JF-dUV"/>
-                            <constraint firstItem="3He-3W-Fo1" firstAttribute="centerX" secondItem="Obg-VZ-4KN" secondAttribute="centerX" id="uJa-3e-HkH"/>
-                            <constraint firstAttribute="bottom" secondItem="YxH-ZC-09S" secondAttribute="bottom" constant="6" id="wKS-Aj-muh"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -689,7 +676,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="a filter (9 filters in total)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-GK-tHc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="a filter (15 filters in total)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-GK-tHc">
                                 <rect key="frame" x="57" y="356" width="206" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="I8J-zj-4Ut"/>
@@ -909,7 +896,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="a filter (9 filters in total)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OT6-Ao-7Tb">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="a filter (15 filters in total)." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OT6-Ao-7Tb">
                                 <rect key="frame" x="57" y="172" width="206" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="Zjc-Ux-ggD"/>

@@ -43,7 +43,7 @@
 
 -(IBAction)filterSelector:(id)sender
 {
-    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Pencil Sketch", @"Vintage", @"Vintage 2", @"Vintage 3", @"Oil Painting", @"Cartoon", @"Vignette", @"Pixelate", @"Center Pixelate", @"Polka Dot", @"News Print", nil];
+    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Pencil Sketch", @"Vintage", @"Vintage 2", @"Vintage 3", @"Oil Painting", @"Cartoon", @"Vignette", @"Pixelate", @"Center Pixelate", @"Polka Dot", @"Dot Matrix", nil];
     [filter setDelegate:self];
     //actionSheetNo=false;
     actionSheetNumber=0;
