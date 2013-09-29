@@ -15,10 +15,12 @@
 
 @interface PhotoboothViewController2 ()
 {
-    bool state; //This is to check if view is launched from social media
-    bool filterApplied; //Prevent infinite loop of filter applying
+    BOOL state; //This is to check if view is launched from social media
+    BOOL filterApplied; //Prevent infinite loop of filter applying
     NSInteger actionSheetNumber;
     NSData *chosenImage;
+    
+    BOOL saved;
 }
 
 @end
@@ -45,7 +47,6 @@
 {
     UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Pencil Sketch", @"Vintage", @"Vintage 2", @"Vintage 3", @"Oil Painting", @"Cartoon", @"Vignette", @"Pixelate", @"Center Pixelate", @"Polka Dot", @"Dot Matrix", nil];
     [filter setDelegate:self];
-    //actionSheetNo=false;
     actionSheetNumber=0;
     [filter showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -63,8 +64,9 @@
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 _mainImage.image=[sepiaFilter imageByFilteringImage:_mainImage.image];
+                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
-            [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Black & White"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -87,6 +89,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Emboss"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -98,6 +101,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Vintage"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -109,6 +113,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Vintage 2"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -120,6 +125,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Vignette"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -131,6 +137,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Pixelate"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -144,6 +151,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Center Pixelate"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -157,6 +165,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Polka Dot"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -170,6 +179,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Cartoon"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -181,6 +191,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Oil Painting"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -192,8 +203,9 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
-        else if ([buttonTitle isEqualToString:@"News Print"]) {
+        else if ([buttonTitle isEqualToString:@"Dot Matrix"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
             GPUImageHalftoneFilter *filter = [[GPUImageHalftoneFilter alloc] init];
             [filter setFractionalWidthOfAPixel:0.007];
@@ -203,6 +215,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Vintage 3"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -214,6 +227,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Pencil Sketch"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -225,6 +239,7 @@
                 _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
             });
+            saved=FALSE;
         }
     }
     else if (actionSheetNumber==1) //This is for the watermarks
@@ -233,18 +248,22 @@
             case 0:
                 [self clearWatermark];
                 _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"Design-Cluster.png"]];
+                saved=FALSE;
                 break;
                 
             case 1:
                 [self clearWatermark];
                 _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"SSTFullLogo.png"]];
+                saved=FALSE;
                 break;
             case 2:
                 [self clearWatermark];
                 _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"SSTVertLogo.png"]];
+                saved=FALSE;
                 break;
             case 3:
                 [self clearWatermark];
+                saved=FALSE;
                 break;
             default:
                 break;
@@ -257,6 +276,7 @@
                 [_mainImage setImage:imageChoosed];
                 [self clearWatermark];
                 [SVProgressHUD showSuccessWithStatus:@"Edits Cleared!"];
+                saved=TRUE;
                 break;
                 
             default:
@@ -396,6 +416,7 @@
     mouseSwiped = NO;
     UITouch *touch = [touches anyObject];
     lastPoint = [touch locationInView:self.view];
+    saved=FALSE;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -460,6 +481,7 @@
     } else {
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Image was saved in Camera Roll"];
+        saved=TRUE;
     }
 }
 
@@ -476,6 +498,7 @@
     if (_showEditorOrController) {
         UIImageWriteToSavedPhotosAlbum(_mainImage.image, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
     }
+    saved=TRUE;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -486,7 +509,6 @@
 //This is to make a watermarked image
 -(UIImage *) generateWatermarkForImage:(UIImage *)mainImg :(UIImage *)transparentImg{
     UIImage *backgroundImage = mainImg;
-    //UIImage *watermarkImage = [UIImage imageNamed:@"Design-Cluster.png"];
     UIImage *watermarkImage = transparentImg;
     
     UIGraphicsBeginImageContext(backgroundImage.size);
@@ -508,10 +530,13 @@
 
 -(IBAction)goBack:(id)sender
 {
-    UIAlertView *backAlert = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"All unsaved changes will be lost!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
-    [backAlert setDelegate:self];
-    
-    [backAlert show];
+    if (!saved) {
+        UIAlertView *backAlert = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"All unsaved changes will be lost!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
+        [backAlert setDelegate:self];
+        [backAlert show];
+    }
+    else
+        [self performSegueWithIdentifier:@"goBack" sender:self];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
