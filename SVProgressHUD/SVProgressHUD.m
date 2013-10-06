@@ -41,9 +41,7 @@ CGFloat SVProgressHUDRingThickness = 6;
 
 @property (nonatomic, readonly) CGFloat visibleKeyboardHeight;
 
-- (void)showProgress:(float)progress
-              status:(NSString*)string
-            maskType:(SVProgressHUDMaskType)hudMaskType;
+- (void)showProgress:(float)progress status:(NSString*)string maskType:(SVProgressHUDMaskType)hudMaskType;
 
 - (void)showImage:(UIImage*)image
            status:(NSString*)status
@@ -120,7 +118,7 @@ CGFloat SVProgressHUDRingThickness = 6;
     [[self sharedView] showProgress:progress status:status maskType:SVProgressHUDMaskTypeNone];
 }
 
-+ (void)showProgress:(CGFloat)progress status:(NSString *)status maskType:(SVProgressHUDMaskType)maskType {
++ (void)showProgressWithMask:(CGFloat)progress status:(NSString *)status maskType:(SVProgressHUDMaskType)maskType {
     [[self sharedView] showProgress:progress status:status maskType:maskType];
 }
 

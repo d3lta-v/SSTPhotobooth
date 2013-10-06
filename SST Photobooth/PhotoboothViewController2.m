@@ -197,7 +197,7 @@
         }
         else if ([buttonTitle isEqualToString:@"Oil Painting"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImageKuwaharaRadius3Filter *filter = [[GPUImageKuwaharaRadius3Filter alloc] init];
+            GPUImageKuwaharaFilter *filter = [[GPUImageKuwaharaFilter alloc] init];
             
             double delayInSeconds = 0.1;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
