@@ -33,6 +33,7 @@
 		225D0CC217A1569900F71A68 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC117A1569900F71A68 /* CoreVideo.framework */; };
 		225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC317A156A000F71A68 /* OpenGLES.framework */; };
 		2288E86617A17895000AA61D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2288E86517A17895000AA61D /* README.md */; };
+		229C914718028E330020C13E /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C914618028E330020C13E /* FilterViewController.m */; };
 		22B0F8A817EE9E1F00E5DAED /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0F8A517EE9E1400E5DAED /* libGPUImage.a */; };
 		22B0F8AA17EEB7BA00E5DAED /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8A917EEB7BA00E5DAED /* lookup_amatorka.png */; };
 		22B0F8AC17EEB7EE00E5DAED /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8AB17EEB7EE00E5DAED /* lookup_miss_etikate.png */; };
@@ -112,6 +113,8 @@
 		225D0CC317A156A000F71A68 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		225D0CC517A156A700F71A68 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2288E86517A17895000AA61D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		229C914518028E330020C13E /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		229C914618028E330020C13E /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Submodules/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		22B0F8A917EEB7BA00E5DAED /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_amatorka.png; path = Submodules/framework/Resources/lookup_amatorka.png; sourceTree = SOURCE_ROOT; };
 		22B0F8AB17EEB7EE00E5DAED /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_miss_etikate.png; path = Submodules/framework/Resources/lookup_miss_etikate.png; sourceTree = SOURCE_ROOT; };
@@ -268,6 +271,8 @@
 				22CAF14F1782CB8100794998 /* PhotoboothViewController.m */,
 				2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */,
 				2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */,
+				229C914518028E330020C13E /* FilterViewController.h */,
+				229C914618028E330020C13E /* FilterViewController.m */,
 				2206283317A26B2E004EBCC8 /* LensAboutViewController.h */,
 				2206283417A26B2E004EBCC8 /* LensAboutViewController.m */,
 				22CAF1371782CB8100794998 /* Supporting Files */,
@@ -440,6 +445,7 @@
 				22CAF15B1782CBA100794998 /* SVProgressHUD.m in Sources */,
 				2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */,
 				221B33CA17EF451D0048EA2C /* LastTutorialViewController.m in Sources */,
+				229C914718028E330020C13E /* FilterViewController.m in Sources */,
 				2206283517A26B2E004EBCC8 /* LensAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

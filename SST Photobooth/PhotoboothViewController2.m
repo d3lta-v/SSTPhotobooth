@@ -13,12 +13,16 @@
 #import "GPUImage.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
+#import "FilterViewController.h"
+
 @interface PhotoboothViewController2 ()
 {
     BOOL state; //This is to check if view is launched from social media
     BOOL filterApplied; //Prevent infinite loop of filter applying
     NSInteger actionSheetNumber;
     NSData *chosenImage;
+    
+    NSString *chosenFilter;
     
     BOOL saved;
 }
@@ -45,7 +49,7 @@
 
 -(IBAction)filterSelector:(id)sender
 {
-    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Pencil Sketch", @"Vintage", @"Vintage 2", @"Vintage 3", @"Oil Painting", @"Cartoon", @"Vignette", @"Pixelate", @"Center Pixelate", @"Polka Dot", @"Dot Matrix", nil];
+    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Pencil Sketch", @"Vintage", @"Vintage 2", @"Vintage 3", @"Oil Painting", @"Cartoon", @"Vignette", @"Pixellate", @"Center Pixelate", @"Polka Dot", @"Dot Matrix", nil];
     [filter setDelegate:self];
     actionSheetNumber=0;
     [filter showInView:[UIApplication sharedApplication].keyWindow];
@@ -57,7 +61,7 @@
         NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
 
         if ([buttonTitle isEqualToString:@"Sepia"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
+            /*[SVProgressHUD showWithStatus:@"Applying filter..."];
             GPUImageSepiaFilter *sepiaFilter = [[GPUImageSepiaFilter alloc] init];
             
             double delayInSeconds = 0.1;
@@ -65,7 +69,9 @@
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 _mainImage.image=[sepiaFilter imageByFilteringImage:_mainImage.image];
                 [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+            });*/
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Black & White"]) {
@@ -92,17 +98,8 @@
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Emboss"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImageEmbossFilter *filter = [[GPUImageEmbossFilter alloc] init];
-            
-            [filter setIntensity:0.7];
-            
-            double delayInSeconds = 0.1;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
-                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Vintage"]) {
@@ -141,82 +138,34 @@
             });
             saved=FALSE;
         }
-        else if ([buttonTitle isEqualToString:@"Pixelate"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImagePixellateFilter *filter = [[GPUImagePixellateFilter alloc] init];
-            
-            [filter setFractionalWidthOfAPixel:0.02];
-            
-            double delayInSeconds = 0.1;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
-                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+        else if ([buttonTitle isEqualToString:@"Pixellate"]) {
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Center Pixelate"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImagePolarPixellateFilter *filter = [[GPUImagePolarPixellateFilter alloc] init];
-            
-            [filter setPixelSize:CGSizeMake(0.03, 0.03)];
-            
-            double delayInSeconds = 0.1;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
-                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Polka Dot"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImagePolkaDotFilter *filter = [[GPUImagePolkaDotFilter alloc] init];
-            
-            [filter setFractionalWidthOfAPixel:0.02];
-            
-            double delayInSeconds = 0.1;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
-                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Cartoon"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImageSmoothToonFilter *filter = [[GPUImageSmoothToonFilter alloc] init];
-            
-            double delayInSeconds = 0.1;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
-                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Oil Painting"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImageKuwaharaFilter *filter = [[GPUImageKuwaharaFilter alloc] init];
-            
-            double delayInSeconds = 0.1;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
-                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Dot Matrix"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImageHalftoneFilter *filter = [[GPUImageHalftoneFilter alloc] init];
-            [filter setFractionalWidthOfAPixel:0.007];
-            double delayInSeconds = 0.1;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
-                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Vintage 3"]) {
@@ -232,15 +181,8 @@
             saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Pencil Sketch"]) {
-            [SVProgressHUD showWithStatus:@"Applying filter..."];
-            GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc] init];
-            
-            double delayInSeconds = 0.1;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
-                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
-            });
+            chosenFilter=[[NSString alloc]initWithString:buttonTitle];
+            [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
             saved=FALSE;
         }
     }
@@ -556,6 +498,21 @@
 -(void)willPresentAlertView:(UIAlertView *)alertView{
     UILabel *theBody = [alertView valueForKey:@"_bodyTextLabel"];
     [theBody setTextColor:[UIColor whiteColor]];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditorToFilter"]) {
+        FilterViewController *filterVC = [segue destinationViewController];
+        filterVC.receivedImage = _mainImage.image;
+        filterVC.filterType=chosenFilter;
+    }
+}
+
+-(void)updateImageWithFilter:(UIImage *)image //This is to update the received image
+{
+    _mainImage.image=image;
+    [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
 }
 
 - (void)didReceiveMemoryWarning
