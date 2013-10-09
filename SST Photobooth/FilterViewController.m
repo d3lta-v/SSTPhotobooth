@@ -86,8 +86,7 @@
 
 -(IBAction) sliderValueChanged:(UISlider *)sender {
     senderValue = [sender value];
-    NSLog(@"%f",senderValue);
-    
+
     if ([filterType isEqualToString:@"Sepia"]) {
         [self sepiaFilter];
     }
@@ -217,24 +216,20 @@
 -(void)pencilSketch
 {
     [SVProgressHUD showWithStatus:@"Applying filter..."];
-    double delayInSeconds = 0.1;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        GPUImageSketchFilter *sketch = [[GPUImageSketchFilter alloc]init];
-        if (senderValue>0.1) {
-            //[sketch setTexelWidth:senderValue];
-            //[sketch setTexelHeight:senderValue];
-            [sketch setEdgeStrength:senderValue];
-        }
-        else
-        {
-            [sketch setEdgeStrength:0.1];
-            //[sketch setTexelWidth:0.0001];
-            //[sketch setTexelHeight:0.0001];
-        }
-        mainImageView.image=[sketch imageByFilteringImage:receivedImage];
-        [SVProgressHUD dismiss];
-    });
+    GPUImageSketchFilter *sketch = [[GPUImageSketchFilter alloc]init];
+    if (senderValue>0.1) {
+        //[sketch setTexelWidth:senderValue];
+        //[sketch setTexelHeight:senderValue];
+        [sketch setEdgeStrength:senderValue];
+    }
+    else
+    {
+        [sketch setEdgeStrength:0.1];
+        //[sketch setTexelWidth:0.0001];
+        //[sketch setTexelHeight:0.0001];
+    }
+    mainImageView.image=[sketch imageByFilteringImage:receivedImage];
+    [SVProgressHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning
