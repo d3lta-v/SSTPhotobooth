@@ -611,8 +611,12 @@
                                 </items>
                             </toolbar>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7CM-0a-cbc">
-                                <rect key="frame" x="18" y="10" width="284" height="34"/>
+                                <rect key="frame" x="18" y="396" width="284" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="egc-Rq-6Wr" eventType="touchUpOutside" id="Fpc-du-Iwk"/>
+                                    <action selector="sliderValueChanged:" destination="egc-Rq-6Wr" eventType="touchUpInside" id="rv2-m8-nUd"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

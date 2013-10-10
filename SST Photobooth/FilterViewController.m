@@ -133,14 +133,10 @@
 -(void)embossFilter
 {
     [SVProgressHUD showWithStatus:@"Applying filter..."];
-    double delayInSeconds = 0.1;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        GPUImageEmbossFilter *embossFilter =[[GPUImageEmbossFilter alloc]init];
-        [embossFilter setIntensity:senderValue];
-        mainImageView.image=[embossFilter imageByFilteringImage:receivedImage];
-        [SVProgressHUD dismiss];
-    });
+    GPUImageEmbossFilter *embossFilter =[[GPUImageEmbossFilter alloc]init];
+    [embossFilter setIntensity:senderValue];
+    mainImageView.image=[embossFilter imageByFilteringImage:receivedImage];
+    [SVProgressHUD dismiss];
 }
 
 -(void)pixellateFilter
@@ -179,29 +175,21 @@
 -(void)toonFilter
 {
     [SVProgressHUD showWithStatus:@"Applying filter..."];
-    double delayInSeconds = 0.1;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        GPUImageToonFilter *toonFilter = [[GPUImageToonFilter alloc]init];
-        [toonFilter setTexelHeight:senderValue];
-        [toonFilter setTexelWidth:senderValue];
-        //[toonFilter setThreshold:senderValue];
-        mainImageView.image=[toonFilter imageByFilteringImage:receivedImage];
-        [SVProgressHUD dismiss];
-    });
+    GPUImageToonFilter *toonFilter = [[GPUImageToonFilter alloc]init];
+    [toonFilter setTexelHeight:senderValue];
+    [toonFilter setTexelWidth:senderValue];
+    //[toonFilter setThreshold:senderValue];
+    mainImageView.image=[toonFilter imageByFilteringImage:receivedImage];
+    [SVProgressHUD dismiss];
 }
 
 -(void)oilPainting
 {
     [SVProgressHUD showWithStatus:@"Applying filter..."];
-    double delayInSeconds = 0.1;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        GPUImageKuwaharaFilter *oilFilter = [[GPUImageKuwaharaFilter alloc]init];
-        [oilFilter setRadius:senderValue];
-        mainImageView.image=[oilFilter imageByFilteringImage:receivedImage];
-        [SVProgressHUD dismiss];
-    });
+    GPUImageKuwaharaFilter *oilFilter = [[GPUImageKuwaharaFilter alloc]init];
+    [oilFilter setRadius:senderValue];
+    mainImageView.image=[oilFilter imageByFilteringImage:receivedImage];
+    [SVProgressHUD dismiss];
 }
 
 -(void)dotMatrix

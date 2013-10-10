@@ -120,7 +120,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDU-qD-hXG">
                                 <rect key="frame" x="89" y="496" width="142" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Feedback Here!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -915,10 +915,11 @@
                                 </items>
                             </toolbar>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kpg-um-w4V">
-                                <rect key="frame" x="18" y="10" width="284" height="34"/>
+                                <rect key="frame" x="18" y="481" width="284" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="sliderValueChanged:" destination="0Tg-kg-4yf" eventType="valueChanged" id="k0r-70-gGx"/>
+                                    <action selector="sliderValueChanged:" destination="0Tg-kg-4yf" eventType="touchUpOutside" id="1r9-yL-rze"/>
+                                    <action selector="sliderValueChanged:" destination="0Tg-kg-4yf" eventType="touchUpInside" id="AYL-vZ-5Ya"/>
                                 </connections>
                             </slider>
                         </subviews>
