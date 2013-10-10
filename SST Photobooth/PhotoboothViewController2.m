@@ -443,10 +443,6 @@
         UIImageWriteToSavedPhotosAlbum(_mainImage.image, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
     }
     saved=TRUE;
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
     _mainImage.image=imageChoosed;
 }
 
