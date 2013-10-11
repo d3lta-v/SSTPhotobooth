@@ -72,7 +72,6 @@
             });*/
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Black & White"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -100,7 +99,6 @@
         else if ([buttonTitle isEqualToString:@"Emboss"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Vintage"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -141,32 +139,26 @@
         else if ([buttonTitle isEqualToString:@"Pixellate"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Center Pixelate"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Polka Dot"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Cartoon"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Oil Painting"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Dot Matrix"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
         else if ([buttonTitle isEqualToString:@"Vintage 3"]) {
             [SVProgressHUD showWithStatus:@"Applying filter..."];
@@ -183,7 +175,6 @@
         else if ([buttonTitle isEqualToString:@"Pencil Sketch"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
-            saved=FALSE;
         }
     }
     else if (actionSheetNumber==1) //This is for the watermarks
@@ -440,7 +431,7 @@
 	// Do any additional setup after loading the view.
     
     if (_showEditorOrController) {
-        UIImageWriteToSavedPhotosAlbum(_mainImage.image, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+        UIImageWriteToSavedPhotosAlbum(imageChoosed, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
     }
     saved=TRUE;
     _mainImage.image=imageChoosed;
@@ -509,6 +500,7 @@
 {
     _mainImage.image=image;
     [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
+    saved=NO;
 }
 
 - (void)didReceiveMemoryWarning
