@@ -40,34 +40,123 @@
     senderValue=0.0;
     if ([filterType isEqualToString:@"Sepia"]) {
         filterSlider.maximumValue=1.0;
+        filterSlider.value=0.8;
+        senderValue=0.8;
+        [SVProgressHUD showWithStatus:@"Applying filter..."];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImageSepiaFilter *sepiaFilter = [[GPUImageSepiaFilter alloc]init];
+            [sepiaFilter setIntensity:senderValue];
+            mainImageView.image=[sepiaFilter imageByFilteringImage:receivedImage];
+            [SVProgressHUD dismiss];
+        });
     }
     else if ([filterType isEqualToString:@"Emboss"]) {
         filterSlider.maximumValue=4.0;
+        filterSlider.value=2.0;
+        senderValue=2.0;
+        [SVProgressHUD showWithStatus:@"Applying filter..."];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImageEmbossFilter *embossFilter =[[GPUImageEmbossFilter alloc]init];
+            [embossFilter setIntensity:senderValue];
+            mainImageView.image=[embossFilter imageByFilteringImage:receivedImage];
+            [SVProgressHUD dismiss];
+        });
     }
     else if ([filterType isEqualToString:@"Pixellate"]) {
         filterSlider.maximumValue=0.1;
+        filterSlider.value=0.05;
+        senderValue=0.05;
+        [SVProgressHUD showWithStatus:@"Applying filter..."];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImagePixellateFilter *pixellateFilter = [[GPUImagePixellateFilter alloc]init];
+            [pixellateFilter setFractionalWidthOfAPixel:senderValue];
+            mainImageView.image=[pixellateFilter imageByFilteringImage:receivedImage];
+            [SVProgressHUD dismiss];
+        });
     }
     else if ([filterType isEqualToString:@"Center Pixelate"]) {
         filterSlider.maximumValue=0.07;
+        filterSlider.value=0.04;
+        senderValue=0.04;
+        [SVProgressHUD showWithStatus:@"Applying filters..."];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImagePolarPixellateFilter *polarPix = [[GPUImagePolarPixellateFilter alloc]init];
+            [polarPix setPixelSize:CGSizeMake(senderValue, senderValue)];
+            mainImageView.image=[polarPix imageByFilteringImage:receivedImage];
+            [SVProgressHUD dismiss];
+        });
     }
     else if ([filterType isEqualToString:@"Polka Dot"]) {
         filterSlider.maximumValue=0.08;
+        filterSlider.value=0.04;
+        senderValue=0.04;
+        [SVProgressHUD showWithStatus:@"Applying filter..."];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImagePolkaDotFilter *polkaFilter = [[GPUImagePolkaDotFilter alloc]init];
+            [polkaFilter setFractionalWidthOfAPixel:senderValue];
+            mainImageView.image=[polkaFilter imageByFilteringImage:receivedImage];
+            [SVProgressHUD dismiss];
+        });
     }
     else if ([filterType isEqualToString:@"Cartoon"]) {
         filterSlider.maximumValue=0.002;
-        //filterSlider.maximumValue=0.5;
+        filterSlider.value=0.001;
+        senderValue=0.001;
+        [SVProgressHUD showWithStatus:@"Applying filter..."];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImageToonFilter *toonFilter = [[GPUImageToonFilter alloc]init];
+            [toonFilter setTexelHeight:senderValue];
+            [toonFilter setTexelWidth:senderValue];
+            mainImageView.image=[toonFilter imageByFilteringImage:receivedImage];
+            [SVProgressHUD dismiss];
+        });
     }
     else if ([filterType isEqualToString:@"Oil Painting"]) {
         filterSlider.maximumValue=4.0;
+        filterSlider.value=0.0f;
+        [SVProgressHUD dismiss];
     }
     else if ([filterType isEqualToString:@"Dot Matrix"]) {
         filterSlider.maximumValue=0.05;
+        filterSlider.value=0.025;
+        senderValue=0.025;
+        [SVProgressHUD showWithStatus:@"Applying filter..."];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImageHalftoneFilter *dotFilter = [[GPUImageHalftoneFilter alloc]init];
+            [dotFilter setFractionalWidthOfAPixel:senderValue];
+            mainImageView.image=[dotFilter imageByFilteringImage:receivedImage];
+            [SVProgressHUD dismiss];
+        });
     }
     else if ([filterType isEqualToString:@"Pencil Sketch"]) {
         //filterSlider.maximumValue=0.01;
         filterSlider.maximumValue=1;
+        filterSlider.value=0.3;
+        senderValue=0.3;
+        [SVProgressHUD showWithStatus:@"Applying filter..."];
+        double delayInSeconds = 0.2;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            GPUImageSketchFilter *sketch = [[GPUImageSketchFilter alloc]init];
+            [sketch setEdgeStrength:senderValue];
+            mainImageView.image=[sketch imageByFilteringImage:receivedImage];
+            [SVProgressHUD dismiss];
+        });
     }
-    filterSlider.value=0.0f;
 }
 
 -(IBAction)returnWithFilter:(id)sender
@@ -195,9 +284,13 @@
 -(void)dotMatrix
 {
     [SVProgressHUD showWithStatus:@"Applying filter..."];
-    GPUImageHalftoneFilter *dotFilter = [[GPUImageHalftoneFilter alloc]init];
-    [dotFilter setFractionalWidthOfAPixel:senderValue];
-    mainImageView.image=[dotFilter imageByFilteringImage:receivedImage];
+    if (senderValue==0)
+        mainImageView.image=receivedImage;
+    else {
+        GPUImageHalftoneFilter *dotFilter = [[GPUImageHalftoneFilter alloc]init];
+        [dotFilter setFractionalWidthOfAPixel:senderValue];
+        mainImageView.image=[dotFilter imageByFilteringImage:receivedImage];
+    }
     [SVProgressHUD dismiss];
 }
 
@@ -205,18 +298,14 @@
 {
     [SVProgressHUD showWithStatus:@"Applying filter..."];
     GPUImageSketchFilter *sketch = [[GPUImageSketchFilter alloc]init];
-    if (senderValue>0.1) {
-        //[sketch setTexelWidth:senderValue];
-        //[sketch setTexelHeight:senderValue];
+    if (senderValue>0.05) {
         [sketch setEdgeStrength:senderValue];
+        mainImageView.image=[sketch imageByFilteringImage:receivedImage];
     }
     else
     {
-        [sketch setEdgeStrength:0.1];
-        //[sketch setTexelWidth:0.0001];
-        //[sketch setTexelHeight:0.0001];
+        mainImageView.image=receivedImage;
     }
-    mainImageView.image=[sketch imageByFilteringImage:receivedImage];
     [SVProgressHUD dismiss];
 }
 

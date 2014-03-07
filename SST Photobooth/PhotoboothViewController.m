@@ -27,8 +27,7 @@
     [super viewDidLoad];
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    if (! [defaults boolForKey:@"notFirstRun"]) {
-        
+    if (![defaults boolForKey:@"notFirstRun"]) {
         double delayInSeconds = 0.1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -37,9 +36,7 @@
         [defaults setBool:YES forKey:@"notFirstRun"];
     }
     else
-    {
-        return;
-    }
+        return; 
 }
 
 //This will also get to the editor
@@ -176,7 +173,6 @@
 {
     if (socialOrNot) //Checking if it is initiating from the Social function or the Add Photo function
     {
-        //image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
         image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:^(void) //Dismiss the VC with an action on dismiss
         {

@@ -32,7 +32,6 @@
 		225D0CC017A1569100F71A68 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CBF17A1569100F71A68 /* CoreMedia.framework */; };
 		225D0CC217A1569900F71A68 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC117A1569900F71A68 /* CoreVideo.framework */; };
 		225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC317A156A000F71A68 /* OpenGLES.framework */; };
-		2288E86617A17895000AA61D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2288E86517A17895000AA61D /* README.md */; };
 		229C914718028E330020C13E /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C914618028E330020C13E /* FilterViewController.m */; };
 		22B0F8A817EE9E1F00E5DAED /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0F8A517EE9E1400E5DAED /* libGPUImage.a */; };
 		22B0F8AA17EEB7BA00E5DAED /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8A917EEB7BA00E5DAED /* lookup_amatorka.png */; };
@@ -56,6 +55,7 @@
 		22CAF15B1782CBA100794998 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CAF1591782CBA100794998 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-Wno-deprecated"; }; };
 		22CAF15D1782CBC600794998 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF15C1782CBC600794998 /* QuartzCore.framework */; };
 		22CAF15F1782CBCE00794998 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CAF15E1782CBCE00794998 /* Social.framework */; };
+		22CCB99D18632C4A007C9A35 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22CCB99C18632C4A007C9A35 /* Settings.bundle */; };
 		22E902041799806800D2E04C /* Reset Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E902021799806800D2E04C /* Reset Button.png */; };
 		22E902051799806800D2E04C /* Undo Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E902031799806800D2E04C /* Undo Button.png */; };
 		22F5B91B179AE1D100633CDE /* Save.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F5B919179AE1D100633CDE /* Save.png */; };
@@ -143,6 +143,7 @@
 		22CAF1591782CBA100794998 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		22CAF15C1782CBC600794998 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22CAF15E1782CBCE00794998 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		22CCB99C18632C4A007C9A35 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		22E902021799806800D2E04C /* Reset Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reset Button.png"; sourceTree = "<group>"; };
 		22E902031799806800D2E04C /* Undo Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Undo Button.png"; sourceTree = "<group>"; };
 		22F5B919179AE1D100633CDE /* Save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Save.png; sourceTree = "<group>"; };
@@ -283,6 +284,7 @@
 		22CAF1371782CB8100794998 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22CCB99C18632C4A007C9A35 /* Settings.bundle */,
 				22B0F8AF17EEB9C000E5DAED /* lookup_soft_elegance_1.png */,
 				22B0F8AD17EEB90E00E5DAED /* lookup_soft_elegance_2.png */,
 				22B0F8AB17EEB7EE00E5DAED /* lookup_miss_etikate.png */,
@@ -412,11 +414,11 @@
 				22B0F8AE17EEB90E00E5DAED /* lookup_soft_elegance_2.png in Resources */,
 				22B0F8AA17EEB7BA00E5DAED /* lookup_amatorka.png in Resources */,
 				22E902041799806800D2E04C /* Reset Button.png in Resources */,
+				22CCB99D18632C4A007C9A35 /* Settings.bundle in Resources */,
 				22E902051799806800D2E04C /* Undo Button.png in Resources */,
 				22C0AF1C17F1EC7300EFA0C4 /* MainStoryboard-568h.storyboard in Resources */,
 				22F5B91B179AE1D100633CDE /* Save.png in Resources */,
 				22F5B91C179AE1D100633CDE /* Share Round.png in Resources */,
-				2288E86617A17895000AA61D /* README.md in Resources */,
 				22FE27A517A65D6D000818C4 /* iTunesArtwork.png in Resources */,
 				22FE27A617A65D6D000818C4 /* iTunesArtwork@2x.png in Resources */,
 				224A04EF17A954D900B12EA5 /* Filter Button.png in Resources */,
@@ -544,14 +546,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Submodules/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F97B209E-2AA1-41BE-8FBC-5264C09D4FDC";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B281A0B4-1773-4010-AA12-03D76450FF78";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -564,14 +567,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: School of Science and Technology Singapore (7K6ZTDFM48)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Submodules/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DFDDC3CE-8AB3-4FC1-AE75-F4D0AD074A04";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DFDDC3CE-8AB3-4FC1-AE75-F4D0AD074A04";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
