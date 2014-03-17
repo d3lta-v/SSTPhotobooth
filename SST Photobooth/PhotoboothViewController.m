@@ -25,10 +25,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults boolForKey:@"notFirstRun"]) {
-        double delayInSeconds = 0.1;
+        double delayInSeconds = 1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [self performSegueWithIdentifier:@"DefaultToHelp" sender:self];
@@ -36,7 +39,7 @@
         [defaults setBool:YES forKey:@"notFirstRun"];
     }
     else
-        return; 
+        return;
 }
 
 //This will also get to the editor
