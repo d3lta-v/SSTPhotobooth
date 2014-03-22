@@ -10,11 +10,13 @@
 #import "SVProgressHUD.h"
 #import <Social/Social.h>
 #import "PhotoboothViewController2.h"
+#import "BloggerShare/BloggerShare.h"
 
 @interface PhotoboothViewController ()
 {
     bool editorOrAdd;
     bool socialOrNot; //Social is 1, image is 2
+    bool bloggerShouldActivate;
     UIImage *image1;
 }
 
@@ -25,12 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:false forKey:@"bloggerOrNot"];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults boolForKey:@"notFirstRun"]) {
+        bloggerShouldActivate=false;
         double delayInSeconds = 1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -40,6 +45,12 @@
     }
     else
         return;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults addObserver:self forKeyPath:@"bloggerOrNot" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 //This will also get to the editor
@@ -176,13 +187,16 @@
 {
     if (socialOrNot) //Checking if it is initiating from the Social function or the Add Photo function
     {
+        bloggerShouldActivate=true;
         image1 = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:^(void) //Dismiss the VC with an action on dismiss
         {
             if (NSClassFromString(@"UIActivityViewController"))
             {
+                //[defaults setBool:false forKey:@"bloggerOrNot"];
+                BloggerShare *activity = [[BloggerShare alloc] init];
                 NSArray *dataToShare = @[image1];
-                UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
+                UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:@[activity]];
                 activityVC.excludedActivityTypes=@[UIActivityTypeSaveToCameraRoll];
                 [self presentViewController:activityVC animated:YES completion:nil];
             }
@@ -252,6 +266,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"bloggerOrNot"]&&bloggerShouldActivate) {
+        NSLog(@"KVO: %@ changed property %@ to value %@", object, keyPath, change);
+        //[self dismissViewControllerAnimated:YES completion:nil];
+        bloggerShouldActivate=false;
+    }
 }
 
 @end

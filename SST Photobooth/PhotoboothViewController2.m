@@ -11,6 +11,7 @@
 #import <Social/Social.h>
 #import "SVProgressHUD.h"
 #import "GPUImage.h"
+#import "BloggerShare/BloggerShare.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
 #import "FilterViewController.h"
@@ -277,8 +278,9 @@
             UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
+            BloggerShare *blogger = [[BloggerShare alloc] init];
             NSArray *dataToShare = @[SaveImage];
-            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:@[blogger]];
             activityVC.excludedActivityTypes=@[UIActivityTypeSaveToCameraRoll];
             [self presentViewController:activityVC animated:YES completion:nil];
         }
@@ -414,7 +416,7 @@
             [alert show];
         }
     } else {
-        [SVProgressHUD dismiss];
+        //[SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Image was saved in Camera Roll"];
         saved=TRUE;
     }

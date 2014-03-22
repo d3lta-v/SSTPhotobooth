@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SmC-fz-Gnp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SmC-fz-Gnp">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Photobooth View Controller-->
@@ -435,11 +435,12 @@
                         <outlet property="watermark" destination="v5L-Qy-mNC" id="PAh-qk-lRL"/>
                         <segue destination="SmC-fz-Gnp" kind="modal" identifier="goBack" modalTransitionStyle="flipHorizontal" id="aH0-SU-VUG"/>
                         <segue destination="0Tg-kg-4yf" kind="modal" identifier="EditorToFilter" id="qKS-4a-oBU"/>
+                        <segue destination="W0H-GU-HrB" kind="modal" identifier="PostToBlogger" id="ux7-Iv-IyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENz-Yt-Ypl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="-82"/>
+            <point key="canvasLocation" x="1401" y="-82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qnQ-eN-u1l">
@@ -932,7 +933,90 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIA-4n-PiV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="-82"/>
+            <point key="canvasLocation" x="2047" y="-82"/>
+        </scene>
+        <!--Post To Blogger View Controller-->
+        <scene sceneID="YZO-Zo-2BR">
+            <objects>
+                <tableViewController id="W0H-GU-HrB" customClass="PostToBloggerViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="QjB-nx-IfY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Ezf-vl-c7r">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Post to Blogger" id="lZR-K9-wa9">
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="hZX-d1-DAp">
+                                        <connections>
+                                            <action selector="exit:" destination="W0H-GU-HrB" id="OtC-Op-q0c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="Post" id="KgX-vF-SAY">
+                                        <connections>
+                                            <action selector="postToBlogger:" destination="W0H-GU-HrB" id="g3p-c3-xey"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <sections>
+                            <tableViewSection headerTitle="Title" id="bkk-pb-wu9">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ErN-aD-9RM">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ErN-aD-9RM" id="t36-O7-cRi">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert title here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdm-08-xnC">
+                                                    <rect key="frame" x="8" y="0.0" width="304" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Post" id="QLE-cR-0UT">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="141" id="ZwU-Sc-A4d">
+                                        <rect key="frame" x="0.0" y="191" width="320" height="141"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZwU-Sc-A4d" id="Gai-f1-h20">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kde-EF-g2V">
+                                                    <rect key="frame" x="0.0" y="1" width="320" height="138"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="W0H-GU-HrB" id="N6p-Ub-TTm"/>
+                            <outlet property="delegate" destination="W0H-GU-HrB" id="y4O-5V-RTo"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="content" destination="kde-EF-g2V" id="dX4-tC-hai"/>
+                        <outlet property="title" destination="hdm-08-xnC" id="Jbr-EI-zc2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agT-3s-NuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047" y="563"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bdo-mY-nyL">
