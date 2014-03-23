@@ -7,7 +7,6 @@
 //
 
 #import "BloggerShare.h"
-#import "PostToBloggerViewController.h"
 #import "Mailgun.h"
 #import "MGMessage.h"
 #import "SVProgressHUD.h"
@@ -77,7 +76,8 @@
 
 - (NSString *)activityType
 {
-    return NSStringFromClass([self class]);
+    //return NSStringFromClass([self class]);
+    return @"sg.edu.sst.SSTLens";
 }
 
 - (NSString *)activityTitle
