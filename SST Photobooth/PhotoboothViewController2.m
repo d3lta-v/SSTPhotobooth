@@ -184,18 +184,18 @@
         switch (buttonIndex) {
             case 0:
                 [self clearWatermark];
-                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"Design-Cluster.png"]];
+                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"ICTLT-logo.png"]];
                 saved=FALSE;
                 break;
                 
             case 1:
                 [self clearWatermark];
-                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"SSTFullLogo.png"]];
+                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"ICTLT-logo-Horizontal.png"]];
                 saved=FALSE;
                 break;
             case 2:
                 [self clearWatermark];
-                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"SSTVertLogo.png"]];
+                _watermark.image=[self generateWatermarkForImage:_watermark.image :[UIImage imageNamed:@"ICTLT-logo-Vertical.png"]];
                 saved=FALSE;
                 break;
             case 3:
@@ -467,7 +467,7 @@
 
 -(IBAction)watermarkSelector:(id)sender
 {
-    UIActionSheet *watermarkSelector=[[UIActionSheet alloc]initWithTitle:@"Watermark Type Selector" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"SST Hexagon", @"Full SST Logo (Horizontal)", @"Full SST Logo (Vertical)", @"None", nil];
+    UIActionSheet *watermarkSelector=[[UIActionSheet alloc]initWithTitle:@"Watermark Type Selector" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"ICTLT Logo", @"Horizontal ICTLT Logo", @"Vertical ICTLT Logo", @"None", nil];
     [watermarkSelector setDelegate:self];
     actionSheetNumber=1;
     //[watermarkSelector showInView:[UIApplication sharedApplication].keyWindow];
