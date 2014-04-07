@@ -224,7 +224,7 @@
     {
          //Here are some methods for detecting image orientation, developer only
          
-        /*if (((UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]).imageOrientation==UIImageOrientationLeft)
+        if (((UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]).imageOrientation==UIImageOrientationLeft)
             NSLog(@"image left");
         else if (((UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]).imageOrientation==UIImageOrientationRight)
             NSLog(@"image right");
@@ -233,7 +233,7 @@
         else if (((UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]).imageOrientation==UIImageOrientationDown)
             NSLog(@"image down");
         else
-            NSLog(@"unknown orient");*/
+            NSLog(@"unknown orient");
         
         if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
         {
