@@ -101,13 +101,26 @@
     UIImage *sourceImage=imageInput;
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) //If user is using an iPad
     {
-        if (imageInput.imageOrientation == UIImageOrientationDown || imageInput.imageOrientation == UIImageOrientationUp) {
-            sourceImage = [imageInput imageRotatedByDegrees:90];
-            potraitOrLandscape=true;
+        if (editorOrAdd==TRUE) {
+            if (imageInput.imageOrientation != UIImageOrientationLeft || imageInput.imageOrientation != UIImageOrientationRight) {
+                sourceImage = [imageInput imageRotatedByDegrees:90];
+                potraitOrLandscape=true;
+            }
+            else {
+                sourceImage=imageInput;
+                potraitOrLandscape=false;
+            }
         }
-        else {
-            sourceImage=imageInput;
-            potraitOrLandscape=false;
+        else
+        {
+            if (imageInput.imageOrientation != UIImageOrientationDown || imageInput.imageOrientation != UIImageOrientationUp) {
+                sourceImage = [imageInput imageRotatedByDegrees:90];
+                potraitOrLandscape=true;
+            }
+            else {
+                sourceImage=imageInput;
+                potraitOrLandscape=false;
+            }
         }
     }
     else // else if the user uses a phone

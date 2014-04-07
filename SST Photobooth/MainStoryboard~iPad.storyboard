@@ -99,19 +99,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SSTINC.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Ps-XR-jJh">
-                                <rect key="frame" x="313" y="288" width="142" height="84"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatiX Industries Icon 2D.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Ps-XR-jJh">
+                                <rect key="frame" x="313" y="288" width="142" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Developed by StatiX Industries" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zL3-7j-x0Q">
-                                <rect key="frame" x="266" y="400" width="236" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="of SST Inc." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fc-JK-2HF">
-                                <rect key="frame" x="342" y="429" width="85" height="21"/>
+                                <rect key="frame" x="266" y="438" width="236" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1066,10 +1059,10 @@
         <image name="Pink1.png" width="53" height="333"/>
         <image name="Red1.png" width="53" height="333"/>
         <image name="Reset Button.png" width="258" height="258"/>
-        <image name="SSTINC.png" width="477" height="282"/>
         <image name="Save.png" width="257" height="257"/>
         <image name="Share Round.png" width="258" height="258"/>
         <image name="Share.png" width="267" height="267"/>
+        <image name="StatiX Industries Icon 2D.png" width="1024" height="1024"/>
         <image name="Undo Button.png" width="258" height="258"/>
         <image name="Watermark.png" width="258" height="258"/>
         <image name="Yellow1.png" width="53" height="333"/>
