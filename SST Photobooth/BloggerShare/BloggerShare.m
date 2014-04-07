@@ -18,62 +18,6 @@
     UIImage *_image;
 }
 
-/*- (NSString *)activityType
-{
-    return @"yourappname.Review.App";
-}
-
-- (NSString *)activityTitle
-{
-    return @"Review App";
-}
-
-- (UIImage *)activityImage
-{
-    // Note: These images need to have a transparent background and I recommend these sizes:
-    // iPadShare@2x should be 126 px, iPadShare should be 53 px, iPhoneShare@2x should be 100
-    // px, and iPhoneShare should be 50 px. I found these sizes to work for what I was making.
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
-        return [UIImage imageNamed:@"BloggeriPad.png"];
-    }
-    else
-    {
-        return [UIImage imageNamed:@"Blogger.png"];
-    }
-}
-
-- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
-{
-    NSLog(@"%s", __FUNCTION__);
-    return YES;
-}
-
-- (void)prepareWithActivityItems:(NSArray *)activityItems
-{
-    NSLog(@"%s",__FUNCTION__);
-}
-
-- (UIViewController *)activityViewController
-{
-    PostToBloggerViewController *controller = [[PostToBloggerViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    controller.activity=self;
-    return navController;
-}
-
-- (void)performActivity
-{
-    // This is where you can do anything you want, and is the whole reason for creating a custom
-    // UIActivity
-    
-    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=yourappid"]];
-    [self activityDidFinish:YES];
-}
-
-@end*/
-
 - (NSString *)activityType
 {
     //return NSStringFromClass([self class]);
@@ -142,7 +86,13 @@
         REComposeViewController *composeViewController = [[REComposeViewController alloc] init];
         composeViewController.hasAttachment = YES;
         composeViewController.attachmentImage = [self imageByScalingAndCroppingForSize:CGSizeMake(300, 300) withImage:_image];
-        UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blogger-logo"]];
+        UIImageView *titleImageView;
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+            titleImageView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blogger-logo"]];
+        }
+        else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+            titleImageView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blogger-logo~iPad"]];
+        }
         titleImageView.frame = CGRectMake(0, 0, 110, 30);
         composeViewController.navigationItem.titleView = titleImageView;
         composeViewController.placeholderText = @"Title Here";

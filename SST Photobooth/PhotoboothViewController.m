@@ -11,12 +11,16 @@
 #import <Social/Social.h>
 #import "PhotoboothViewController2.h"
 #import "BloggerShare/BloggerShare.h"
+#import "UIImage-Extensions.h"
+
+#define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
 
 @interface PhotoboothViewController ()
 {
     bool editorOrAdd;
     bool socialOrNot; //Social is 1, image is 2
     bool bloggerShouldActivate;
+    bool potraitOrLandscape; //Potrait==false Landscape==true
     UIImage *image1;
 }
 
@@ -27,8 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:false forKey:@"bloggerOrNot"];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -45,12 +47,6 @@
     }
     else
         return;
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults addObserver:self forKeyPath:@"bloggerOrNot" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
 //This will also get to the editor
@@ -102,7 +98,30 @@
 //Autocrop image to fit screen size
 - (UIImage*)imageByScalingAndCroppingForSize:(CGSize)targetSize withImage:(UIImage*)imageInput
 {
-    UIImage *sourceImage = imageInput;
+    UIImage *sourceImage=imageInput;
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) //If user is using an iPad
+    {
+        if (imageInput.imageOrientation == UIImageOrientationDown || imageInput.imageOrientation == UIImageOrientationUp) {
+            sourceImage = [imageInput imageRotatedByDegrees:90];
+            potraitOrLandscape=true;
+        }
+        else {
+            sourceImage=imageInput;
+            potraitOrLandscape=false;
+        }
+    }
+    else // else if the user uses a phone
+    {
+        if (imageInput.imageOrientation != UIImageOrientationUp || imageInput.imageOrientation != UIImageOrientationDown) {
+            sourceImage = [imageInput imageRotatedByDegrees:90];
+            potraitOrLandscape=true;
+        }
+        else {
+            sourceImage=imageInput;
+            potraitOrLandscape=false;
+        }
+    }
+    
     UIImage *newImage = nil;
     CGSize imageSize = sourceImage.size;
     CGFloat width = imageSize.width;
@@ -193,7 +212,6 @@
         {
             if (NSClassFromString(@"UIActivityViewController"))
             {
-                //[defaults setBool:false forKey:@"bloggerOrNot"];
                 BloggerShare *activity = [[BloggerShare alloc] init];
                 NSArray *dataToShare = @[image1];
                 UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:@[activity]];
@@ -204,6 +222,19 @@
     }
     else //If the user wasn't using the share function
     {
+         //Here are some methods for detecting image orientation, developer only
+         
+        /*if (((UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]).imageOrientation==UIImageOrientationLeft)
+            NSLog(@"image left");
+        else if (((UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]).imageOrientation==UIImageOrientationRight)
+            NSLog(@"image right");
+        else if (((UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]).imageOrientation==UIImageOrientationUp)
+            NSLog(@"image up");
+        else if (((UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage]).imageOrientation==UIImageOrientationDown)
+            NSLog(@"image down");
+        else
+            NSLog(@"unknown orient");*/
+        
         if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
         {
             CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
@@ -221,7 +252,13 @@
         }
         else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
         {
-            image1 = [self imageByScalingAndCroppingForSize:CGSizeMake(640.0, 960.0) withImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            // Detecting if device is retina to properly crop the image to screen size
+            if (IS_RETINA) {
+                image1 = [self imageByScalingAndCroppingForSize:CGSizeMake(1536.0, 2048.0) withImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            }
+            else {
+                image1 = [self imageByScalingAndCroppingForSize:CGSizeMake(768.0, 1024.0) withImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+            }
         }
         [self dismissViewControllerAnimated:YES completion:^(void){
             [self performSegueWithIdentifier:@"DefaultToEditor" sender:self];
@@ -253,11 +290,13 @@
         {
             segueController.showEditorOrController=false;
             segueController.imageChoosed=image1;
+            segueController.potraitOrLandscape=potraitOrLandscape;
         }
         else if (editorOrAdd==TRUE) //Means Add Photo
         {
             segueController.showEditorOrController=true;
             segueController.imageChoosed=image1;
+            segueController.potraitOrLandscape=potraitOrLandscape;
         }
     }
 }
@@ -266,14 +305,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    if ([keyPath isEqualToString:@"bloggerOrNot"]&&bloggerShouldActivate) {
-        NSLog(@"KVO: %@ changed property %@ to value %@", object, keyPath, change);
-        //[self dismissViewControllerAnimated:YES completion:nil];
-        bloggerShouldActivate=false;
-    }
 }
 
 @end

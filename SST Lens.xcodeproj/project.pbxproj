@@ -36,6 +36,8 @@
 		2218B9B518DB157600EBE0A5 /* BloggeriPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2218B9B218DB157600EBE0A5 /* BloggeriPad.png */; };
 		221B33CA17EF451D0048EA2C /* LastTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221B33C917EF451D0048EA2C /* LastTutorialViewController.m */; };
 		221B33CC17EF474E0048EA2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221B33CB17EF474E0048EA2C /* Images.xcassets */; };
+		22282DF518DF306F00A9EDF5 /* MainStoryboard~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22282DF418DF306F00A9EDF5 /* MainStoryboard~iPad.storyboard */; };
+		2237D20318E0697100EF7C55 /* blogger-logo~iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2237D20218E0697100EF7C55 /* blogger-logo~iPad@2x.png */; };
 		2248BF8017857CCF0043BE83 /* PhotoboothViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */; };
 		224A04EF17A954D900B12EA5 /* Filter Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04EE17A954D900B12EA5 /* Filter Button.png */; };
 		224A04F317A955DE00B12EA5 /* SSTINC.png in Resources */ = {isa = PBXBuildFile; fileRef = 224A04F217A955DE00B12EA5 /* SSTINC.png */; };
@@ -51,6 +53,7 @@
 		225D0CC017A1569100F71A68 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CBF17A1569100F71A68 /* CoreMedia.framework */; };
 		225D0CC217A1569900F71A68 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC117A1569900F71A68 /* CoreVideo.framework */; };
 		225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D0CC317A156A000F71A68 /* OpenGLES.framework */; };
+		228799CD18E54D89006C67B7 /* UIImage-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 228799CC18E54D89006C67B7 /* UIImage-Extensions.m */; };
 		228C4C1518DB42FA00614D39 /* DEComposeRuledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 228C4C0918DB42FA00614D39 /* DEComposeRuledView.m */; };
 		228C4C1618DB42FA00614D39 /* DEComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 228C4C0B18DB42FA00614D39 /* DEComposeTextView.m */; };
 		228C4C1718DB42FA00614D39 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 228C4C0D18DB42FA00614D39 /* RECommonFunctions.m */; };
@@ -156,6 +159,8 @@
 		221B33C817EF451D0048EA2C /* LastTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastTutorialViewController.h; sourceTree = "<group>"; };
 		221B33C917EF451D0048EA2C /* LastTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastTutorialViewController.m; sourceTree = "<group>"; };
 		221B33CB17EF474E0048EA2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Lens/Images.xcassets; sourceTree = "<group>"; };
+		22282DF418DF306F00A9EDF5 /* MainStoryboard~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "MainStoryboard~iPad.storyboard"; sourceTree = "<group>"; };
+		2237D20218E0697100EF7C55 /* blogger-logo~iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blogger-logo~iPad@2x.png"; path = "BloggerShare/blogger-logo~iPad@2x.png"; sourceTree = "<group>"; };
 		2248BF7E17857CCF0043BE83 /* PhotoboothViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoboothViewController2.h; sourceTree = "<group>"; };
 		2248BF7F17857CCF0043BE83 /* PhotoboothViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoboothViewController2.m; sourceTree = "<group>"; };
 		224A04EE17A954D900B12EA5 /* Filter Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filter Button.png"; sourceTree = "<group>"; };
@@ -174,6 +179,8 @@
 		225D0CC117A1569900F71A68 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		225D0CC317A156A000F71A68 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		225D0CC517A156A700F71A68 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		228799CB18E54D89006C67B7 /* UIImage-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
+		228799CC18E54D89006C67B7 /* UIImage-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
 		2288E86517A17895000AA61D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		228C4C0818DB42FA00614D39 /* DEComposeRuledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEComposeRuledView.h; sourceTree = "<group>"; };
 		228C4C0918DB42FA00614D39 /* DEComposeRuledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEComposeRuledView.m; sourceTree = "<group>"; };
@@ -300,6 +307,7 @@
 		2218B9AA18D9E2B100EBE0A5 /* BloggerShare */ = {
 			isa = PBXGroup;
 			children = (
+				2237D20218E0697100EF7C55 /* blogger-logo~iPad@2x.png */,
 				228C4C1F18DB470700614D39 /* blogger-logo@2x.png */,
 				2218B9B018DB157600EBE0A5 /* Blogger.png */,
 				2218B9B118DB157600EBE0A5 /* Blogger@2x.png */,
@@ -430,6 +438,7 @@
 				22CAF1401782CB8100794998 /* PhotoboothAppDelegate.m */,
 				22CAF1481782CB8100794998 /* MainStoryboard_iPhone.storyboard */,
 				22C0AF1B17F1EC7300EFA0C4 /* MainStoryboard-568h.storyboard */,
+				22282DF418DF306F00A9EDF5 /* MainStoryboard~iPad.storyboard */,
 				221B33C817EF451D0048EA2C /* LastTutorialViewController.h */,
 				221B33C917EF451D0048EA2C /* LastTutorialViewController.m */,
 				22CAF14E1782CB8100794998 /* PhotoboothViewController.h */,
@@ -440,6 +449,8 @@
 				229C914618028E330020C13E /* FilterViewController.m */,
 				2206283317A26B2E004EBCC8 /* LensAboutViewController.h */,
 				2206283417A26B2E004EBCC8 /* LensAboutViewController.m */,
+				228799CB18E54D89006C67B7 /* UIImage-Extensions.h */,
+				228799CC18E54D89006C67B7 /* UIImage-Extensions.m */,
 				22CAF1371782CB8100794998 /* Supporting Files */,
 			);
 			path = "SST Photobooth";
@@ -591,6 +602,8 @@
 				22FCEC8017C5C0BE00E388F4 /* iPhone5Transparent.png in Resources */,
 				228C4C1A18DB42FA00614D39 /* REComposeViewController.bundle in Resources */,
 				2207771D17C7029C00129035 /* Watermark.png in Resources */,
+				2237D20318E0697100EF7C55 /* blogger-logo~iPad@2x.png in Resources */,
+				22282DF518DF306F00A9EDF5 /* MainStoryboard~iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +636,7 @@
 				2218B99A18D80C8300EBE0A5 /* MGMessage.m in Sources */,
 				2206283517A26B2E004EBCC8 /* LensAboutViewController.m in Sources */,
 				2218B9A918D8940900EBE0A5 /* SVProgressHUD.m in Sources */,
+				228799CD18E54D89006C67B7 /* UIImage-Extensions.m in Sources */,
 				2218B98C18D80C7A00EBE0A5 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2218B98918D80C7A00EBE0A5 /* AFHTTPRequestOperation.m in Sources */,
 				2218B98F18D80C7A00EBE0A5 /* AFXMLRequestOperation.m in Sources */,
@@ -726,15 +740,15 @@
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Submodules/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B281A0B4-1773-4010-AA12-03D76450FF78";
-				TARGETED_DEVICE_FAMILY = 1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "40EBA5E1-4374-4145-AD25-2BD827774AFB";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -750,7 +764,7 @@
 				GCC_PREFIX_HEADER = "SST Photobooth/SST Lens-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Submodules/framework/**";
 				INFOPLIST_FILE = "SST Photobooth/SST Lens-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -758,7 +772,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DFDDC3CE-8AB3-4FC1-AE75-F4D0AD074A04";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

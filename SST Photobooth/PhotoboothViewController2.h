@@ -18,6 +18,7 @@
     CGFloat brush;
     CGFloat opacity;
     BOOL mouseSwiped;
+    bool potraitOrLandscape;
     
     UIImage *imageChoosed;
 }
@@ -27,10 +28,16 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawImage;
 @property (weak, nonatomic) IBOutlet UIImageView *watermark;
+@property (strong, nonatomic) IBOutlet UISlider *brushSizeSlider;
 
 @property (strong, nonatomic) UIImage *imageChoosed;
+@property (nonatomic) bool potraitOrLandscape;
+
+@property (strong, nonatomic) IBOutlet UIButton *clearButton;
+@property (strong, nonatomic) IBOutlet UIButton *watermarkButton;
 
 -(IBAction)pencilPressed:(id)sender;
+-(IBAction)brushSizeChanged:(id)sender;
 
 -(IBAction)shareActivityButton:(id)sender;
 -(IBAction)save:(id)sender;

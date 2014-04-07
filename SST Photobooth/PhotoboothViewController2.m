@@ -15,6 +15,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 #import "FilterViewController.h"
+#import "UIImage-Extensions.h"
 
 @interface PhotoboothViewController2 ()
 {
@@ -32,7 +33,7 @@
 
 @implementation PhotoboothViewController2
 
-@synthesize imageChoosed;
+@synthesize imageChoosed, clearButton, brushSizeSlider, watermarkButton, potraitOrLandscape ;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -246,7 +247,13 @@
     UIImage *SaveImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     //Writing to Photo Album
-    UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+    if (potraitOrLandscape) {
+        SaveImage = [SaveImage imageRotatedByDegrees:90];
+        UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }
+    else {
+        UIImageWriteToSavedPhotosAlbum(SaveImage, self,@selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }
     if ([ALAssetsLibrary authorizationStatus]!=ALAuthorizationStatusAuthorized)
     {
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Permission Required:" message:@"This app requires access to your Photo Library, please enable it in your Settings/Privacy/Photos" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
@@ -259,7 +266,9 @@
     UIActionSheet *resetActionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:@"Clear all edits" otherButtonTitles:nil, nil];
     [resetActionSheet setDelegate:self];
     actionSheetNumber=2;
-    [resetActionSheet showInView:[UIApplication sharedApplication].keyWindow];
+    //[resetActionSheet showInView:[UIApplication sharedApplication].keyWindow];
+    //[resetActionSheet showFromBarButtonItem:sender animated:YES];
+    [resetActionSheet showFromRect:clearButton.frame inView:self.view animated:YES];
 }
 
 -(IBAction)shareActivityButton:(id)sender
@@ -290,7 +299,7 @@
 -(IBAction)pencilPressed:(id)sender
 {
     UIButton * PressedButton = (UIButton*)sender;
-    brush = 10.0;
+    //brush = 50.0;
     switch(PressedButton.tag)
     {
         case 0:
@@ -428,6 +437,9 @@
     green = 0.0/255.0;
     blue = 0.0/255.0;
     brush = 10.0;
+    brushSizeSlider.maximumValue=30.0;
+    brushSizeSlider.minimumValue=1.0;
+    brushSizeSlider.value=10.0;
     opacity = 1.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -458,7 +470,8 @@
     UIActionSheet *watermarkSelector=[[UIActionSheet alloc]initWithTitle:@"Watermark Type Selector" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"SST Hexagon", @"Full SST Logo (Horizontal)", @"Full SST Logo (Vertical)", @"None", nil];
     [watermarkSelector setDelegate:self];
     actionSheetNumber=1;
-    [watermarkSelector showInView:[UIApplication sharedApplication].keyWindow];
+    //[watermarkSelector showInView:[UIApplication sharedApplication].keyWindow];
+    [watermarkSelector showFromRect:watermarkButton.frame inView:self.view animated:YES];
 }
 
 -(IBAction)goBack:(id)sender
@@ -484,9 +497,14 @@
     }
 }
 
+-(IBAction)brushSizeChanged:(id)sender
+{
+    brush=brushSizeSlider.value;
+}
+
 -(void)willPresentAlertView:(UIAlertView *)alertView{
-    UILabel *theBody = [alertView valueForKey:@"_bodyTextLabel"];
-    [theBody setTextColor:[UIColor whiteColor]];
+    //UILabel *theBody = [alertView valueForKey:@"_bodyTextLabel"];
+    // [theBody setTextColor:[UIColor whiteColor]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

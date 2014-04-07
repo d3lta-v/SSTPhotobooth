@@ -61,9 +61,24 @@
         
     {   // The iOS device = iPad
         
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
+        //UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        //UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+        //splitViewController.delegate = (id)navigationController.topViewController;
+        
+        // Instantiate a new storyboard object using the storyboard file named Storyboard_iPhone4
+        UIStoryboard *iPad = [UIStoryboard storyboardWithName:@"MainStoryboard~iPad" bundle:nil];
+        
+        // Instantiate the initial view controller object from the storyboard
+        UIViewController *initialViewController = [iPad instantiateInitialViewController];
+        
+        // Instantiate a UIWindow object and initialize it with the screen size of the iOS device
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        // Set the initial view controller to be the root view controller of the window object
+        self.window.rootViewController  = initialViewController;
+        
+        // Set the window object to be the key window and show it
+        [self.window makeKeyAndVisible];
         
     }
     return YES;
