@@ -16,6 +16,7 @@
 		2217252618F29F47005301D7 /* ICTLT-logo-Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 2217252318F29F47005301D7 /* ICTLT-logo-Horizontal.png */; };
 		2217252718F29F47005301D7 /* ICTLT-logo-Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 2217252418F29F47005301D7 /* ICTLT-logo-Vertical.png */; };
 		2217252818F29F47005301D7 /* ICTLT-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2217252518F29F47005301D7 /* ICTLT-logo.png */; };
+		2217252918F2C8C7005301D7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2218B9A118D80D5F00EBE0A5 /* Security.framework */; };
 		2218B98818D80C7A00EBE0A5 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B97618D80C7A00EBE0A5 /* AFHTTPClient.m */; };
 		2218B98918D80C7A00EBE0A5 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B97818D80C7A00EBE0A5 /* AFHTTPRequestOperation.m */; };
 		2218B98A18D80C7A00EBE0A5 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B97A18D80C7A00EBE0A5 /* AFImageRequestOperation.m */; };
@@ -27,7 +28,6 @@
 		2218B99018D80C7A00EBE0A5 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B98718D80C7A00EBE0A5 /* UIImageView+AFNetworking.m */; };
 		2218B99918D80C8300EBE0A5 /* Mailgun.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B99618D80C8300EBE0A5 /* Mailgun.m */; };
 		2218B99A18D80C8300EBE0A5 /* MGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B99818D80C8300EBE0A5 /* MGMessage.m */; };
-		2218B9A218D80D5F00EBE0A5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2218B9A118D80D5F00EBE0A5 /* Security.framework */; };
 		2218B9A818D8940900EBE0A5 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2218B9A518D8940900EBE0A5 /* SVProgressHUD.bundle */; };
 		2218B9A918D8940900EBE0A5 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B9A718D8940900EBE0A5 /* SVProgressHUD.m */; };
 		2218B9AD18D9E2EE00EBE0A5 /* BloggerShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B9AC18D9E2EE00EBE0A5 /* BloggerShare.m */; };
@@ -240,7 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2218B9A218D80D5F00EBE0A5 /* Security.framework in Frameworks */,
+				2217252918F2C8C7005301D7 /* Security.framework in Frameworks */,
 				22B0F8A817EE9E1F00E5DAED /* libGPUImage.a in Frameworks */,
 				2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */,
 				2202609F17A2333900F6DD8A /* AVFoundation.framework in Frameworks */,
@@ -763,7 +763,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ziyue Pan (3DFK5PPTDE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SST Photobooth/ICTLT Lens-Prefix.pch";
 				HEADER_SEARCH_PATHS = "Submodules/framework/**";
@@ -774,8 +774,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BC880351-8C9F-4293-99A8-EEE8E5C4E308";
+				PROVISIONING_PROFILE = "997578D6-D282-4622-A451-CA0A8074C3DC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "997578D6-D282-4622-A451-CA0A8074C3DC";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
