@@ -5,8 +5,10 @@
 #import "GPUImageOutput.h"
 
 extern const GLfloat kColorConversion601[];
+extern const GLfloat kColorConversion601FullRange[];
 extern const GLfloat kColorConversion709[];
 extern NSString *const kGPUImageYUVVideoRangeConversionForRGFragmentShaderString;
+extern NSString *const kGPUImageYUVFullRangeConversionForLAFragmentShaderString;
 extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString;
 
 
@@ -23,8 +25,6 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
 */
 @interface GPUImageVideoCamera : GPUImageOutput <AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate>
 {
-    CVOpenGLESTextureCacheRef coreVideoTextureCache;    
-
     NSUInteger numberOfFramesCaptured;
     CGFloat totalFrameTimeDuringCapture;
     
@@ -35,7 +35,7 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
 	AVCaptureVideoDataOutput *videoOutput;
 
     BOOL capturePaused;
-    GPUImageRotationMode outputRotation;
+    GPUImageRotationMode outputRotation, internalRotation;
     dispatch_semaphore_t frameRenderingSemaphore;
         
     BOOL captureAsYUV;
@@ -54,7 +54,7 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
 /**
  Setting this to 0 or below will set the frame rate back to the default setting for a particular preset.
  */
-@property (readwrite) NSInteger frameRate;
+@property (readwrite) int32_t frameRate;
 
 /// Easy way to tell which cameras are present on device
 @property (readonly, getter = isFrontFacingCameraPresent) BOOL frontFacingCameraPresent;
@@ -145,6 +145,8 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
 /** When benchmarking is enabled, this will keep a running average of the time from uploading, processing, and final recording or display
  */
 - (CGFloat)averageFrameDurationDuringCapture;
+
+- (void)resetBenchmarkAverage;
 
 + (BOOL)isBackFacingCameraPresent;
 + (BOOL)isFrontFacingCameraPresent;

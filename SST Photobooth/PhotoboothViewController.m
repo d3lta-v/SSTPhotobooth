@@ -125,13 +125,13 @@
     }
     else // else if the user uses a phone
     {
-        if (imageInput.imageOrientation != UIImageOrientationUp || imageInput.imageOrientation != UIImageOrientationDown) {
-            sourceImage = [imageInput imageRotatedByDegrees:90];
-            potraitOrLandscape=true;
-        }
-        else {
+        if (imageInput.imageOrientation == UIImageOrientationUp || imageInput.imageOrientation == UIImageOrientationDown) {
             sourceImage=imageInput;
             potraitOrLandscape=false;
+        }
+        else {
+            sourceImage = [imageInput imageRotatedByDegrees:90];
+            potraitOrLandscape=true;
         }
     }
     

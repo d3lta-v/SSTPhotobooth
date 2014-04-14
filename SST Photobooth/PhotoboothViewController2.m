@@ -22,7 +22,6 @@
     BOOL state; //This is to check if view is launched from social media
     BOOL filterApplied; //Prevent infinite loop of filter applying
     NSInteger actionSheetNumber;
-    NSData *chosenImage;
     
     NSString *chosenFilter;
     
@@ -51,7 +50,7 @@
 
 -(IBAction)filterSelector:(id)sender
 {
-    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Pencil Sketch", @"Vintage", @"Vintage 2", @"Vintage 3", @"Oil Painting", @"Cartoon", @"Vignette", @"Pixellate", @"Center Pixelate", @"Polka Dot", @"Dot Matrix", nil];
+    UIActionSheet *filter=[[UIActionSheet alloc]initWithTitle:@"Filter Selector (Some effects may not work on certain images)" delegate:self cancelButtonTitle:@"Back" destructiveButtonTitle:nil otherButtonTitles:@"Sepia", @"Black & White", @"Invert", @"Emboss", @"Pencil Sketch", @"Vintage", @"Vintage 2", @"Vintage 3", @"Oil Painting", @"Cartoon", @"Vignette", @"Pixellate", @"Center Pixelate", @"Polka Dot", @"Dot Matrix", @"Gaussian Blur", nil];
     [filter setDelegate:self];
     actionSheetNumber=0;
     [filter showInView:[UIApplication sharedApplication].keyWindow];
@@ -177,6 +176,21 @@
         else if ([buttonTitle isEqualToString:@"Pencil Sketch"]) {
             chosenFilter=[[NSString alloc]initWithString:buttonTitle];
             [self performSegueWithIdentifier:@"EditorToFilter" sender:self];
+        }
+        else if ([buttonTitle isEqualToString:@"Gaussian Blur"]) {
+            [SVProgressHUD showWithStatus:@"Applying filter..."];
+            GPUImageGaussianBlurFilter *filter = [[GPUImageGaussianBlurFilter alloc] init];
+            
+            filter.blurRadiusInPixels=2.5;
+            //filter.blurRadiusInPixels = 5;
+            
+            double delayInSeconds = 0.1;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                _mainImage.image=[filter imageByFilteringImage:_mainImage.image];
+                [SVProgressHUD showSuccessWithStatus:@"Filter applied!"];
+            });
+            saved=FALSE;
         }
     }
     else if (actionSheetNumber==1) //This is for the watermarks

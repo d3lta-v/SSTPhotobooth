@@ -16,6 +16,7 @@
 		2207771D17C7029C00129035 /* Watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2207771C17C7029C00129035 /* Watermark.png */; };
 		2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */; };
 		2217251918F254F2005301D7 /* StatiX Industries Icon 2D.png in Resources */ = {isa = PBXBuildFile; fileRef = 2217251818F254F1005301D7 /* StatiX Industries Icon 2D.png */; };
+		2217257E18F42E72005301D7 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2217257918F42DD9005301D7 /* libGPUImage.a */; };
 		2218B98818D80C7A00EBE0A5 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B97618D80C7A00EBE0A5 /* AFHTTPClient.m */; };
 		2218B98918D80C7A00EBE0A5 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B97818D80C7A00EBE0A5 /* AFHTTPRequestOperation.m */; };
 		2218B98A18D80C7A00EBE0A5 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2218B97A18D80C7A00EBE0A5 /* AFImageRequestOperation.m */; };
@@ -64,7 +65,6 @@
 		228C4C1B18DB42FA00614D39 /* REComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228C4C1418DB42FA00614D39 /* REComposeViewController.m */; };
 		228C4C2018DB470700614D39 /* blogger-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 228C4C1F18DB470700614D39 /* blogger-logo@2x.png */; };
 		229C914718028E330020C13E /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C914618028E330020C13E /* FilterViewController.m */; };
-		22B0F8A817EE9E1F00E5DAED /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0F8A517EE9E1400E5DAED /* libGPUImage.a */; };
 		22B0F8AA17EEB7BA00E5DAED /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8A917EEB7BA00E5DAED /* lookup_amatorka.png */; };
 		22B0F8AC17EEB7EE00E5DAED /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8AB17EEB7EE00E5DAED /* lookup_miss_etikate.png */; };
 		22B0F8AE17EEB90E00E5DAED /* lookup_soft_elegance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B0F8AD17EEB90E00E5DAED /* lookup_soft_elegance_2.png */; };
@@ -95,19 +95,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		22B0F8A417EE9E1400E5DAED /* PBXContainerItemProxy */ = {
+		2217257818F42DD9005301D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */;
+			containerPortal = 2217257218F42DD9005301D7 /* GPUImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
 			remoteInfo = GPUImage;
 		};
-		22B0F8A617EE9E1400E5DAED /* PBXContainerItemProxy */ = {
+		2217257A18F42DD9005301D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */;
+			containerPortal = 2217257218F42DD9005301D7 /* GPUImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
 			remoteInfo = GPUImageTests;
+		};
+		2217257C18F42E66005301D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2217257218F42DD9005301D7 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
+			remoteInfo = GPUImage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -121,6 +128,7 @@
 		2207771C17C7029C00129035 /* Watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Watermark.png; sourceTree = "<group>"; };
 		2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		2217251818F254F1005301D7 /* StatiX Industries Icon 2D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatiX Industries Icon 2D.png"; sourceTree = "<group>"; };
+		2217257218F42DD9005301D7 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Submodules/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		2218B97518D80C7A00EBE0A5 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		2218B97618D80C7A00EBE0A5 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		2218B97718D80C7A00EBE0A5 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -200,7 +208,6 @@
 		228C4C1F18DB470700614D39 /* blogger-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blogger-logo@2x.png"; path = "BloggerShare/blogger-logo@2x.png"; sourceTree = "<group>"; };
 		229C914518028E330020C13E /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		229C914618028E330020C13E /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
-		22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Submodules/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		22B0F8A917EEB7BA00E5DAED /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_amatorka.png; path = Submodules/framework/Resources/lookup_amatorka.png; sourceTree = SOURCE_ROOT; };
 		22B0F8AB17EEB7EE00E5DAED /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_miss_etikate.png; path = Submodules/framework/Resources/lookup_miss_etikate.png; sourceTree = SOURCE_ROOT; };
 		22B0F8AD17EEB90E00E5DAED /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_soft_elegance_2.png; path = Submodules/framework/Resources/lookup_soft_elegance_2.png; sourceTree = SOURCE_ROOT; };
@@ -240,8 +247,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2217257E18F42E72005301D7 /* libGPUImage.a in Frameworks */,
 				2218B9A218D80D5F00EBE0A5 /* Security.framework in Frameworks */,
-				22B0F8A817EE9E1F00E5DAED /* libGPUImage.a in Frameworks */,
 				2213A7C717AE55EE007693B0 /* AssetsLibrary.framework in Frameworks */,
 				2202609F17A2333900F6DD8A /* AVFoundation.framework in Frameworks */,
 				225D0CC417A156A000F71A68 /* OpenGLES.framework in Frameworks */,
@@ -258,6 +265,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2217257318F42DD9005301D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2217257918F42DD9005301D7 /* libGPUImage.a */,
+				2217257B18F42DD9005301D7 /* GPUImageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2218B97418D80C7A00EBE0A5 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,15 +374,6 @@
 			path = REComposeViewController;
 			sourceTree = "<group>";
 		};
-		22B0F89F17EE9E1300E5DAED /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				22B0F8A517EE9E1400E5DAED /* libGPUImage.a */,
-				22B0F8A717EE9E1400E5DAED /* GPUImageTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		22CA07EC1793DFA30095A4B9 /* SST Lens */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,8 +395,8 @@
 		22CAF1241782CB8100794998 = {
 			isa = PBXGroup;
 			children = (
+				2217257218F42DD9005301D7 /* GPUImage.xcodeproj */,
 				221B33CB17EF474E0048EA2C /* Images.xcassets */,
-				22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */,
 				2213A7C617AE55EE007693B0 /* AssetsLibrary.framework */,
 				2288E86517A17895000AA61D /* README.md */,
 				225D0CC517A156A700F71A68 /* AVFoundation.framework */,
@@ -496,6 +503,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2217257D18F42E66005301D7 /* PBXTargetDependency */,
 			);
 			name = Lens;
 			productName = "SST Photobooth";
@@ -529,8 +537,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 22B0F89F17EE9E1300E5DAED /* Products */;
-					ProjectRef = 22B0F89E17EE9E1300E5DAED /* GPUImage.xcodeproj */;
+					ProductGroup = 2217257318F42DD9005301D7 /* Products */;
+					ProjectRef = 2217257218F42DD9005301D7 /* GPUImage.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -541,18 +549,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		22B0F8A517EE9E1400E5DAED /* libGPUImage.a */ = {
+		2217257918F42DD9005301D7 /* libGPUImage.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libGPUImage.a;
-			remoteRef = 22B0F8A417EE9E1400E5DAED /* PBXContainerItemProxy */;
+			remoteRef = 2217257818F42DD9005301D7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		22B0F8A717EE9E1400E5DAED /* GPUImageTests.octest */ = {
+		2217257B18F42DD9005301D7 /* GPUImageTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = GPUImageTests.octest;
-			remoteRef = 22B0F8A617EE9E1400E5DAED /* PBXContainerItemProxy */;
+			remoteRef = 2217257A18F42DD9005301D7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -649,6 +657,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2217257D18F42E66005301D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = 2217257C18F42E66005301D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		22CAF1391782CB8100794998 /* InfoPlist.strings */ = {
