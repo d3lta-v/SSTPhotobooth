@@ -1,3 +1,4 @@
+**THIS VERSION IS NOT USABLE. SEE UPDATED VERSION**
 **SST Lens (formerly known as SST Photobooth)**
 ------------------------------------------------------
 Made by StatiX Industries and [REDACTED]
